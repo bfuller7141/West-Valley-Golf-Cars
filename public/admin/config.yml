@@ -1,0 +1,36 @@
+backend:
+  name: git-gateway
+  branch: main
+  repo: bfuller7141/wvgolf-cars
+  accept_roles: 
+    - admin
+    - editor
+  api_root: https://gitlab.com/api/v4
+
+media_folder: "public/carts"
+public_folder: "/carts"
+
+collections:
+  - name: "sales"
+    label: "Carts"
+    folder: "src/content/carts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "title", widget: "string", required: true}
+      - {label: "Features", name: "body", widget: "markdown", required: true}
+      - {label: "Serial Number", name: "serial", widget: "string", required: false}
+      - {label: "Make", name: "make", widget: "string", required: true}
+      - {label: "Model", name: "model", widget: "string", required: false}
+      - {label: "Trim", name: "trim", widget: "string", required: false}
+      - {label: "Year", name: "year", widget: "number", required: true, pattern: ["^[0-9]{4}$", "Year must be a 4 digit year."]}
+      - {label: "Color", name: "color", widget: "string", required: true}
+      - {label: "Price", name: "price", widget: "number", required: true}
+      - {label: "Passenger Capacity", name: "passenger", widget: "number", required: true, pattern: ["^[0-9]{1}$", "Passenger capacity must be a number between 1 and 9."]}
+      - {label: "Condition", name: "condition", widget: "select", options: ["New", "Used"], required: true}
+      - {label: "Fuel Type", name: "fuel", widget: "select", options: ["Gas", "Electric", "Lead Acid"], required: true}
+      - {label: "Sold", name: "sold", widget: "boolean", hint: "Check to add sold badge to listing" required: false}
+      - {label: "Thumbnail", name: "thumbnail", widget: "image", hint: "This image will be displayed as the main image for the cart.", allow_multiple: false, required: true}
+      - {label: "Images", name: "images", widget: "list", fields: [
+          {label: "Image", name: "image", widget: "image", required: true}
+        ]}
