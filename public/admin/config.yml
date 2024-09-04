@@ -10,6 +10,14 @@ backend:
 media_folder: "public/carts"
 public_folder: "/carts"
 
+media_library:
+  name: cloudinary
+  output_filename_only: false
+  config:
+    cloud_name: dua9v3oki
+    api_key: 547347771126385
+    multiple: true
+
 collections:
   - name: "sales"
     label: "Carts"
@@ -31,6 +39,4 @@ collections:
       - {label: "Fuel Type", name: "fuel", widget: "select", options: ["Gas", "Electric", "Lead Acid"], required: true}
       - {label: "Sold", name: "sold", widget: "boolean", hint: "Check to add sold badge to listing", required: false}
       - {label: "Thumbnail", name: "thumbnail", widget: "image", hint: "This image will be displayed as the main image for the cart.", allow_multiple: false, required: true}
-      - {label: "Images", name: "images", widget: "list", fields: [
-          {label: "Image", name: "image", widget: "image", required: true}
-        ]}
+      - {label: "Images", name: "images", widget: "image", hint: "These images will be displayed in the gallery for the cart.", allow_multiple: true, required: false}
