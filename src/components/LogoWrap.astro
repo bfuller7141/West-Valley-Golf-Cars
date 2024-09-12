@@ -58,6 +58,11 @@ const { logoSize = 'logo-small', text = 'small-text' } = Astro.props as LogoWrap
 }
 
 /* Responsive layout for smaller screens */
+@media (max-width: 757px) {
+    .logo-wrapper {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
 @media (max-width: 500px) {
     .logo-wrapper {
         grid-template-columns: repeat(2, 1fr); 

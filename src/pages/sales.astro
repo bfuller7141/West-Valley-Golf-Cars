@@ -84,16 +84,29 @@ import FooterMain from '../components/FooterMain.astro';
 			<FooterMain />
 		</footer>
 	</body>
-	<script>
+    <script>
         import * as AOS from 'aos';
         import 'aos/dist/aos.css';
-
-		AOS.init({
-			duration: 800,  // Set the duration for all animations
-			once: true,  // Animate only once when scrolling
-			easing: 'ease-in-out',  // Easing function for smooth animation
-			offset: 0,  // Start the animation sooner (adjust this value as needed)
-			delay: 0,  // Minimal delay before starting animations on mobile
-		});
-	</script>
+    
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.innerWidth > 980) {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    easing: 'ease-in-out',
+                    offset: 0,
+                    delay: 0,
+                });
+            } else {
+                const aosElements = document.querySelectorAll('[data-aos]');
+    
+                aosElements.forEach(element => {
+                    const el = element as HTMLElement;
+                    el.removeAttribute('data-aos');
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+            }
+        });
+    </script>  
 </html>
