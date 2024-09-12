@@ -84,7 +84,7 @@ const {title, description, keywords, image, url} = Astro.props as BaseHeadProps;
     <link rel="stylesheet" href="/styles/flatpickr.css">
 
     <!-- Page Transition -->
-    <script use:client>
+    <script>
       document.addEventListener('DOMContentLoaded', () => {
           const body = document.body;
           body.classList.add('page-transition-enter-active');
