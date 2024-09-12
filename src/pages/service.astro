@@ -21,7 +21,7 @@ import TestimonialCardWrap from '../components/TestimonialCardWrap.astro'
 	<body class="page-transition-enter">
 		<SkipMain />
 		<header>
-			<NavMain data-aos="fade-down" data-aos-delay="100" />
+			<NavMain data-aos="fade-down" />
 		</header>
 		<main id="main-content">
             <section class="hero-home" data-aos="fade-up">
@@ -31,9 +31,9 @@ import TestimonialCardWrap from '../components/TestimonialCardWrap.astro'
                     <div class="container">
                         <div class="wrapper column-hero">
                             <div class="wrapper">
-                                <h1 class="page-title" data-aos="fade-up" data-aos-delay="200">Expert <span class="underline">Care</span> for your Gas or Electric Golf Cart</h1>
-                                <p class="text" data-aos="fade-up" data-aos-delay="400">Keep your golf cart running at its best with our professional service team at West Valley Golf Cars. From routine maintenance to complex repairs, our experts bring years of experience and a passion for precision to every task. We understand the importance of your golf cart's performance and reliability, whether you're on the course or on the move. Trust us to deliver top-notch service with a focus on quality, efficiency, and customer satisfaction. Let us take the hassle out of maintaining your cart, so you can focus on enjoying the ride.</p>
-                                <div class="btn-wrapper" data-aos="fade-up" data-aos-delay="600">
+                                <h1 class="page-title" data-aos="fade-up">Expert <span class="underline">Care</span> for your Gas or Electric Golf Cart</h1>
+                                <p class="text" data-aos="fade-up">Keep your golf cart running at its best with our professional service team at West Valley Golf Cars. From routine maintenance to complex repairs, our experts bring years of experience and a passion for precision to every task. We understand the importance of your golf cart's performance and reliability, whether you're on the course or on the move. Trust us to deliver top-notch service with a focus on quality, efficiency, and customer satisfaction. Let us take the hassle out of maintaining your cart, so you can focus on enjoying the ride.</p>
+                                <div class="btn-wrapper" data-aos="fade-up">
                                     <a href="#schedule" class="btn">Schedule Your Service Today</a>
                                 </div>
                             </div>
@@ -109,7 +109,7 @@ import TestimonialCardWrap from '../components/TestimonialCardWrap.astro'
 				<div class="padding-global" data-aos="fade-up">
 					<div class="container">
 						<h2 class="section-title center">What Our <span class="underline">Customers</span> Are Saying</h2>
-						<TestimonialCardWrap data-aos="fade-up" data-aos-delay="200" />
+						<TestimonialCardWrap data-aos="fade-up"/>
 					</div>
 				</div>
 			</section>
@@ -117,7 +117,7 @@ import TestimonialCardWrap from '../components/TestimonialCardWrap.astro'
 				<div class="padding-global">
 					<div class="container">
 						<h2 class="section-title center">Let's Schedule Your <span class="underline">Cart Service</span> today</h2>
-						<ServiceForm data-aos="fade-up" data-aos-delay="200" />
+						<ServiceForm data-aos="fade-up" />
 					</div>
 				</div>
 			</section>
@@ -126,12 +126,12 @@ import TestimonialCardWrap from '../components/TestimonialCardWrap.astro'
 			<FooterMain />
 		</footer>
 	</body>
-    <script>
+	<script>
         import * as AOS from 'aos';
         import 'aos/dist/aos.css';
 
 		AOS.init({
-			duration: 1000,  // Set the duration for all animations
+			duration: 800,  // Set the duration for all animations
 			once: true,  // Animate only once when scrolling
 			easing: 'ease-in-out',  // Easing function for smooth animation
 		});

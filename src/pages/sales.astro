@@ -21,7 +21,7 @@ import FooterMain from '../components/FooterMain.astro';
 	<body class="page-transition-enter">
 		<SkipMain />
 		<header>
-			<NavMain data-aos="fade-down" data-aos-delay="100" />
+			<NavMain data-aos="fade-down" />
 		</header>
 		<main id="main-content">
             <section class="hero-home" data-aos="fade-up">
@@ -31,9 +31,9 @@ import FooterMain from '../components/FooterMain.astro';
                     <div class="container">
                         <div class="wrapper column-hero">
                             <div class="wrapper">
-                                <h1 class="page-title" data-aos="fade-up" data-aos-delay="200">Find the <span class="underline">Perfect</span> Cart at West Valley Golf Cars</h1>
-                                <p class="text" data-aos="fade-up" data-aos-delay="400">At West Valley Golf Cars, we’re dedicated to helping you find the ideal golf cart to match your style, needs, and budget. Whether you're searching for a new model, a reliable used cart, or a custom build that’s one-of-a-kind, we’ve got a wide selection ready for you. Explore our inventory and discover the perfect fit for your adventures on the course or around town.</p>
-                                <div class="btn-wrapper" data-aos="fade-up" data-aos-delay="600">
+                                <h1 class="page-title" data-aos="fade-up">Find the <span class="underline">Perfect</span> Cart at West Valley Golf Cars</h1>
+                                <p class="text" data-aos="fade-up">At West Valley Golf Cars, we’re dedicated to helping you find the ideal golf cart to match your style, needs, and budget. Whether you're searching for a new model, a reliable used cart, or a custom build that’s one-of-a-kind, we’ve got a wide selection ready for you. Explore our inventory and discover the perfect fit for your adventures on the course or around town.</p>
+                                <div class="btn-wrapper" data-aos="fade-up">
                                     <a href="#inventory" class="btn">View Our Current Inventory</a>
                                 </div>
                             </div>
@@ -51,8 +51,8 @@ import FooterMain from '../components/FooterMain.astro';
                         text="large-text" />
                         <div class="mt-4">
                             <h2 class="section-title">Our <span class="underline">Current</span> Inventory</h2>
-                            <InventoryCardWrap data-aos="fade-up" data-aos-delay="200" />
-                            <p class="text" data-aos="fade-up" data-aos-delay="400">*We strive to reflect the most accurate current pricing on our website. However, there may be errors, price changes, or other discrepancies. Please inquire with our sales team to obtain the most accurate and up-to-date pricing information.*</p>
+                            <InventoryCardWrap data-aos="fade-up" />
+                            <p class="text" data-aos="fade-up">*We strive to reflect the most accurate current pricing on our website. However, there may be errors, price changes, or other discrepancies. Please inquire with our sales team to obtain the most accurate and up-to-date pricing information.*</p>
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@ import FooterMain from '../components/FooterMain.astro';
 				<div class="padding-global">
 					<div class="container">
 						<h2 class="section-title center">Let's Get you into your <span class="underline">Dream</span> Cart today</h2>
-						<GeneralForm data-aos="fade-up" data-aos-delay="200" />
+						<GeneralForm data-aos="fade-up" />
 					</div>
 				</div>
 			</section>
@@ -84,12 +84,12 @@ import FooterMain from '../components/FooterMain.astro';
 			<FooterMain />
 		</footer>
 	</body>
-    <script>
+	<script>
         import * as AOS from 'aos';
         import 'aos/dist/aos.css';
 
 		AOS.init({
-			duration: 1000,  // Set the duration for all animations
+			duration: 800,  // Set the duration for all animations
 			once: true,  // Animate only once when scrolling
 			easing: 'ease-in-out',  // Easing function for smooth animation
 		});

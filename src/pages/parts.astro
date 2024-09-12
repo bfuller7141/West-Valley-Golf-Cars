@@ -21,7 +21,7 @@ import TestimonialCardWrap from "../components/TestimonialCardWrap.astro";
 	<body class="page-transition-enter">
 		<SkipMain />
 		<header>
-			<NavMain data-aos="fade-down" data-aos-delay="100" />
+			<NavMain data-aos="fade-down"/>
 		</header>
 		<main id="main-content">
             <section class="hero-home" data-aos="fade-up">
@@ -31,9 +31,9 @@ import TestimonialCardWrap from "../components/TestimonialCardWrap.astro";
                     <div class="container">
                         <div class="wrapper column-hero">
                             <div class="wrapper">
-                                <h1 class="page-title" data-aos="fade-up" data-aos-delay="200">Find the <span class="underline">Perfect</span> Parts for your golf cart</h1>
-                                <p class="text" data-aos="fade-up" data-aos-delay="400">At West Valley Golf Cars, we understand the importance of keeping your golf cart in top condition. Our knowledgeable team is here to help you identify and source the right parts for any repair or upgrade. From batteries and tires to custom accessories, we have the expertise to guide you through the selection process, ensuring you get exactly what you need. Our commitment is to provide you with unparalleled support and advice, making it easy for you to maintain and enhance your golf cart's performance and appearance.</p>
-                                <div class="btn-wrapper" data-aos="fade-up" data-aos-delay="600">
+                                <h1 class="page-title" data-aos="fade-up">Find the <span class="underline">Perfect</span> Parts for your golf cart</h1>
+                                <p class="text" data-aos="fade-up">At West Valley Golf Cars, we understand the importance of keeping your golf cart in top condition. Our knowledgeable team is here to help you identify and source the right parts for any repair or upgrade. From batteries and tires to custom accessories, we have the expertise to guide you through the selection process, ensuring you get exactly what you need. Our commitment is to provide you with unparalleled support and advice, making it easy for you to maintain and enhance your golf cart's performance and appearance.</p>
+                                <div class="btn-wrapper" data-aos="fade-up">
                                     <a href="#request" class="btn">Find Parts Today</a>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@ import TestimonialCardWrap from "../components/TestimonialCardWrap.astro";
 				<div class="padding-global" data-aos="fade-up">
 					<div class="container">
 						<h2 class="section-title center">What Our <span class="underline">Customers</span> Are Saying</h2>
-						<TestimonialCardWrap data-aos="fade-up" data-aos-delay="200" />
+						<TestimonialCardWrap data-aos="fade-up" />
 					</div>
 				</div>
 			</section>
@@ -74,7 +74,7 @@ import TestimonialCardWrap from "../components/TestimonialCardWrap.astro";
 				<div class="padding-global">
 					<div class="container">
 						<h2 class="section-title center">Let's Find the <span class="underline">Right Parts</span> for Your Cart</h2>
-						<PartsForm data-aos="fade-up" data-aos-delay="200" />
+						<PartsForm data-aos="fade-up"/>
 					</div>
 				</div>
 			</section>
@@ -83,12 +83,12 @@ import TestimonialCardWrap from "../components/TestimonialCardWrap.astro";
 			<FooterMain />
 		</footer>
 	</body>
-    <script>
+	<script>
         import * as AOS from 'aos';
         import 'aos/dist/aos.css';
 
 		AOS.init({
-			duration: 1000,  // Set the duration for all animations
+			duration: 800,  // Set the duration for all animations
 			once: true,  // Animate only once when scrolling
 			easing: 'ease-in-out',  // Easing function for smooth animation
 		});

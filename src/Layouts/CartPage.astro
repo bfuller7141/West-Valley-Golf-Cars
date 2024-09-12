@@ -83,7 +83,7 @@ const formatPrice = (price) => {
   <body class="page-transition-enter">
     <SkipMain />
     <header>
-      <NavMain data-aos="fade-down" data-aos-delay="100" />
+      <NavMain data-aos="fade-down"/>
     </header>
     <main id="main-content">
       <section class="hero-home" data-aos="fade-up">
@@ -98,12 +98,12 @@ const formatPrice = (price) => {
 					<ImageGallery images={images} />
 				</div>
               <div class="wrapper-feature">
-                <h1 class="page-title" data-aos="fade-up" data-aos-delay="200">{year} <span class="underline">{make}</span> {model}</h1>
-                <div class="md-title wheat" data-aos="fade-up" data-aos-delay="400">${formatPrice(price)}</div>
-                <div class="text" data-aos="fade-up" data-aos-delay="600">
+                <h1 class="page-title" data-aos="fade-up">{year} <span class="underline">{make}</span> {model}</h1>
+                <div class="md-title wheat" data-aos="fade-up">${formatPrice(price)}</div>
+                <div class="text" data-aos="fade-up">
 					<div set:html={bodyHTML}></div>
                 </div>
-				<div class="feature-grid" data-aos="fade-up" data-aos-delay="800">
+				<div class="feature-grid" data-aos="fade-up">
 					<div class="feature-card">
 						<div class="feature-wrapper">
 							<!-- Year -->
@@ -176,15 +176,15 @@ const formatPrice = (price) => {
           </div>
         </div>
       </section>
-	  <ServiceBanner data-aos="fade-up" data-aos-delay="1000" />
+	  <ServiceBanner data-aos="fade-up"/>
 	  <section>
 		<div class="padding-global" data-aos="fade-up">
 			<div class="container">
 				<h2 class="section-title">Check out <span class="underline">More</span> Inventory</h2>
 			</div>
-			<InventoryCardWrap limit={true} data-aos="fade-up" data-aos-delay="200"/>
+			<InventoryCardWrap limit={true} data-aos="fade-up"/>
 			<div class="container">
-				<div class="btn-wrapper" data-aos="fade-up" data-aos-delay="400">
+				<div class="btn-wrapper" data-aos="fade-up">
 					<a href="/golf-carts" class="btn secondary">View All Inventory</a>
 				</div>
 			</div>
@@ -208,7 +208,7 @@ const formatPrice = (price) => {
 		<div class="padding-global" data-aos="fade-up">
 			<div class="container">
 				<h2 class="section-title center">Let's Get you into your <span class="underline">Dream</span> Cart today</h2>
-				<GeneralForm data-aos="fade-up" data-aos-delay="300" />
+				<GeneralForm data-aos="fade-up" />
 			</div>
 		</div>
 	</section>
@@ -218,14 +218,14 @@ const formatPrice = (price) => {
 </footer>
 </body>
 <script>
-import * as AOS from 'aos';
-import 'aos/dist/aos.css';
+	import * as AOS from 'aos';
+	import 'aos/dist/aos.css';
 
-AOS.init({
-	duration: 1000,  // Set the duration for all animations
-	once: true,  // Animate only once when scrolling
-	easing: 'ease-in-out',  // Easing function for smooth animation
-});
+	AOS.init({
+		duration: 800,  // Set the duration for all animations
+		once: true,  // Animate only once when scrolling
+		easing: 'ease-in-out',  // Easing function for smooth animation
+	});
 </script>
 </html>
 
