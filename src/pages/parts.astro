@@ -1,0 +1,96 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import ArrowButton from "../components/buttons/ArrowButton.astro";
+import SkipMain from "../components/buttons/SkipMain.astro";
+import FooterMain from "../components/FooterMain.astro";
+import PartsForm from "../components/forms/PartsForm.astro";
+import LogoWrap from "../components/LogoWrap.astro";
+import NavMain from "../components/NavMain.astro";
+import ServiceBanner from "../components/ServiceBanner.astro";
+import TestimonialCardWrap from "../components/TestimonialCardWrap.astro";
+---
+<!DOCTYPE html>
+<html lang="en">
+	<BaseHead 
+        title="Golf Cart Parts | West Valley Golf Cars | Arizona's Trusted Dealer"
+        description="Find high-quality parts for your golf cart at West Valley Golf Cars. We offer a wide range of golf cart parts and accessories to keep your cart running smoothly. Serving Arizona with the best golf cart parts since 2000."
+        keywords="golf cart parts, golf cart accessories, golf cart batteries, golf cart tires, golf cart maintenance, West Valley, Arizona"
+        image="/images/opengraph/open-graph_main2.webp"
+        url="https://www.westvalleygolfcars.com/parts"
+	/>
+	<body class="page-transition-enter">
+		<SkipMain />
+		<header>
+			<NavMain data-aos="fade-down" data-aos-delay="100" />
+		</header>
+		<main id="main-content">
+            <section class="hero-home" data-aos="fade-up">
+                <div class="top-banner"></div>
+                <div class="background-image"></div>
+                <div class="padding-hero">
+                    <div class="container">
+                        <div class="wrapper column-hero">
+                            <div class="wrapper">
+                                <h1 class="page-title" data-aos="fade-up" data-aos-delay="200">Find the <span class="underline">Perfect</span> Parts for your golf cart</h1>
+                                <p class="text" data-aos="fade-up" data-aos-delay="400">At West Valley Golf Cars, we understand the importance of keeping your golf cart in top condition. Our knowledgeable team is here to help you identify and source the right parts for any repair or upgrade. From batteries and tires to custom accessories, we have the expertise to guide you through the selection process, ensuring you get exactly what you need. Our commitment is to provide you with unparalleled support and advice, making it easy for you to maintain and enhance your golf cart's performance and appearance.</p>
+                                <div class="btn-wrapper" data-aos="fade-up" data-aos-delay="600">
+                                    <a href="#request" class="btn">Find Parts Today</a>
+                                </div>
+                            </div>
+                            <img src="/images/static/rental-home.webp" alt="2024 Madjax Blue Golf Cart" class="img-main hero" loading="eager" data-aos="fade-left" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <ServiceBanner data-aos="fade-up" />
+            <section id="inventory" data-aos="fade-up">
+                <div class="padding-global">
+                    <div class="container">
+                        <LogoWrap 
+                        logoSize="logo-large"
+                        text="large-text" />
+                        <div class="mt-8">
+                            <div class="wrapper column vert-center">
+                                <img src="/images/static/eco-battery.webp" alt="West Valley Golf Cars West Valley Edition" class="img-main" loading="lazy" data-aos="zoom-in"/>
+                                <div class="wrapper" data-aos="fade-right">
+                                    <h2 class="section-title">Ask Us about The <span class="underline">Eco-Battery</span> Lithium Battery</h2>
+                                    <p class="text">Eco Battery stands at the forefront of sustainable, high-performance energy solutions, providing reliable power that enhances your golf cart's efficiency and longevity. With 10x the life span, 3x smaller footprint, and 5x lighter than lead acid batteries, you can spend more time enjoying your golf cart and less time worrying about charge! Let us help you make the switch to a more reliable power source with Eco Battery.</p>
+                                    <ArrowButton slug="https://ecobattery.com/" aria="More about eco-battery" text="More About Eco Battery" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+				<div class="padding-global" data-aos="fade-up">
+					<div class="container">
+						<h2 class="section-title center">What Our <span class="underline">Customers</span> Are Saying</h2>
+						<TestimonialCardWrap data-aos="fade-up" data-aos-delay="200" />
+					</div>
+				</div>
+			</section>
+            <section id="request" data-aos="fade-up">
+				<div class="padding-global">
+					<div class="container">
+						<h2 class="section-title center">Let's Find the <span class="underline">Right Parts</span> for Your Cart</h2>
+						<PartsForm data-aos="fade-up" data-aos-delay="200" />
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<FooterMain />
+		</footer>
+	</body>
+    <script>
+        import * as AOS from 'aos';
+        import 'aos/dist/aos.css';
+
+		AOS.init({
+			duration: 1000,  // Set the duration for all animations
+			once: true,  // Animate only once when scrolling
+			easing: 'ease-in-out',  // Easing function for smooth animation
+		});
+	</script>
+</html>

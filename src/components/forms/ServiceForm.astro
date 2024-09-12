@@ -1,0 +1,252 @@
+---
+declare var flatpickr: any; // Declare flatpickr as a global variable
+
+---
+<!-- Include Flatpickr from CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" href="/styles/flatpickr.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<div class="form-wrap">
+    <form name="service-scheduling" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
+        <input type="hidden" name="form-name" value="service-scheduling" />
+
+        <!-- Honey Pot Field -->
+        <div class="hidden" style="display: none;">
+            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+        </div>
+
+        <!-- Name, Email, Phone -->
+         <div class="horizontal-group">
+            <div class="input-wrap">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Full Name" class="input" required />
+            </div>
+            <div class="input-wrap">
+                <label for="worked-before">Have we worked with you before?</label>
+                <select id="worked-before" name="worked-before" class="input" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+        </div>
+        <div class="input-wrap">
+            <label for="referral">How did you hear about us?</label>
+            <input type="text" id="referral" name="referral" placeholder="e.g., Google, Friend" class="input" />
+        </div>
+        <div class="input-wrap">
+            <label for="pickup">Do you want us to pick it up? (Additional charges may apply)</label>
+            <select id="pickup" name="pickup" class="input">
+                <option value="" disabled selected>Select an option</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+        <div class="horizontal-group">
+            <div class="input-wrap">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="(480) 123-4567" class="input" required />
+            </div>
+            <div class="input-wrap">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="email@domain.com" class="input" required />
+            </div>
+        </div>
+
+        <!-- Address -->
+        <div class="input-wrap">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" placeholder="Street Address" class="input" required />
+        </div>
+        <div class="horizontal-group">
+            <div class="input-wrap">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" placeholder="City" class="input" required />
+            </div>
+            <div class="input-wrap">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="State" class="input" required />
+            </div>
+        </div>
+
+        <!-- Vehicle Information -->
+        <h3>Vehicle Information</h3>
+        <hr />
+        <div class="input-wrap">
+            <label for="make">Make</label>
+            <input type="text" id="make" name="make" placeholder="Vehicle Make" class="input" required />
+        </div>
+        <div class="input-wrap">
+            <label for="model">Model</label>
+            <input type="text" id="model" name="model" placeholder="Vehicle Model" class="input" required />
+        </div>
+        <div class="input-wrap">
+            <label for="year">Year</label>
+            <input type="text" id="year" name="year" placeholder="Vehicle Year" class="input" required />
+        </div>
+        <div class="input-wrap">
+            <label for="issue">Can you briefly explain the issue?</label>
+            <textarea id="issue" name="issue" placeholder="Description of the issue" class="textarea"></textarea>
+        </div>
+        <div class="horizontal-group">
+            <div class="input-wrap">
+                <label for="timeframe">Timeframe for completion (Date Range)</label>
+                <input type="text" id="timeframe" name="timeframe" class="flatpickr-input" placeholder="mm/dd/yyyy" required />
+            </div>
+            <div class="input-wrap">
+                <label for="willing-wait">Are you willing to wait past this date?</label>
+                <select id="willing-wait" name="willing-wait" class="input">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn" aria-label="Submit form">Submit Form</button>
+    </form>
+</div>
+
+<!-- Flatpickr Initialization -->
+<script>
+    declare var flatpickr: any;
+    document.addEventListener('DOMContentLoaded', function() {
+        flatpickr("#timeframe", {
+            mode: "range",
+            dateFormat: "m/d/Y",
+            minDate: "today"
+        });
+    });
+</script>
+
+<style>
+    .btn {
+        margin-top: 2rem;
+    }
+    .form-wrap {
+        padding-top: 2rem;
+        max-width: 80rem;
+        margin: auto;
+    }
+
+    .horizontal-group {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        gap: 1rem;
+    }
+
+    .input-wrap {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    label {
+        font-family: var(--body);
+        font-size: var(--text);
+        color: var(--green-500);
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+    }
+
+    .input, .flatpickr-input {
+        padding: 0.75rem 0.5rem;
+        border: solid 2px var(--wheat-600);
+        border-radius: 0.125rem;
+        font-family: var(--body);
+        font-size: var(--text);
+        background-color: var(--white);
+        transition: border-color 0.25s ease-in-out;
+    }
+
+    .input:hover, .input:focus, .input:active, 
+    .flatpickr-input:hover, .flatpickr-input:focus, .flatpickr-input:active {
+        border-color: var(--green-500);
+        transition: border-color 0.25s ease-in-out;
+    }
+
+    .textarea {
+        font-family: var(--body);
+        font-size: var(--text);
+        resize: none;
+        min-height: 10rem;
+        overflow-y: scroll;
+    }
+
+    h3 {
+        font-family: var(--title-font);
+        font-size: var(--sub-title);
+        font-weight: 500;
+        color: var(--green-500);
+        margin-top: 2rem;
+    }
+
+    @media (max-width: 657px) {
+        .horizontal-group {
+            gap: 0rem;
+        }
+        .input-wrap {
+            margin-top: 0.5rem;
+        }
+    }
+
+    hr {
+        border: none;
+        border-top: 2px solid var(--wheat-500);
+        margin-bottom: 2rem;
+    }
+
+/* Override Flatpickr font and colors */
+.flatpickr-calendar {
+    font-family: sans-serif !important; /* Force sans-serif font */
+    background-color: #f5f5f5 !important; /* Background color of the date picker */
+    border: 1px solid #334843 !important; /* Border color around the calendar */
+}
+
+.flatpickr-months {
+    background-color: #334843 !important; /* Header background */
+    color: white !important; /* Text color for the month and year */
+}
+
+.flatpickr-current-month {
+    font-family: sans-serif !important; /* Ensure the month/year font is sans-serif */
+}
+
+.flatpickr-weekdays {
+    background-color: #334843 !important; /* Weekday header background */
+    color: white !important; /* Text color for weekdays */
+}
+
+.flatpickr-day {
+    font-family: sans-serif !important; /* Ensure day numbers are sans-serif */
+    color: #334843 !important; /* Default day color */
+}
+
+.flatpickr-day:hover,
+.flatpickr-day:focus {
+    background-color: #597d87 !important; /* Hover color for days */
+    color: white !important; /* Text color on hover */
+    border-radius: 0.25rem !important; /* Optional: Rounded corners */
+}
+
+.flatpickr-day.selected {
+    background-color: #334843 !important; /* Selected day background color */
+    color: white !important; /* Selected day text color */
+    border-radius: 0.25rem !important; /* Optional: Rounded corners */
+}
+
+.flatpickr-next-month, .flatpickr-prev-month {
+    color: white !important; /* Arrows for next/previous months */
+}
+
+.flatpickr-weekday {
+    font-family: sans-serif !important; /* Weekday font */
+}
+
+.flatpickr-day.today {
+    border-color: #334843 !important; /* Today's date border color */
+    color: #334843 !important; /* Today's date text color */
+}
+
+</style>

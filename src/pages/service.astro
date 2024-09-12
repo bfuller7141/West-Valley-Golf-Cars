@@ -1,0 +1,139 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import ArrowButton from '../components/buttons/ArrowButton.astro'
+import SkipMain from '../components/buttons/SkipMain.astro'
+import FooterMain from '../components/FooterMain.astro'
+import ServiceForm from '../components/forms/ServiceForm.astro'
+import NavMain from '../components/NavMain.astro'
+import ServiceBanner from '../components/ServiceBanner.astro'
+import ServiceList from '../components/ServiceList.astro'
+import TestimonialCardWrap from '../components/TestimonialCardWrap.astro'
+---
+<!DOCTYPE html>
+<html lang="en">
+	<BaseHead 
+        title="Golf Cart Service | West Valley Golf Cars | Maintenance and Repairs in Arizona"
+        description="Keep your golf cart in top condition with expert service and maintenance from West Valley Golf Cars. We offer repair services, battery replacements, and regular maintenance to ensure your golf cart runs smoothly. Serving Arizona's West Valley region."
+        keywords="golf cart service, golf cart maintenance, golf cart repairs, golf cart battery replacement, West Valley, Arizona"
+        image="/images/opengraph/service-page.webp"
+        url="https://www.westvalleygolfcars.com/open-graph_main2.webp"
+	/>
+	<body class="page-transition-enter">
+		<SkipMain />
+		<header>
+			<NavMain data-aos="fade-down" data-aos-delay="100" />
+		</header>
+		<main id="main-content">
+            <section class="hero-home" data-aos="fade-up">
+                <div class="top-banner"></div>
+                <div class="background-image"></div>
+                <div class="padding-hero">
+                    <div class="container">
+                        <div class="wrapper column-hero">
+                            <div class="wrapper">
+                                <h1 class="page-title" data-aos="fade-up" data-aos-delay="200">Expert <span class="underline">Care</span> for your Gas or Electric Golf Cart</h1>
+                                <p class="text" data-aos="fade-up" data-aos-delay="400">Keep your golf cart running at its best with our professional service team at West Valley Golf Cars. From routine maintenance to complex repairs, our experts bring years of experience and a passion for precision to every task. We understand the importance of your golf cart's performance and reliability, whether you're on the course or on the move. Trust us to deliver top-notch service with a focus on quality, efficiency, and customer satisfaction. Let us take the hassle out of maintaining your cart, so you can focus on enjoying the ride.</p>
+                                <div class="btn-wrapper" data-aos="fade-up" data-aos-delay="600">
+                                    <a href="#schedule" class="btn">Schedule Your Service Today</a>
+                                </div>
+                            </div>
+                            <img src="/images/static/service-home.webp" alt="WVGC employee finding tools in a tool box" class="img-main hero" loading="eager" data-aos="fade-left" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <ServiceBanner data-aos="fade-up" />
+            <section id="services">
+				<div class="padding-global" data-aos="fade-up">
+					<div class="container">
+						<div class="wrapper column">
+							<div class="wrapper" data-aos="fade-right">
+                                <h2 class="section-title">Gas <span class="underline">Service</span></h2>
+                                <div class="mt-2">
+                                    <div class="card">
+                                        <ServiceList title="Multi-Point Inspection" />
+                                        <ServiceList title="Check tires and inflate" />
+                                        <ServiceList title="Change oil and oil filter" />
+                                        <ServiceList title="Change fuel filter and air filter" />
+                                        <ServiceList title="Adjust or replace spark plugs" />
+                                        <ServiceList title="Inspect and test battery" />
+                                        <ServiceList title="Brake inspection and adjustment" />
+                                        <ServiceList title="Check suspension points" />
+                                        <ServiceList title="Pressure wash cart" />
+                                        <div class="btn-wrapper">
+                                            <a href="#schedule" class="btn"> Schedule A Service</a>
+                                        </div>
+                                    </div>
+                                </div>
+							</div>
+                            <div class="wrapper" data-aos="fade-right">
+                                <h2 class="section-title">Electric <span class="underline">Service</span></h2>
+                                <div class="mt-2">
+                                    <div class="card">
+                                        <ServiceList title="Multi-Point Inspection" />
+                                        <ServiceList title="Check tires and inflate" />
+                                        <ServiceList title="Brake inspection and adjustment" />
+                                        <ServiceList title="Clean battery terminals" />
+                                        <ServiceList title="Inspect and test battery" />
+                                        <ServiceList title="inspect cables and connections" />
+                                        <ServiceList title="Balance battery cells" />
+                                        <ServiceList title="Clean battery housing" />
+                                        <ServiceList title="Pressure wash cart" />
+                                        <div class="btn-wrapper">
+                                            <a href="#schedule" class="btn"> Schedule A Service</a>
+                                        </div>
+                                    </div>
+                                </div>
+							</div>
+                        </div>
+					</div>
+				</div>
+			</section>
+            <section data-aos="fade-up">
+                <div class="padding-global">
+					<div class="container">
+						<div class="wrapper column vert-center">
+                            <img src="/images/static/pickup-delivery.webp" alt="West Valley Golf Cars West Valley Edition" class="img-main" loading="lazy" data-aos="zoom-in"/>
+							<div class="wrapper" data-aos="fade-right">
+								<h2 class="section-title">Ask Us About Our <span class="underline">Pick-Up</span> and Delivery Services</h2>
+								<p class="text">At West Valley Golf Cars, we're committed to making your service experience as effortless as possible. That's why we offer a convenient pick-up and delivery service for your golf cart. Whether you need maintenance, repairs, or any other service, we'll come to you. Our goal is to provide you with hassle-free support, ensuring your golf cart gets the care it needs without disrupting your schedule. Some charges may apply for this service, but we strive to keep them reasonable and will always be upfront about any costs involved.</p>
+                                <div class="btn-wrapper">
+                                    <a href="#schedule" class="btn">Schedule A Service</a>
+                                </div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </section>
+            <section>
+				<div class="padding-global" data-aos="fade-up">
+					<div class="container">
+						<h2 class="section-title center">What Our <span class="underline">Customers</span> Are Saying</h2>
+						<TestimonialCardWrap data-aos="fade-up" data-aos-delay="200" />
+					</div>
+				</div>
+			</section>
+            <section id="schedule" data-aos="fade-up">
+				<div class="padding-global">
+					<div class="container">
+						<h2 class="section-title center">Let's Schedule Your <span class="underline">Cart Service</span> today</h2>
+						<ServiceForm data-aos="fade-up" data-aos-delay="200" />
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<FooterMain />
+		</footer>
+	</body>
+    <script>
+        import * as AOS from 'aos';
+        import 'aos/dist/aos.css';
+
+		AOS.init({
+			duration: 1000,  // Set the duration for all animations
+			once: true,  // Animate only once when scrolling
+			easing: 'ease-in-out',  // Easing function for smooth animation
+		});
+	</script>
+</html>

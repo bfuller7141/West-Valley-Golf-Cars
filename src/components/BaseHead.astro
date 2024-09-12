@@ -19,6 +19,34 @@ const {title, description, keywords, image, url} = Astro.props as BaseHeadProps;
 
     <meta name="generator" content={Astro.generator} />
 
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "West Valley Golf Cars",
+        "url": "https://www.westvalleygolfcars.com",
+        "logo": "https://www.westvalleygolfcars.com/logo.png",
+        "sameAs": [
+          "https://www.facebook.com/westvalleygolfcars",
+          "https://www.instagram.com/westvalleygolfcars"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "6205 N Sarival Ave",
+          "addressLocality": "Litchfield Park",
+          "addressRegion": "AZ",
+          "postalCode": "85340",
+          "addressCountry": "US"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-623-882-0222",
+          "contactType": "Customer Service"
+        }
+      }
+    </script>
+
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -32,12 +60,16 @@ const {title, description, keywords, image, url} = Astro.props as BaseHeadProps;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
     <meta name="twitter:url" content={url} />
-    <meta name="twitter:site" content="@tripassdesign" />
+    <meta name="twitter:site" content="@westvalleygolfcars" />
 
     <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#334843">
+    <meta name="msapplication-TileColor" content="#334843">    
+    
 
     <!-- Styles -->
     <link rel="stylesheet" href="/styles/global.css">
@@ -45,4 +77,24 @@ const {title, description, keywords, image, url} = Astro.props as BaseHeadProps;
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://use.typekit.net/jfw6suq.css">
+
+    <!-- Flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="/styles/flatpickr.css">
+
+    <!-- Page Transition -->
+    <script use:client>
+      document.addEventListener('DOMContentLoaded', () => {
+          const body = document.body;
+          body.classList.add('page-transition-enter-active');
+  
+          window.addEventListener('beforeunload', (event) => {
+              body.classList.add('page-transition-exit-active');
+              setTimeout(() => {
+                  body.classList.add('hidden');  // Hide content after transition ends
+              }, 500);  // Duration of transition
+          });
+      });
+  </script>
 </head>

@@ -1,0 +1,130 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import ArrowButton from "../components/buttons/ArrowButton.astro";
+import ImageButton from "../components/buttons/ImageButton.astro";
+import SkipMain from "../components/buttons/SkipMain.astro";
+import FooterMain from "../components/FooterMain.astro";
+import GeneralForm from "../components/forms/GeneralForm.astro";
+import LogoWrap from "../components/LogoWrap.astro";
+import NavMain from "../components/NavMain.astro";
+import ServiceBanner from "../components/ServiceBanner.astro";
+import TestimonialCardWrap from "../components/TestimonialCardWrap.astro";
+
+---
+<!DOCTYPE html>
+<html lang="en">
+	<BaseHead 
+    title="About West Valley Golf Cars | Family-Owned Golf Cart Dealership in Arizona"
+    description="Learn about West Valley Golf Cars, a family-owned golf cart dealership serving Arizona since 2000. Discover our mission, history, and commitment to quality service for new and used golf carts, rentals, parts, and repairs."
+    keywords="about West Valley Golf Cars, family-owned golf cart dealer, Arizona golf carts, golf cart service, golf cart dealership, West Valley Arizona"
+    image="/images/opengraph/open-graph_team.webp"
+    url="https://www.westvalleygolfcars.com/about"
+	/>
+	<body class="page-transition-enter">
+		<SkipMain />
+		<header>
+			<NavMain data-aos="fade-down" data-aos-delay="100" />
+		</header>
+		<main id="main-content">
+            <section class="hero-home" data-aos="fade-up">
+                <div class="top-banner"></div>
+                <div class="background-image"></div>
+                <div class="padding-hero">
+                    <div class="container">
+                        <div class="wrapper column-hero">
+                            <div class="wrapper">
+                                <h1 class="page-title" data-aos="fade-up" data-aos-delay="200">Proudly <span class="underline">Serving</span> the West Valley Since 2000</h1>
+                                <p class="text" data-aos="fade-up" data-aos-delay="400">For over 20 years, we’ve been serving the West Valley with top-notch golf cart sales, service, and rentals, always with a friendly smile. With a passion for excellence and a commitment to customer satisfaction, we strive to deliver top-notch products, expert service, and a personalized experience. Our team of knowledgeable professionals is here to assist you in finding the perfect golf cart to suit your needs, whether it's for leisurely rides on the green or transportation within you community.</p>
+                                <div class="btn-wrapper" data-aos="fade-up" data-aos-delay="600">
+                                    <a href="/service#schedule" class="btn">Schedule A Service</a>
+									<a href="/sales#inventory" class="btn secondary">View Our Inventory</a>
+                                </div>
+                            </div>
+                            <img src="/images/static/team.webp" alt="West Valley Golf Cars team" class="img-main hero" loading="eager" data-aos="fade-left" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <ServiceBanner data-aos="fade-up" />
+            <section>
+				<div class="padding-global" data-aos="fade-up">
+					<div class="container">
+						<h2 class="section-title">Your <span class="underline">Trusted</span> West Valley Golf Cart Dealer</h2>
+						<div class="btn-grid" data-aos="zoom-in" data-aos-delay="200">
+							<ImageButton image="/images/static/sales-home.webp" title="New & Used Carts" link="/sales"/>
+							<ImageButton image="/images/static/service-home.webp" title="Expert Service" link="/service"/>
+							<ImageButton image="/images/static/rental-home.webp" title="Parts & Accessories" link="/parts"/>
+						</div>
+					</div>
+				</div>
+			</section>
+            <section>
+                <div class="padding-global" data-aos="fade-up">
+                    <div class="container">
+                        <LogoWrap 
+                        logoSize="logo-large"
+                        text="large-text" />
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="padding-global" data-aos="fade-up">
+                    <div class="container">
+						<div class="wrapper column vert-center">
+							<div class="wrapper" data-aos="fade-right">
+								<h2 class="section-title">A History Rich with Serving Our <span class="underline">Amazing</span> Customers</h2>
+								<p class="text">At West Valley Golf Cars, we take pride in our rich history of serving our amazing customers. Since our establishment, we have been dedicated to providing exceptional products and services that exceed expectations.</p>
+								<p class="text">Over the years, we have built strong relationships with our valued customers, understanding their unique needs and ensuring their complete satisfaction. From our humble beginnings to becoming a trusted name in the industry, our success is a testament to the loyalty and support of our amazing customers. As we continue to grow, we remain committed to upholding our legacy of excellence, innovation, and outstanding customer service.</p>
+                                <ArrowButton slug="mailto:info@westvalleygolfcars.com" aria="Reach out to our team" text="Reach Out to Our Team" />
+							</div>
+                            <img src="/images/static/rentals.webp" alt="West Valley Golf Cars West Valley Edition" class="img-main" loading="lazy" data-aos="zoom-in"/>
+						</div>
+                    </div>
+                </div>
+            </section>
+            <section>
+				<div class="padding-global" data-aos="fade-up">
+					<div class="container">
+						<h2 class="section-title center">What Our <span class="underline">Customers</span> Are Saying</h2>
+						<TestimonialCardWrap data-aos="fade-up" data-aos-delay="200" />
+					</div>
+				</div>
+			</section>
+            <section>
+                <div class="padding-global" data-aos="fade-up">
+                    <div class="container">
+						<div class="wrapper column vert-center">
+                            <img src="/images/static/team.webp" alt="West Valley Golf Cars West Valley Edition" class="img-main" loading="lazy" data-aos="zoom-in"/>
+							<div class="wrapper" data-aos="fade-right">
+								<h2 class="section-title">Meet The Team <span class="underline">Behind</span> West Valley Golf Cars</h2>
+								<p class="text">At the heart of West Valley Golf Cars is a team of seasoned professionals, each bringing years of expertise and a genuine passion for the golf cart industry to the table. Our staff is not just skilled in the mechanics and nuances of golf carts; they're dedicated problem solvers committed to providing solutions that meet your specific needs. Whether you're seeking the perfect custom build, need expert advice on maintenance, or are navigating the selection of the right parts, our team is here to guide you every step of the way.</p>
+                                <ArrowButton slug="mailto:info@westvalleygolfcars.com" aria="Reach out to our team" text="Reach Out To Our Team" />
+							</div>
+						</div>
+                    </div>
+                </div>
+            </section>
+            <section>
+				<div class="padding-global" data-aos="fade-up">
+					<div class="container">
+						<h2 class="section-title center">Let's Get you into your <span class="underline">Dream</span> Cart today</h2>
+						<GeneralForm data-aos="fade-up" data-aos-delay="300" />
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<FooterMain />
+		</footer>
+	</body>
+	<script>
+        import * as AOS from 'aos';
+        import 'aos/dist/aos.css';
+
+		AOS.init({
+			duration: 1000,  // Set the duration for all animations
+			once: true,  // Animate only once when scrolling
+			easing: 'ease-in-out',  // Easing function for smooth animation
+		});
+	</script>
+</html>

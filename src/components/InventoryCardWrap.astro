@@ -1,0 +1,85 @@
+---
+import InventoryCard from './InventoryCard.astro'
+
+const { limit } = Astro.props;
+const carts = await Astro.glob('../content/carts/*.md');
+
+// Shuffle array elements
+function shuffleArray(array: any[]) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    }
+    return array; // Make sure to return the shuffled array
+}
+
+// Sort carts so unsold items appear first
+function sortBySoldStatus(array: any[]) {
+    return array.sort((a, b) => {
+        if (a.frontmatter.sold && !b.frontmatter.sold) {
+            return 1; // sold comes after unsold
+        } else if (!a.frontmatter.sold && b.frontmatter.sold) {
+            return -1; // unsold comes before sold
+        } else {
+            return 0; // keep original order if both are sold or unsold
+        }
+    });
+}
+
+// Shuffle the array, then sort by sold status
+const shuffledCarts = shuffleArray(carts); // Shuffle the array and ensure it's returned
+const sortedCarts = sortBySoldStatus(shuffledCarts); // Sort based on sold status
+
+// If a limit is applied, slice the array accordingly
+const featuredCarts = sortedCarts.filter(cart => cart.frontmatter.featured === true);
+const displayedCarts = limit ? featuredCarts.slice(0, 3) : sortedCarts;
+
+---
+
+<ul class="inventory-card-wrap">
+    {displayedCarts.map((cart) => (
+        <InventoryCard
+            name={cart.frontmatter.name}
+            price={cart.frontmatter.price}
+            image={cart.frontmatter.thumbnail}
+            sold={cart.frontmatter.sold || false}
+            slug={cart.frontmatter.slug}
+            year={cart.frontmatter.year}
+            make={cart.frontmatter.make}
+            model={cart.frontmatter.model}
+         />
+      ))}
+</ul>
+
+<style>
+.inventory-card-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 3rem 2rem;
+  max-width: 100rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  padding: 0;
+  justify-content: space-between;
+}
+
+.inventory-card-wrap ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.inventory-card-wrap .card {
+  width: 100%; 
+  min-width: 18rem;
+}
+
+@media (min-width: 1024px) {
+  .inventory-card-wrap {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+</style>

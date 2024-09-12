@@ -1,0 +1,66 @@
+---
+export interface LogoWrapProps {
+    logoSize?: string;
+    text?: string;
+}
+
+const { logoSize = 'logo-small', text = 'small-text' } = Astro.props as LogoWrapProps;
+---
+
+<div class="mt-2">
+    <p class={text}><strong>Authorized Dealers of:</strong></p>
+    <div class="logo-wrapper">
+        <img src="/images/logos/madjax.svg" alt="MadJax logo" class={logoSize} loading="lazy"/>
+        <img src="/images/logos/bluetees.svg" alt="Blue Tees logo" class={logoSize} loading="lazy"/>
+        <img src="/images/logos/trojan.svg" alt="Trojan Battery logo" class={logoSize} loading="lazy"/>
+        <img src="/images/logos/ecobattery.svg" alt="Eco Battery logo" class={logoSize} loading="lazy"/>
+    </div>
+</div>
+
+<style>
+/* Responsive Logo Sizes */
+.logo-small {
+    max-height: clamp(3rem, 5vw, 3.5rem);
+    margin: auto;
+}
+
+.logo-large {
+    max-height: clamp(4rem, 7vw, 6rem);
+    margin: auto;
+}
+
+.logo-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); 
+    gap: 2rem;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;
+    margin: 0 auto;
+    max-width: 100rem; 
+}
+
+.small-text {
+    font-family: var(--body);
+    font-size: var(--small-text);
+    font-weight: 700;
+    color: var(--gray-400);
+    margin-top: 1rem;
+}
+
+.large-text {
+    font-family: var(--body);
+    font-size: var(--text);
+    font-weight: 700;
+    color: var(--gray-400);
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 500px) {
+    .logo-wrapper {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+</style>

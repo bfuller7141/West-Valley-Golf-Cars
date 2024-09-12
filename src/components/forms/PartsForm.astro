@@ -1,0 +1,132 @@
+<form class="form-wrap" id="general-contact-form" name="general-contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
+    <input type="hidden" name="form-name" value="general-contact-form" />
+    
+    <!-- Honey Pot Field -->
+    <div class="hidden" style="display: none;">
+        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+    </div>
+
+    <div class="horizontal-group">
+        <div class="input-wrap">
+            <label for="first-name">First Name</label>
+            <input class="input" type="text" id="first-name" name="first-name" placeholder="First Name" required/>
+        </div>
+        <div class="input-wrap">
+            <label for="last-name">Last Name</label>
+            <input class="input" type="text" id="last-name" name="last-name" placeholder="Last Name" required/>
+        </div>
+    </div>
+    <div class="horizontal-group">
+        <div class="input-wrap">
+            <label for="email">Email</label>
+            <input class="input" type="email" id="email" name="email" placeholder="email@domain.com" required/>
+        </div>
+        <div class="input-wrap">
+            <label for="phone">Phone</label>
+            <input class="input" type="tel" id="phone" name="phone" placeholder="(480) 123-4567"/>
+        </div>
+    </div>
+    <h3>Vehicle Information</h3>
+        <hr />
+        <div class="input-wrap">
+            <label for="make">Make</label>
+            <input type="text" id="make" name="make" placeholder="Vehicle Make" class="input" required />
+        </div>
+        <div class="input-wrap">
+            <label for="model">Model</label>
+            <input type="text" id="model" name="model" placeholder="Vehicle Model" class="input" required />
+        </div>
+        <div class="input-wrap">
+            <label for="year">Year</label>
+            <input type="text" id="year" name="year" placeholder="Vehicle Year" class="input" required />
+        </div>
+        <div class="input-wrap">
+            <label for="message">Additional Information</label>
+            <textarea class="input textarea" id="message" name="message" placeholder="Tell us more about the parts you're looking for."></textarea>
+        </div>
+        <button type="submit" class="btn" aria-label="Submit form">Submit Form</button>
+</form>
+
+<style>
+    .form-wrap {
+        padding-top: 2rem;
+        max-width: 80rem;
+        margin: auto;
+    }
+    .horizontal-group {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        gap: 1rem;
+    }
+    .input-wrap {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .input {
+        padding: 0.75rem 0.5rem 0.5rem 0.5rem;
+        border: solid 2px var(--wheat-600);
+        border-radius: 0.125rem;
+        font-family: var(--body);
+        font-size: var(--text);
+        margin-top: 0.125rem;
+        background-color: var(--white);
+        transition: border-color 0.25s ease-in-out;
+        }
+    .textarea {
+        resize: none;
+        min-height: 10rem;
+        overflow-y: scroll;
+    }
+    .input:hover, .input:focus, .input:active {
+        border-color: var(--green-500);
+        transition: border-color 0.25s ease-in-out;
+    }
+    label {
+        font-family: var(--body);
+        font-size: var(--text);
+        color: var(--green-500);
+        margin-top: 1rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+    }
+    .btn {
+        margin-top: 2rem;
+    }
+
+    h3 {
+        font-family: var(--title-font);
+        font-size: var(--sub-title);
+        font-weight: 500;
+        color: var(--green-500);
+        margin-top: 2rem;
+    }
+
+    hr {
+        border: 0;
+        border-top: 2px solid var(--wheat-500);
+        margin-top: 0.5rem;
+    }
+
+    .input-wrap select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23334843%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+    padding-right: 2em; 
+    padding-left: 1em;
+    }
+    .input-wrap select::-ms-expand {
+        display: none;
+    }
+    @media (max-width: 657px) {
+        .horizontal-group {
+            gap: 0rem;
+        }
+        .input-wrap {
+            margin-top: 0.5rem;
+        }
+</style>

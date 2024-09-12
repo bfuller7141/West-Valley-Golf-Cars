@@ -1,68 +1,149 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
+import ArrowButton from "../components/buttons/ArrowButton.astro";
+import ImageButton from "../components/buttons/ImageButton.astro";
 import SkipMain from "../components/buttons/SkipMain.astro";
-import InventoryCard from "../components/InventoryCard.astro";
+import GeneralForm from "../components/forms/GeneralForm.astro";
+import InventoryCardWrap from "../components/InventoryCardWrap.astro";
 import NavMain from "../components/NavMain.astro";
 import ServiceBanner from "../components/ServiceBanner.astro";
+import TestimonialCardWrap from "../components/TestimonialCardWrap.astro";
+import FooterMain from "../components/FooterMain.astro";
+import LogoWrap from "../components/LogoWrap.astro";
 ---
 <!DOCTYPE html>
 <html lang="en">
 	<BaseHead 
-	title="West Valley Golf Cars | Golf Cart Sales, Service, and Rentals in Arizona"
-	description="West Valley Golf Cars is Arizona's premier golf cart dealer. We offer new and used golf carts, golf cart rentals, golf cart parts, and golf cart service."
-	keyworkds=""
-	image=""
-	url="" 
+    title="West Valley Golf Cars | Golf Cart Sales, Service, and Rentals in Arizona"
+    description="West Valley Golf Cars is Arizona's premier golf cart dealer. We offer new and used golf carts, golf cart rentals, golf cart parts, and golf cart service."
+    keywords="golf carts, used golf carts, new golf carts, golf cart service, golf cart rentals, West Valley, Arizona"
+	image="/images/opengraph/open-graph_main.webp"
+    url="https://www.westvalleygolfcars.com/"
 	/>
-	<body>
+	<body class="page-transition-enter">
 		<SkipMain />
 		<header>
-			<NavMain />
-			<div class="top-banner"></div>
+			<NavMain data-aos="fade-down" data-aos-delay="100" />
 		</header>
 		<main id="main-content">
-			<section class="hero-home">
+			<section class="hero-home" data-aos="fade-up">
+				<div class="top-banner"></div>
+				<div class="background-image"></div>
 				<div class="padding-hero">
 					<div class="container">
 						<div class="wrapper column-hero">
 							<div class="wrapper">
-								<h1 class="page-title">Arizona's Premier Golf Cart<span class="underline"> Destination</span> for Over 20 Years</h1>
-								<p class="text">For over 20 years, we’ve been serving the West Valley with top-notch golf cart sales, service, and rentals, always with a friendly smile. Whether you're looking for a reliable ride or a custom-built cart to turn heads, our team in Litchfield Park has you covered. Let us help you find the perfect cart to suit your needs and style, so you can enjoy every moment on the course and beyond.</p>
-								<div class="btn-wrapper">
-									<a href="/golf-carts" class="btn">View Our Inventory</a>
-									<a href="/contact" class="btn secondary">Contact Us</a>
+								<h1 class="page-title" data-aos="fade-up" data-aos-delay="200">Arizona's Premier Golf Cart <span class="underline">Destination</span> for Over 20 Years</h1>
+								<p class="text" data-aos="fade-up" data-aos-delay="400">For over 20 years, we’ve been serving the West Valley with top-notch golf cart sales, service, and rentals, always with a friendly smile. Whether you're looking for a reliable ride or a custom-built cart to turn heads, our team in Litchfield Park has you covered. Let us help you find the perfect cart to suit your needs and style, so you can enjoy every moment on the course and beyond.</p>
+								<div class="btn-wrapper" data-aos="fade-up" data-aos-delay="600">
+									<a href="/sales#inventory" class="btn">View Our Inventory</a>
+									<a href="/service#schedule" class="btn secondary">Schedule A Service</a>
 								</div>
-								<div class="mt-2">
-									<p class="small-text bold-gray"><strong>Authorized Dealers of:</strong></p>
-									<div class="logo-wrapper">
-										<img src="/images/logos/madjax.svg" alt="MadJax logo" class="logo-small" loading="lazy"/>
-										<img src="/images/logos/ecobattery.svg" alt="Eco Battery logo" class="logo-small" loading="lazy"/>
-										<img src="/images/logos/bluetees.svg" alt="Blue Tees logo" class="logo-small" loading="lazy"/>
-										<img src="/images/logos/trojan.svg" alt="Trojan Battery logo" class="logo-small" loading="lazy"/>
-									</div>
-								</div>
+								<LogoWrap logoSize="logo-small" text="small-text" data-aos="fade-up" data-aos-delay="800" />
 							</div>
-							<img src="/images/static/2024-madjax_blue.webp" alt="2024 Madjax Blue Golf Cart" class="hero-img" loading="eager"/>
+							<img src="/images/static/2024-madjax_blue.webp" alt="2024 Madjax Blue Golf Cart" class="hero-img" loading="eager" data-aos="fade-left" />
 						</div>
 					</div>
 				</div>
 			</section>
-			<ServiceBanner />
+			<ServiceBanner data-aos="fade-up" data-aos-delay="1000" />
 			<section>
-				<div class="large-top">
+				<div class="large-top" data-aos="fade-right">
 					<div class="container">
 						<div class="wrapper column-l">
-							<img src="/images/static/2023-madjax_navy.webp" alt="2023 Madjax Navy Golf Cart" class="img cart" loading="lazy"/>
-							<div class="wrapper">
-								<h2 class="section-title">Get Yourself In The New 2024 <span class="underline">MadJax</span> X-Series</h2>
-								<p class="text">Introducing the latest innovation from the top-tier golf cart parts and accessories brand—a golf cart that not only boasts unmatched style but also offers unparalleled comfort. The MadJax X-Series takes your golfing experience to new heights. With a remarkable 3-year warranty, an all new digital display, and readily available replacement parts and accessories, this exceptional cart ensures that having a blast is effortlessly attainable.</p>
-								<div class="btn-wrapper">
+							<img src="/images/static/2023-madjax_navy.webp" alt="2023 Madjax Navy Golf Cart" class="img cart" loading="lazy" data-aos="zoom-in" />
+							<div class="wrapper" data-aos="fade-left">
+								<h2 class="section-title">Experience The All New 2024 <span class="underline">MadJax</span> X-Series</h2>
+								<p class="text">Experience the MadJax X-Series and take your golfing adventures to new heights. With its blend of sleek design and top-tier performance, this cart promises to enhance every moment on the course. Whether you're navigating fairways or cruising around town, the MadJax X-Series delivers both comfort and style, ensuring that every ride is enjoyable and effortless.</p>
+								<p class="text">Offering a 3-year warranty and easy access to replacement parts and accessories, the MadJax X-Series is designed for long-lasting enjoyment. Maintaining and upgrading your cart is simple, allowing you to focus on having fun without worrying about downtime. With the MadJax X-Series, the thrill of the ride is always within reach.</p>								
+								<div class="btn-wrapper" data-aos="fade-up" data-aos-delay="300">
 									<div class="sub-title">Starting at $15,930</div>
-									<a href="/contact" class="btn">Check Availability</a>
+									<a href="#contact" class="btn">Check Availability</a>
+								</div>
 							</div>
 						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="padding-global" data-aos="fade-up">
+					<div class="container">
+						<h2 class="section-title">Check out our <span class="underline">current</span> Inventory</h2>
+					</div>
+					<InventoryCardWrap limit={true} data-aos="fade-up" data-aos-delay="200"/>
+					<div class="container">
+						<div class="btn-wrapper" data-aos="fade-up" data-aos-delay="400">
+							<a href="/sales#inventory" class="btn secondary">View All Inventory</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="padding-global" data-aos="fade-up">
+					<div class="container">
+						<h2 class="section-title">Your <span class="underline">Trusted</span> West Valley Golf Cart Dealer</h2>
+						<div class="btn-grid" data-aos="zoom-in" data-aos-delay="200">
+							<ImageButton image="/images/static/sales-home.webp" title="New & Used Carts" link="/sales"/>
+							<ImageButton image="/images/static/service-home.webp" title="Expert Service" link="/service"/>
+							<ImageButton image="/images/static/rental-home.webp" title="Parts & Accessories" link="/parts"/>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="padding-global" data-aos="fade-up">
+					<div class="container">
+						<div class="wrapper column">
+							<div class="wrapper" data-aos="fade-right">
+								<h2 class="section-title">Gas Carts or Electric Carts we've got <span class="underline">your back</span></h2>
+								<p class="text">Whether you own a gas or electric cart, our expert service team is here to ensure your vehicle runs smoothly and efficiently. From routine maintenance to in-depth repairs, we provide top-tier service for both types of carts, addressing everything from engine tune-ups to battery replacements. No matter the issue, you can count on us to keep your cart in peak condition so you can focus on enjoying the ride.</p>
+								<div class="card-wrapper">
+									<div class="card" data-aos="fade-up" data-aos-delay="300">
+										<h3 class="sub-title">Gas Cart Service</h3>
+										<p class="text">Keep your gas cart running smoothly with our expert maintenance and repair services. From engine tune-ups to oil changes, we ensure your cart stays in top shape for every ride.</p>
+										<ArrowButton slug="/service#services" aria="Learn more about our gas cart service" text="Our Services"/>
+									</div>
+									<div class="card" data-aos="fade-up" data-aos-delay="500">
+										<h3 class="sub-title">Electric Cart Service</h3>
+										<p class="text">Ensure your electric cart operates at peak performance with our specialized services. From battery checks to electrical system repairs, we’ve got you covered for a smooth and reliable ride.</p>
+										<ArrowButton slug="/service#services" aria="Learn more about our electric cart service" text="Our Services"/>
+									</div>
+								</div>
+							</div>
+							<img src="/images/static/services-image.webp" alt="West Valley Golf Cars Service garage" class="img-main" loading="lazy" data-aos="zoom-in" />
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="padding-global" data-aos="fade-up">
+					<div class="container">
+						<h2 class="section-title center">What Our <span class="underline">Customers</span> Are Saying</h2>
+						<TestimonialCardWrap data-aos="fade-up" data-aos-delay="200" />
+					</div>
+				</div>
+			</section>
+			<section id="contact">
+				<div class="padding-global" data-aos="fade-up">
+					<div class="container">
+						<h2 class="section-title center">Let's Get you into your <span class="underline">Dream</span> Cart today</h2>
+						<GeneralForm data-aos="fade-up" data-aos-delay="300" />
 					</div>
 				</div>
 			</section>
 		</main>
+		<footer>
+			<FooterMain />
+		</footer>
 	</body>
+	<script>
+        import * as AOS from 'aos';
+        import 'aos/dist/aos.css';
+
+		AOS.init({
+			duration: 1000,  // Set the duration for all animations
+			once: true,  // Animate only once when scrolling
+			easing: 'ease-in-out',  // Easing function for smooth animation
+		});
+	</script>
+</html>
