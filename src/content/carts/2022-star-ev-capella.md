@@ -21,10 +21,11 @@ images:
   - image: /images/carts/coming-soon.webp
     alt: 2020 EZGO Express - Image 3
 slug: 2022-star-ev-capella
----
-### Features
- - Club cover
- - Premium steering wheel
- - LED lights
- - Low-profile tires
- - Custom dashboard
+body: >-
+  ## Features
+   - Club cover
+   - Premium steering wheel
+   - LED lights
+   - Low-profile tires
+   - Custom dashboard
+   ---
