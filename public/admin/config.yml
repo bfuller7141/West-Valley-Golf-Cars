@@ -16,7 +16,7 @@ media_library:
   config:
     cloud_name: dua9v3oki
     api_key: 547347771126385
-    multiple: true
+    multiple: false
 
 collections:
   - name: "sales"
