@@ -14,11 +14,7 @@ fuel: Electric
 sold: false
 thumbnail: /images/carts/coming-soon.webp
 images:
-  - image:
-      - https://res.cloudinary.com/dua9v3oki/image/upload/v1725215438/cld-sample-5.jpg
-      - https://res.cloudinary.com/dua9v3oki/image/upload/v1725215438/cld-sample-4.jpg
-      - https://res.cloudinary.com/dua9v3oki/image/upload/v1725215438/cld-sample-3.jpg
-      - https://res.cloudinary.com/dua9v3oki/image/upload/v1725215438/cld-sample-2.jpg
+  - image: https://res.cloudinary.com/dua9v3oki/image/upload/v1725215438/cld-sample-5.jpg
     alt: 2020 EZGO Express - Image 1
   - image: /images/carts/coming-soon.webp
     alt: 2020 EZGO Express - Image 2
