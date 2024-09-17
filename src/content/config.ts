@@ -28,8 +28,7 @@ const legal = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    date: z.string().optional(),  // Optional date if required
-    slug: z.string().optional()    // Optional slug if needed
+    date: z.string().optional(),
   }),
 });
 
