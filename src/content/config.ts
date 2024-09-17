@@ -28,7 +28,7 @@ const legal = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    date: z.string().optional(),
+    content: z.string(), // The legal content as markdown
   }),
 });
 

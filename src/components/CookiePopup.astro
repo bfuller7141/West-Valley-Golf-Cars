@@ -1,73 +1,90 @@
 <div id="cookie-popup" class="cookie-popup">
     <p class="cookie-text">
-      We use cookies to improve your experience. By using our site, you agree to our use of cookies. <a href="/privacy-policy" class="cookie-link">Learn more</a>
+        We use cookies to improve your experience. By using our site, you agree to our use of cookies. <a href="/privacy-policy" class="cookie-link">Learn more</a>
     </p>
     <div class="cookie-buttons">
-      <button id="accept-cookies" class="btn">Accept</button>
-      <button id="disable-cookies" class="btn secondary">Disable Unnecessary Cookies</button>
+        <button id="accept-cookies" class="btn">Accept</button>
+        <button id="disable-cookies" class="btn secondary">Disable Unnecessary Cookies</button>
     </div>
 </div>
 
 <style>
     /* Cookie Pop-up Styles */
-.cookie-popup {
-    position: fixed;
-    bottom: 1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 40rem;
-    padding: 1.25rem;
-    background-color: var(--wheat-500);
-    color: var(--green-700);
-    box-shadow: var(--shadow);
-    border-radius: 0.25rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    z-index: 1000;
-}
+    .cookie-popup {
+        position: fixed; /* Changed to fixed for visibility across the page */
+        bottom: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 40rem;
+        padding: 1.25rem;
+        background-color: var(--white);
+        color: var(--green-700);
+        box-shadow: var(--shadow);
+        border-radius: 0.25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        z-index: 1000;
+        display: none; /* Initially hidden, shown conditionally with JS */
+    }
 
-.cookie-text {
-    font-family: var(--body);
-    font-size: var(--small-text);
-    color: var(--green-700);
-    text-align: center;
-    margin: 0;
-}
+    .cookie-text {
+        font-family: var(--body);
+        font-size: var(--small-text);
+        color: var(--green-700);
+        text-align: center;
+        margin: 0;
+    }
 
-.cookie-link {
-    color: var(--green-500);
-    text-decoration: underline;
-    cursor: pointer;
-}
+    .cookie-link {
+        color: var(--green-500);
+        text-decoration: underline;
+        cursor: pointer;
+    }
 
-.cookie-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    width: 100%;
-}
+    .cookie-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        width: 100%;
+    }
 
-.cookie-popup .btn {
-    padding: 0.5rem 1.25rem;
-    font-size: var(--text);
-    text-transform: uppercase;
-    transition: var(--hover);
-}
+    .cookie-popup .btn {
+        padding: 0.5rem 1.25rem;
+        font-size: var(--text);
+        text-transform: uppercase;
+        transition: var(--hover);
+    }
 </style>
 
 <script>
-    // Function to hide the cookie popup and set cookies accordingly
+    // Helper function to get a specific cookie by name
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    // Check if the cookie is already set and handle popup visibility
+    window.onload = function() {
+        const cookieConsent = getCookie('tracking');
+        if (!cookieConsent) {
+            document.getElementById('cookie-popup').style.display = 'flex'; // Show popup if no consent yet
+        }
+    };
+
+    // Accept cookies and hide the popup
     document.getElementById('accept-cookies').addEventListener('click', function() {
         document.getElementById('cookie-popup').style.display = 'none';
-        document.cookie = "tracking=enabled; max-age=31536000; path=/";
+        document.cookie = "tracking=enabled; max-age=31536000; path=/"; // Set cookie for 1 year
     });
 
+    // Disable cookies and hide the popup
     document.getElementById('disable-cookies').addEventListener('click', function() {
         document.getElementById('cookie-popup').style.display = 'none';
-        document.cookie = "tracking=disabled; max-age=31536000; path=/";
+        document.cookie = "tracking=disabled; max-age=31536000; path=/"; // Set cookie for 1 year
         // Disable tracking cookies here if any
     });
 </script>
