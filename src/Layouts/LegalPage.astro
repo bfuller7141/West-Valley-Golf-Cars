@@ -9,7 +9,7 @@ import CookiePopup from "../components/CookiePopup.astro";
 
 // Retrieve frontmatter
 type PropsLegal = CollectionEntry<'legal'>['data'];
-const { title, slug } = Astro.props as PropsLegal;
+const { title } = Astro.props as PropsLegal;
 
 // Get the content (Markdown body)
 const contentHTML = marked(Astro.props.content); // Astro.props.content contains the body of the Markdown
@@ -22,7 +22,6 @@ const contentHTML = marked(Astro.props.content); // Astro.props.content contains
             description={`${title} page for West Valley Golf Cars`}
             keywords={`${title}, West Valley Golf Cars`}
             image="/images/opengraph/main.webp"
-            url={`https://www.westvalleygolfcars.com/${slug}`}
         />
     </head>
     <body class="page-transition-enter">
