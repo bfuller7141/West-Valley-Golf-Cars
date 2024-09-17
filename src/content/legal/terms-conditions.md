@@ -1,3 +1,6 @@
+---
+title: Terms & Conditions
+content: >-
 # Terms & Conditions for West Valley Golf Cars
 
 Welcome to the West Valley Golf Cars website. By accessing or using our website, you agree to comply with and be bound by the following terms and conditions. Please read these terms carefully. If you do not agree with any part of these terms, you should not use this website.
@@ -75,3 +78,6 @@ If you have any questions about these Terms & Conditions, please contact us:
 - **Mailing Address**: West Valley Golf Cars, Litchfield Park, AZ 85340
 
 These terms were last updated on **09/17/2024**.
+
+slug: terms
+---
