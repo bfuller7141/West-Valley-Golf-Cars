@@ -100,7 +100,7 @@ collections:
         widget: "list"
         hint: "These images will be displayed in the gallery for the cart."
         required: false
-        field:
+        fields:
           - label: "Image"
             name: "image"
             widget: "image"
