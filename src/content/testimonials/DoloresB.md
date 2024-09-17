@@ -1,5 +1,6 @@
 ---
-name: "Dolores B."
-testimonial: "We called Sun City Mechanical. Their technician,  a knowledgeable and courteous young man, told us our system didn't need servicing at this time. Sun City Mechanical has my business from now on. Thank you."
+name: Mark E.
+testimonial: Bought my cart from West Valley over 3 years ago. They just
+  serviced my cart, best service I have ever received, I highly recommend them.
 rating: 5
 ---
