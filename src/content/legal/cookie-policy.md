@@ -1,53 +1,78 @@
 ---
 title: Cookie Policy
 content: >-
-  ## Cookie Policy for Sun City Mechanical
+  ## Cookie Policy
 
 
-  At Sun City Mechanical, we use cookies to improve your experience on our website. This Cookie Policy explains what cookies are, how we use them, and how you can control them.
+  At West Valley Golf Cars, we use cookies to enhance your experience and improve the performance of our website. This Cookie Policy explains what cookies are, the types we use, how we use them, and how you can control your cookie preferences.
 
 
-  ### What are cookies?
+  ### What Are Cookies?
 
 
-  Cookies are small text files stored on your device by your web browser when you visit a website. They help the website remember information about your visit, which can make your next visit easier and the site more useful to you.
+  Cookies are small text files placed on your device (computer, smartphone, or tablet) when you visit a website. They allow websites to remember your actions and preferences, such as login information, language settings, and other display preferences, for a certain period of time. They can also track your behavior on the website, enabling us to provide tailored content and analyze usage patterns.
 
 
-  ### How we use cookies
+  ### Why Do We Use Cookies?
 
 
-  We use cookies for various purposes, including:
+  We use cookies for a variety of reasons, primarily to ensure that our website functions effectively. Specifically, cookies help us:
 
 
-  1. Ensuring the website functions correctly.
-
-  2. Analyzing website traffic and usage patterns to improve performance.
-
-  3. Personalizing content and advertisements based on your preferences.
+  Enhance Functionality: Cookies enable essential features like page navigation and access to secure areas.
 
 
-  ### Types of cookies we use
+  Improve Performance: Cookies help us gather data on how visitors use our site, allowing us to improve performance.
 
 
-  1. Essential Cookies: Necessary for the website to function properly. These cannot be disabled.
-
-  2. Performance Cookies: Collect information about how visitors use the website to help improve its performance.
-
-  3. Functional Cookies: Allow the website to remember choices you make and provide enhanced features.
+  Personalize Your Experience: By remembering your preferences, cookies allow us to tailor content to your interests.
 
 
-  ### Managing cookies
+  Support Marketing Activities: Cookies help us deliver relevant ads and measure the effectiveness of our marketing campaigns.
 
 
-  You can manage your cookie preferences through your browser settings. Please note that disabling certain types of cookies may affect the functionality of our website.
+  ### Types of Cookies We Use
 
 
-  ### Changes to this policy
+  Essential Cookies: Necessary for basic operation, such as security and accessibility.
 
 
-  We may update this Cookie Policy from time to time. Any changes will be posted on this page.
+  Performance Cookies: Collect anonymous data about how visitors use the website to improve performance.
 
 
-  This policy was last updated on 08/19/2024.
+  Functional Cookies: Remember your choices on the website, such as language preferences.
+
+
+  Targeting and Advertising Cookies: Deliver ads relevant to your interests and limit the number of times you see the same ad.
+
+
+  ### Third-Party Cookies
+
+
+  We use third-party cookies from services like Google Analytics and Facebook to understand user interactions and track marketing campaigns. These cookies are governed by the privacy policies of the third-party providers.
+
+
+  ### How to Manage Cookies
+
+
+  You can manage or disable cookies through your web browser settings. However, disabling cookies may impact the functionality of our website. Popular browser instructions for managing cookies:
+
+
+  Google Chrome: Clear, enable, and manage cookies
+
+
+  Mozilla Firefox: Delete cookies
+
+
+  Safari: Manage cookies and website data in Safari
+
+
+  Microsoft Edge: Delete and manage cookies
+
+
+  ### Consent to Use Cookies
+
+
+  By continuing to use our website, you consent to the placement of cookies as described in this policy.
 slug: cookies
 ---
