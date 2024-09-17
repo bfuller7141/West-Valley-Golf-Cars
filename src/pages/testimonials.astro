@@ -1,0 +1,70 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import SkipMain from "../components/buttons/SkipMain.astro";
+import CookiePopup from "../components/CookiePopup.astro";
+import FooterMain from "../components/FooterMain.astro";
+import NavMain from "../components/NavMain.astro";
+import TestimonialGrid from "../components/TestimonialGrid.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <BaseHead 
+        title="Customer Testimonials | West Valley Golf Cars | Hear from Our Customers"
+        description="Read what our satisfied customers are saying about West Valley Golf Cars. Learn why we are the trusted choice for golf cart sales, service, and rentals in the West Valley."
+        keywords="customer testimonials, reviews, West Valley Golf Cars, golf cart service reviews, customer feedback"
+        image="/images/opengraph/wv-edition-close-up.webp"
+        url="https://www.westvalleygolfcars.com/testimonials"
+    />
+    <body class="page-transition-enter">
+        <SkipMain />
+        <header>
+            <NavMain data-aos="fade-down" />
+        </header>
+        <main id="main-content">
+            <section class="hero-home" data-aos="fade-up">
+                <div class="top-banner"></div>
+                <div class="padding-hero">
+                    <div class="container">
+                            <div class="wrapper">
+                                <h1 class="page-title center" data-aos="fade-up">Our Customers' <span class="underline">Testimonials</span></h1>
+                            </div>
+                        </div>
+                        <TestimonialGrid data-aos="fade-up" />
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <footer>
+            <FooterMain />
+        </footer>
+
+        <CookiePopup />
+    </body>
+
+    <script>
+        import * as AOS from 'aos';
+        import 'aos/dist/aos.css';
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.innerWidth > 980) {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    easing: 'ease-in-out',
+                    offset: 0,
+                    delay: 0,
+                });
+            } else {
+                const aosElements = document.querySelectorAll('[data-aos]');
+                aosElements.forEach((element) => {
+                    const el = element as HTMLElement;
+                    el.removeAttribute('data-aos');
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+            }
+        });
+    </script>
+</html>
