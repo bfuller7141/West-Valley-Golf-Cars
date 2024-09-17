@@ -1,8 +1,7 @@
 ---
 title: "Accessibility"
 date: "2024-09-17"
-slug: "accessibility"
----
+content: |
 
 # Accessibility Statement for West Valley Golf Cars
 
@@ -52,3 +51,4 @@ We are committed to ensuring that our website provides an inclusive and accessib
 We view accessibility as an ongoing effort, and we are continuously working to improve our digital offerings. Our team stays informed about changes to accessibility guidelines and explores new tools and techniques to create a seamless, accessible experience for all users.
 
 This statement was last updated on **09/17/2024**.
+---

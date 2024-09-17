@@ -12,7 +12,7 @@ type PropsLegal = CollectionEntry<'legal'>['data'];
 const { title } = Astro.props as PropsLegal;
 
 // Get the content (Markdown body)
-const contentHTML = marked(Astro.props.content); // Astro.props.content contains the body of the Markdown
+const contentHTML = marked(Astro.props.content || 'No content available.');
 ---
 
 <html lang="en">
