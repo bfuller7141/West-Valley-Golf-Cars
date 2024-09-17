@@ -1,23 +1,19 @@
 ---
 title: Accessibility
 content: >-
-  # Accessibility Statement
+  ## Accessibility Statement
 
 
   West Valley Golf Cars is committed to ensuring digital accessibility for people with disabilities. We strive to continually improve the user experience for all visitors by applying relevant accessibility standards and best practices. We believe that everyone should be able to navigate and enjoy our website without barriers.
 
 
-
-
-  ## Our Accessibility Commitment
+  ### Our Accessibility Commitment
 
 
   At West Valley Golf Cars, we recognize the importance of an inclusive digital experience. We have dedicated resources to ensure our website meets or exceeds accessibility standards. This aligns with our mission to serve the diverse needs of our customers, including individuals with disabilities.
 
 
-
-
-  ## Efforts to Support Accessibility
+  ### Efforts to Support Accessibility
 
 
   Regular Audits: We conduct regular audits and usability testing to identify and address potential accessibility issues. Our team ensures that our website remains compliant with the latest Web Content Accessibility Guidelines (WCAG).
@@ -50,14 +46,10 @@ content: >-
   West Valley Golf Cars is fully conformant with WCAG 2.1 level AA, ensuring accessibility for a wide range of disabilities, including but not limited to vision, hearing, cognitive, and mobility impairments. While we strive for full accessibility, we acknowledge that some areas may not yet be perfect, and we are continually improving our accessibility features.
 
 
-
-
-  ## Feedback and Assistance
+  ### Feedback and Assistance
 
 
   We welcome feedback from all users regarding accessibility. If you experience any issues or have suggestions on how we can improve, please contact us:
-
-
 
 
   Email: info@westvalleygolfcars.com
