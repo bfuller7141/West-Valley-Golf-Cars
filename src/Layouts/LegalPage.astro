@@ -7,12 +7,14 @@ import NavMain from "../components/NavMain.astro";
 import FooterMain from "../components/FooterMain.astro";
 import CookiePopup from "../components/CookiePopup.astro";
 
+// Retrieve frontmatter
 type PropsLegal = CollectionEntry<'legal'>['data'];
+const { title, slug } = Astro.props as PropsLegal;
 
-const { title, content } = Astro.props as PropsLegal;
-const contentHTML = marked(content);
-
+// Get the content (Markdown body)
+const contentHTML = marked(Astro.props.content); // Astro.props.content contains the body of the Markdown
 ---
+
 <html lang="en">
     <head>
         <BaseHead
@@ -20,29 +22,29 @@ const contentHTML = marked(content);
             description={`${title} page for West Valley Golf Cars`}
             keywords={`${title}, West Valley Golf Cars`}
             image="/images/opengraph/main.webp"
-            url={'https://www.westvalleygolfcars.com/${Astro.props.slug}'}
+            url={`https://www.westvalleygolfcars.com/${slug}`}
         />
     </head>
     <body class="page-transition-enter">
-		<SkipMain />
-		<header>
-			<NavMain data-aos="fade-down" />
-		</header>
-		<main id="main-content">
-			<section class="hero-home" data-aos="fade-up">
-				<div class="top-banner"></div>
+        <SkipMain />
+        <header>
+            <NavMain data-aos="fade-down" />
+        </header>
+        <main id="main-content">
+            <section class="hero-home" data-aos="fade-up">
+                <div class="top-banner"></div>
                 <div class="padding-hero" data-aos="fade-up">
                     <div class="container">
                         <div set:html={contentHTML}></div>
                     </div>
                 </div>
             </section>
-		</main>
-		<footer>
-			<FooterMain />
-		</footer>
+        </main>
+        <footer>
+            <FooterMain />
+        </footer>
         <CookiePopup />
-	</body>
+    </body>
     <script>
         import * as AOS from 'aos';
         import 'aos/dist/aos.css';
