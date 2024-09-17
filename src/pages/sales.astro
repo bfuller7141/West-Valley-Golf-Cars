@@ -1,8 +1,8 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
+import BaseHead from '../components/BaseHead.astro';
 import InventoryCardWrap from '../components/InventoryCardWrap.astro';
 import LogoWrap from '../components/LogoWrap.astro';
-import NavMain from '../components/NavMain.astro'
+import NavMain from '../components/NavMain.astro';
 import ServiceBanner from '../components/ServiceBanner.astro';
 import SkipMain from "../components/buttons/SkipMain.astro";
 import ArrowButton from "../components/buttons/ArrowButton.astro";
@@ -10,21 +10,22 @@ import GeneralForm from '../components/forms/GeneralForm.astro';
 import FooterMain from '../components/FooterMain.astro';
 import CookiePopup from '../components/CookiePopup.astro';
 ---
+
 <!DOCTYPE html>
 <html lang="en">
-	<BaseHead 
+    <BaseHead 
         title="Golf Cart Sales | West Valley Golf Cars | New and Used Golf Carts in Arizona"
         description="Shop the best selection of new and used golf carts at West Valley Golf Cars. We offer a wide variety of golf carts for sale, including top brands and custom builds. Serving Arizona's West Valley region."
         keywords="golf cart sales, new golf carts, used golf carts, custom golf carts, West Valley, Arizona"
         image="/images/opengraph/sales-page.webp"
         url="https://www.westvalleygolfcars.com/open-graph_main.webp"
-	/>
-	<body class="page-transition-enter">
-		<SkipMain />
-		<header>
-			<NavMain data-aos="fade-down" />
-		</header>
-		<main id="main-content">
+    />
+    <body class="page-transition-enter">
+        <SkipMain />
+        <header>
+            <NavMain data-aos="fade-down" />
+        </header>
+        <main id="main-content">
             <section class="hero-home" data-aos="fade-up">
                 <div class="top-banner"></div>
                 <div class="background-image"></div>
@@ -43,13 +44,13 @@ import CookiePopup from '../components/CookiePopup.astro';
                     </div>
                 </div>
             </section>
+            
             <ServiceBanner data-aos="fade-up" />
+            
             <section id="inventory" data-aos="fade-up">
                 <div class="padding-global">
                     <div class="container">
-                        <LogoWrap 
-                        logoSize="logo-large"
-                        text="large-text" />
+                        <LogoWrap logoSize="logo-large" text="large-text" />
                         <div class="mt-4">
                             <h2 class="section-title">Our <span class="underline">Current</span> Inventory</h2>
                             <InventoryCardWrap data-aos="fade-up" />
@@ -58,38 +59,43 @@ import CookiePopup from '../components/CookiePopup.astro';
                     </div>
                 </div>
             </section>
+            
             <section data-aos="fade-up">
                 <div class="padding-global">
-					<div class="container">
-						<div class="wrapper column vert-center">
-                            <img src="/images/static/west valley edition.webp" alt="West Valley Golf Cars West Valley Edition" class="img-main" loading="lazy" data-aos="zoom-in"/>
-							<div class="wrapper" data-aos="fade-right">
-								<h2 class="section-title">Check Out the WVGC Exclusive <span class="underline">West Valley Edition</span> Golf Cart</h2>
-								<p class="text">Every West Valley Edition Golf Cart is thoughtfully reconstructed from the foundation up, merging exceptional craftsmanship with cutting-edge features for a ride that's in a class of its own. Boasting striking aesthetics and seamless performance, this edition offers more than a simple trip—it delivers an adventure rich in comfort and elegance. Whether you're navigating the fairways or enjoying a leisurely drive in your community, the West Valley Edition Golf Cart is crafted to turn every journey into an unforgettable experience.</p>
+                    <div class="container">
+                        <div class="wrapper column vert-center">
+                            <img src="/images/static/west valley edition.webp" alt="West Valley Golf Cars West Valley Edition" class="img-main" loading="lazy" data-aos="zoom-in" />
+                            <div class="wrapper" data-aos="fade-right">
+                                <h2 class="section-title">Check Out the WVGC Exclusive <span class="underline">West Valley Edition</span> Golf Cart</h2>
+                                <p class="text">Every West Valley Edition Golf Cart is thoughtfully reconstructed from the foundation up, merging exceptional craftsmanship with cutting-edge features for a ride that's in a class of its own. Boasting striking aesthetics and seamless performance, this edition offers more than a simple trip—it delivers an adventure rich in comfort and elegance. Whether you're navigating the fairways or enjoying a leisurely drive in your community, the West Valley Edition Golf Cart is crafted to turn every journey into an unforgettable experience.</p>
                                 <ArrowButton slug="mailto:info@westvalleygolfcars.com" aria="Learn more about West Valley Custom carts" text="Contact Sales for More" />
-							</div>
-						</div>
-					</div>
-				</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
+            
             <section data-aos="fade-up">
-				<div class="padding-global">
-					<div class="container">
-						<h2 class="section-title center">Let's Get you into your <span class="underline">Dream</span> Cart today</h2>
-						<GeneralForm data-aos="fade-up" />
-					</div>
-				</div>
-			</section>
-		</main>
-		<footer>
-			<FooterMain />
-		</footer>
+                <div class="padding-global">
+                    <div class="container">
+                        <h2 class="section-title center">Let's Get you into your <span class="underline">Dream</span> Cart today</h2>
+                        <GeneralForm data-aos="fade-up" />
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <FooterMain />
+        </footer>
+        
         <CookiePopup />
-	</body>
+    </body>
+    
     <script>
         import * as AOS from 'aos';
         import 'aos/dist/aos.css';
-    
+
         document.addEventListener('DOMContentLoaded', function () {
             if (window.innerWidth > 980) {
                 AOS.init({
@@ -101,7 +107,6 @@ import CookiePopup from '../components/CookiePopup.astro';
                 });
             } else {
                 const aosElements = document.querySelectorAll('[data-aos]');
-    
                 aosElements.forEach(element => {
                     const el = element as HTMLElement;
                     el.removeAttribute('data-aos');
@@ -110,5 +115,5 @@ import CookiePopup from '../components/CookiePopup.astro';
                 });
             }
         });
-    </script>  
+    </script>
 </html>

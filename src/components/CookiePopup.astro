@@ -8,80 +8,33 @@
     </div>
 </div>
 
-<style>
-    /* Cookie Pop-up Styles */
-    .cookie-popup {
-    position: fixed; /* Ensures it's attached to the viewport */
-    bottom: 0; /* Stick to the bottom of the screen */
-    left: 0; /* Align to the left edge */
-    width: 100%; /* Stretch to full width */
-    padding: 1.25rem;
-    background-color: var(--white);
-    color: var(--green-700);
-    box-shadow: var(--shadow);
-    z-index: 1000; /* Ensure it appears above all other elements */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-
-    .cookie-text {
-        font-family: var(--body);
-        font-size: var(--small-text);
-        color: var(--green-700);
-        text-align: center;
-        margin: 0;
-    }
-
-    .cookie-link {
-        color: var(--green-500);
-        text-decoration: underline;
-        cursor: pointer;
-    }
-
-    .cookie-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .cookie-popup .btn {
-        padding: 0.5rem 1.25rem;
-        font-size: var(--text);
-        text-transform: uppercase;
-        transition: var(--hover);
-    }
-</style>
-
 <script>
-    // Helper function to get a specific cookie by name
     function getCookie(name) {
         const value = `; ${document.cookie}`;
         const parts = value.split(`; ${name}=`);
         if (parts.length === 2) return parts.pop().split(';').shift();
     }
 
-    // Check if the cookie is already set and handle popup visibility
-    window.onload = function() {
+    function setupCookiePopup() {
+        const cookiePopup = document.getElementById('cookie-popup');
+        const acceptButton = document.getElementById('accept-cookies');
+        const disableButton = document.getElementById('disable-cookies');
+
         const cookieConsent = getCookie('tracking');
         if (!cookieConsent) {
-            document.getElementById('cookie-popup').style.display = 'flex'; // Show popup if no consent yet
+            cookiePopup.style.display = 'flex';
         }
-    };
 
-    // Accept cookies and hide the popup
-    document.getElementById('accept-cookies').addEventListener('click', function() {
-        document.getElementById('cookie-popup').style.display = 'none';
-        document.cookie = "tracking=enabled; max-age=31536000; path=/"; // Set cookie for 1 year
-    });
+        acceptButton.addEventListener('click', function () {
+            cookiePopup.style.display = 'none';
+            document.cookie = "tracking=enabled; max-age=31536000; path=/"; 
+        });
 
-    // Disable cookies and hide the popup
-    document.getElementById('disable-cookies').addEventListener('click', function() {
-        document.getElementById('cookie-popup').style.display = 'none';
-        document.cookie = "tracking=disabled; max-age=31536000; path=/"; // Set cookie for 1 year
-        // Disable tracking cookies here if any
-    });
+        disableButton.addEventListener('click', function () {
+            cookiePopup.style.display = 'none';
+            document.cookie = "tracking=disabled; max-age=31536000; path=/"; 
+        });
+    }
+
+    window.addEventListener('DOMContentLoaded', setupCookiePopup);
 </script>

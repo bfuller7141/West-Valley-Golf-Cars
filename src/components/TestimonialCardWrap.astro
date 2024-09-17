@@ -13,27 +13,27 @@ function shuffleArray(array: any[]) {
 
 const randomTestimonials = shuffleArray(testimonials).slice(0, 3);
 ---
-
 <div class="testimonial-slider-wrapper">
-    <div class="testimonial-slider">
+    <div class="testimonial-slider" role="region" aria-labelledby="testimonials-heading">
         {randomTestimonials.map((testimonial, index: number) => (
-            <div class="testimonial-slide" id={`slide-${index}`}>
+            <div class="testimonial-slide" id={`slide-${index}`} role="group" aria-roledescription="slide">
                 <TestimonialCard
-                    name={testimonial.frontmatter.name} 
+                    name={testimonial.frontmatter.name}
                     rating={testimonial.frontmatter.rating}
                     quote={testimonial.frontmatter.testimonial}
                 />
             </div>
         ))}
     </div>
-    <div class="indicators">
+    <div class="indicators" role="tablist" aria-label="Testimonials Navigation">
         {randomTestimonials.map((_, index: number) => (
-            <span class="indicator" data-slide={index}></span>
+            <span class="indicator" role="tab" aria-controls={`slide-${index}`} data-slide={index}></span>
         ))}
     </div>
 </div>
+
 <div class="btn-wrapper center">
-    <a href="/testimonials" class="btn secondary">Read More Testimonials</a>
+    <a href="/testimonials" class="btn secondary" aria-label="Read more testimonials">Read More Testimonials</a>
 </div>
 
 <style>
@@ -53,8 +53,9 @@ const randomTestimonials = shuffleArray(testimonials).slice(0, 3);
 }
 
 .indicators {
-    display: none; 
+    display: none;
 }
+
 .center {
     display: flex;
     justify-content: center;
@@ -63,7 +64,7 @@ const randomTestimonials = shuffleArray(testimonials).slice(0, 3);
 @media (max-width: 983px) {
     .testimonial-slider-wrapper {
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch; 
+        -webkit-overflow-scrolling: touch;
     }
 
     .testimonial-slider {
@@ -115,50 +116,50 @@ const randomTestimonials = shuffleArray(testimonials).slice(0, 3);
 </style>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const slides: HTMLElement[] = Array.from(document.querySelectorAll('.testimonial-slide'));
-        const indicators = document.querySelectorAll('.indicator');
-        const slider = document.querySelector('.testimonial-slider');
-        let currentSlide = 0;
-    
-        function updateIndicators(index: number) {
-            indicators.forEach((indicator, i) => {
-                indicator.classList.remove('active');
-                if (i === index) {
-                    indicator.classList.add('active');
-                }
-            });
-        }
-    
-        function calculateCurrentSlide() {
-            const scrollLeft = slider ? slider.scrollLeft : 0;
-            const slideWidth = slides[0].clientWidth;
-            const newSlideIndex = Math.round(scrollLeft / slideWidth);
-            if (newSlideIndex !== currentSlide) {
-                currentSlide = newSlideIndex;
-                updateIndicators(currentSlide);
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = Array.from(document.querySelectorAll('.testimonial-slide'));
+    const indicators = document.querySelectorAll('.indicator');
+    const slider = document.querySelector('.testimonial-slider');
+    let currentSlide = 0;
+
+    function updateIndicators(index) {
+        indicators.forEach((indicator, i) => {
+            indicator.classList.remove('active');
+            if (i === index) {
+                indicator.classList.add('active');
             }
+        });
+    }
+
+    function calculateCurrentSlide() {
+        const scrollLeft = slider ? slider.scrollLeft : 0;
+        const slideWidth = slides[0].clientWidth;
+        const newSlideIndex = Math.round(scrollLeft / slideWidth);
+        if (newSlideIndex !== currentSlide) {
+            currentSlide = newSlideIndex;
+            updateIndicators(currentSlide);
         }
-    
-        if (slider) {
-            slider.addEventListener('scroll', () => {
-                calculateCurrentSlide();
-            });
-        }
-    
-        updateIndicators(currentSlide);
-    
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                currentSlide = index;
-                updateIndicators(currentSlide);
-                if (slider) {
-                    slider.scrollTo({
-                        left: slides[currentSlide].offsetLeft,
-                        behavior: 'smooth',
-                    });
-                }
-            });
+    }
+
+    if (slider) {
+        slider.addEventListener('scroll', () => {
+            calculateCurrentSlide();
+        });
+    }
+
+    updateIndicators(currentSlide);
+
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            currentSlide = index;
+            updateIndicators(currentSlide);
+            if (slider) {
+                slider.scrollTo({
+                    left: (slides[currentSlide] as HTMLElement).offsetLeft,
+                    behavior: 'smooth',
+                });
+            }
         });
     });
+});
     </script>

@@ -1,30 +1,30 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
-import ArrowButton from '../components/buttons/ArrowButton.astro'
-import SkipMain from '../components/buttons/SkipMain.astro'
-import CookiePopup from '../components/CookiePopup.astro'
-import FooterMain from '../components/FooterMain.astro'
-import ServiceForm from '../components/forms/ServiceForm.astro'
-import NavMain from '../components/NavMain.astro'
-import ServiceBanner from '../components/ServiceBanner.astro'
-import ServiceList from '../components/ServiceList.astro'
-import TestimonialCardWrap from '../components/TestimonialCardWrap.astro'
+import BaseHead from '../components/BaseHead.astro';
+import SkipMain from '../components/buttons/SkipMain.astro';
+import CookiePopup from '../components/CookiePopup.astro';
+import FooterMain from '../components/FooterMain.astro';
+import ServiceForm from '../components/forms/ServiceForm.astro';
+import NavMain from '../components/NavMain.astro';
+import ServiceBanner from '../components/ServiceBanner.astro';
+import ServiceList from '../components/ServiceList.astro';
+import TestimonialCardWrap from '../components/TestimonialCardWrap.astro';
 ---
+
 <!DOCTYPE html>
 <html lang="en">
-	<BaseHead 
+    <BaseHead 
         title="Golf Cart Service | West Valley Golf Cars | Maintenance and Repairs in Arizona"
         description="Keep your golf cart in top condition with expert service and maintenance from West Valley Golf Cars. We offer repair services, battery replacements, and regular maintenance to ensure your golf cart runs smoothly. Serving Arizona's West Valley region."
         keywords="golf cart service, golf cart maintenance, golf cart repairs, golf cart battery replacement, West Valley, Arizona"
         image="/images/opengraph/service-page.webp"
         url="https://www.westvalleygolfcars.com/open-graph_main2.webp"
-	/>
-	<body class="page-transition-enter">
-		<SkipMain />
-		<header>
-			<NavMain data-aos="fade-down" />
-		</header>
-		<main id="main-content">
+    />
+    <body class="page-transition-enter">
+        <SkipMain />
+        <header>
+            <NavMain data-aos="fade-down" />
+        </header>
+        <main id="main-content">
             <section class="hero-home" data-aos="fade-up">
                 <div class="top-banner"></div>
                 <div class="background-image"></div>
@@ -43,12 +43,14 @@ import TestimonialCardWrap from '../components/TestimonialCardWrap.astro'
                     </div>
                 </div>
             </section>
+
             <ServiceBanner data-aos="fade-up" />
+
             <section id="services">
-				<div class="padding-global" data-aos="fade-up">
-					<div class="container">
-						<div class="wrapper column">
-							<div class="wrapper" data-aos="fade-right">
+                <div class="padding-global" data-aos="fade-up">
+                    <div class="container">
+                        <div class="wrapper column">
+                            <div class="wrapper" data-aos="fade-right">
                                 <h2 class="section-title">Gas <span class="underline">Service</span></h2>
                                 <div class="mt-2">
                                     <div class="card">
@@ -62,11 +64,12 @@ import TestimonialCardWrap from '../components/TestimonialCardWrap.astro'
                                         <ServiceList title="Check suspension points" />
                                         <ServiceList title="Pressure wash cart" />
                                         <div class="btn-wrapper">
-                                            <a href="#schedule" class="btn"> Schedule A Service</a>
+                                            <a href="#schedule" class="btn">Schedule A Service</a>
                                         </div>
                                     </div>
                                 </div>
-							</div>
+                            </div>
+
                             <div class="wrapper" data-aos="fade-right">
                                 <h2 class="section-title">Electric <span class="underline">Service</span></h2>
                                 <div class="mt-2">
@@ -76,62 +79,68 @@ import TestimonialCardWrap from '../components/TestimonialCardWrap.astro'
                                         <ServiceList title="Brake inspection and adjustment" />
                                         <ServiceList title="Clean battery terminals" />
                                         <ServiceList title="Inspect and test battery" />
-                                        <ServiceList title="inspect cables and connections" />
+                                        <ServiceList title="Inspect cables and connections" />
                                         <ServiceList title="Balance battery cells" />
                                         <ServiceList title="Clean battery housing" />
                                         <ServiceList title="Pressure wash cart" />
                                         <div class="btn-wrapper">
-                                            <a href="#schedule" class="btn"> Schedule A Service</a>
+                                            <a href="#schedule" class="btn">Schedule A Service</a>
                                         </div>
                                     </div>
                                 </div>
-							</div>
+                            </div>
                         </div>
-					</div>
-				</div>
-			</section>
+                    </div>
+                </div>
+            </section>
+
             <section data-aos="fade-up">
                 <div class="padding-global">
-					<div class="container">
-						<div class="wrapper column vert-center">
-                            <img src="/images/static/pickup-delivery.webp" alt="West Valley Golf Cars West Valley Edition" class="img-main" loading="lazy" data-aos="zoom-in"/>
-							<div class="wrapper" data-aos="fade-right">
-								<h2 class="section-title">Ask Us About Our <span class="underline">Pick-Up</span> and Delivery Services</h2>
-								<p class="text">At West Valley Golf Cars, we're committed to making your service experience as effortless as possible. That's why we offer a convenient pick-up and delivery service for your golf cart. Whether you need maintenance, repairs, or any other service, we'll come to you. Our goal is to provide you with hassle-free support, ensuring your golf cart gets the care it needs without disrupting your schedule. Some charges may apply for this service, but we strive to keep them reasonable and will always be upfront about any costs involved.</p>
+                    <div class="container">
+                        <div class="wrapper column vert-center">
+                            <img src="/images/static/pickup-delivery.webp" alt="West Valley Golf Cars West Valley Edition" class="img-main" loading="lazy" data-aos="zoom-in" />
+                            <div class="wrapper" data-aos="fade-right">
+                                <h2 class="section-title">Ask Us About Our <span class="underline">Pick-Up</span> and Delivery Services</h2>
+                                <p class="text">At West Valley Golf Cars, we're committed to making your service experience as effortless as possible. That's why we offer a convenient pick-up and delivery service for your golf cart. Whether you need maintenance, repairs, or any other service, we'll come to you. Our goal is to provide you with hassle-free support, ensuring your golf cart gets the care it needs without disrupting your schedule. Some charges may apply for this service, but we strive to keep them reasonable and will always be upfront about any costs involved.</p>
                                 <div class="btn-wrapper">
                                     <a href="#schedule" class="btn">Schedule A Service</a>
                                 </div>
-							</div>
-						</div>
-					</div>
-				</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
+
             <section>
-				<div class="padding-global" data-aos="fade-up">
-					<div class="container">
-						<h2 class="section-title center">What Our <span class="underline">Customers</span> Are Saying</h2>
-						<TestimonialCardWrap data-aos="fade-up"/>
-					</div>
-				</div>
-			</section>
+                <div class="padding-global" data-aos="fade-up">
+                    <div class="container">
+                        <h2 class="section-title center">What Our <span class="underline">Customers</span> Are Saying</h2>
+                        <TestimonialCardWrap data-aos="fade-up" />
+                    </div>
+                </div>
+            </section>
+
             <section id="schedule" data-aos="fade-up">
-				<div class="padding-global">
-					<div class="container">
-						<h2 class="section-title center">Let's Schedule Your <span class="underline">Cart Service</span> today</h2>
-						<ServiceForm data-aos="fade-up" />
-					</div>
-				</div>
-			</section>
-		</main>
-		<footer>
-			<FooterMain />
-		</footer>
+                <div class="padding-global">
+                    <div class="container">
+                        <h2 class="section-title center">Let's Schedule Your <span class="underline">Cart Service</span> today</h2>
+                        <ServiceForm data-aos="fade-up" />
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <FooterMain />
+        </footer>
+
         <CookiePopup />
-	</body>
+    </body>
+
     <script>
         import * as AOS from 'aos';
         import 'aos/dist/aos.css';
-    
+
         document.addEventListener('DOMContentLoaded', function () {
             if (window.innerWidth > 980) {
                 AOS.init({
@@ -143,7 +152,6 @@ import TestimonialCardWrap from '../components/TestimonialCardWrap.astro'
                 });
             } else {
                 const aosElements = document.querySelectorAll('[data-aos]');
-    
                 aosElements.forEach(element => {
                     const el = element as HTMLElement;
                     el.removeAttribute('data-aos');
@@ -152,5 +160,5 @@ import TestimonialCardWrap from '../components/TestimonialCardWrap.astro'
                 });
             }
         });
-    </script>  
+    </script>
 </html>

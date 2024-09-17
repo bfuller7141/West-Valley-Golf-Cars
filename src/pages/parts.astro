@@ -10,21 +10,22 @@ import NavMain from "../components/NavMain.astro";
 import ServiceBanner from "../components/ServiceBanner.astro";
 import TestimonialCardWrap from "../components/TestimonialCardWrap.astro";
 ---
+
 <!DOCTYPE html>
 <html lang="en">
-	<BaseHead 
+    <BaseHead 
         title="Golf Cart Parts | West Valley Golf Cars | Arizona's Trusted Dealer"
         description="Find high-quality parts for your golf cart at West Valley Golf Cars. We offer a wide range of golf cart parts and accessories to keep your cart running smoothly. Serving Arizona with the best golf cart parts since 2000."
         keywords="golf cart parts, golf cart accessories, golf cart batteries, golf cart tires, golf cart maintenance, West Valley, Arizona"
         image="/images/opengraph/open-graph_main2.webp"
         url="https://www.westvalleygolfcars.com/parts"
-	/>
-	<body class="page-transition-enter">
-		<SkipMain />
-		<header>
-			<NavMain data-aos="fade-down"/>
-		</header>
-		<main id="main-content">
+    />
+    <body class="page-transition-enter">
+        <SkipMain />
+        <header>
+            <NavMain data-aos="fade-down"/>
+        </header>
+        <main id="main-content">
             <section class="hero-home" data-aos="fade-up">
                 <div class="top-banner"></div>
                 <div class="background-image"></div>
@@ -43,7 +44,9 @@ import TestimonialCardWrap from "../components/TestimonialCardWrap.astro";
                     </div>
                 </div>
             </section>
+            
             <ServiceBanner data-aos="fade-up" />
+
             <section id="inventory" data-aos="fade-up">
                 <div class="padding-global">
                     <div class="container">
@@ -63,32 +66,36 @@ import TestimonialCardWrap from "../components/TestimonialCardWrap.astro";
                     </div>
                 </div>
             </section>
+
             <section>
-				<div class="padding-global" data-aos="fade-up">
-					<div class="container">
-						<h2 class="section-title center">What Our <span class="underline">Customers</span> Are Saying</h2>
-						<TestimonialCardWrap data-aos="fade-up" />
-					</div>
-				</div>
-			</section>
+                <div class="padding-global" data-aos="fade-up">
+                    <div class="container">
+                        <h2 class="section-title center">What Our <span class="underline">Customers</span> Are Saying</h2>
+                        <TestimonialCardWrap data-aos="fade-up" />
+                    </div>
+                </div>
+            </section>
+
             <section id="request" data-aos="fade-up">
-				<div class="padding-global">
-					<div class="container">
-						<h2 class="section-title center">Let's Find the <span class="underline">Right Parts</span> for Your Cart</h2>
-						<PartsForm data-aos="fade-up"/>
-					</div>
-				</div>
-			</section>
-		</main>
-		<footer>
-			<FooterMain />
-		</footer>
+                <div class="padding-global">
+                    <div class="container">
+                        <h2 class="section-title center">Let's Find the <span class="underline">Right Parts</span> for Your Cart</h2>
+                        <PartsForm data-aos="fade-up"/>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <FooterMain />
+        </footer>
         <CookiePopup />
-	</body>
+    </body>
+
     <script>
         import * as AOS from 'aos';
         import 'aos/dist/aos.css';
-    
+
         document.addEventListener('DOMContentLoaded', function () {
             if (window.innerWidth > 980) {
                 AOS.init({
@@ -109,5 +116,5 @@ import TestimonialCardWrap from "../components/TestimonialCardWrap.astro";
                 });
             }
         });
-    </script>  
+    </script>
 </html>

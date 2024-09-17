@@ -78,12 +78,14 @@ html {
     font-size: 16px;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    position: relative;
 }
 
 body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    position: relative;
     background-color: var(--gray-100);
     ::selection {
         background-color: var(--wheat-500);
@@ -556,6 +558,52 @@ a {
     margin: 0;
     border-radius: 0.125rem;
 }
+
+    /* Cookie Pop-up Styles */
+    .cookie-popup {
+    position: fixed; /* Ensures it's attached to the viewport */
+    bottom: 0; /* Stick to the bottom of the screen */
+    left: 0; /* Align to the left edge */
+    width: 100%; /* Stretch to full width */
+    padding: 1.25rem;
+    background-color: var(--white);
+    color: var(--green-700);
+    box-shadow: var(--shadow);
+    z-index: 1000; /* Ensure it appears above all other elements */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+    .cookie-text {
+        font-family: var(--body);
+        font-size: var(--small-text);
+        color: var(--green-700);
+        text-align: center;
+        margin: 0;
+    }
+
+    .cookie-link {
+        color: var(--green-500);
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .cookie-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .cookie-popup .btn {
+        padding: 0.5rem 1.25rem;
+        font-size: var(--text);
+        text-transform: uppercase;
+        transition: var(--hover);
+    }
 
 /* Mobile Styles */
 

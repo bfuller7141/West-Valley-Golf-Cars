@@ -8,32 +8,30 @@ const carts = await Astro.glob('../content/carts/*.md');
 function shuffleArray(array: any[]) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+        [array[i], array[j]] = [array[j], array[i]]; 
     }
-    return array; // Make sure to return the shuffled array
+    return array;
 }
 
 // Sort carts so unsold items appear first
 function sortBySoldStatus(array: any[]) {
     return array.sort((a, b) => {
         if (a.frontmatter.sold && !b.frontmatter.sold) {
-            return 1; // sold comes after unsold
+            return 1
         } else if (!a.frontmatter.sold && b.frontmatter.sold) {
-            return -1; // unsold comes before sold
+            return -1;
         } else {
-            return 0; // keep original order if both are sold or unsold
+            return 0;
         }
     });
 }
 
 // Shuffle the array, then sort by sold status
-const shuffledCarts = shuffleArray(carts); // Shuffle the array and ensure it's returned
-const sortedCarts = sortBySoldStatus(shuffledCarts); // Sort based on sold status
+const shuffledCarts = shuffleArray(carts);
+const sortedCarts = sortBySoldStatus(shuffledCarts);
 
-// If a limit is applied, slice the array accordingly
 const featuredCarts = sortedCarts.filter(cart => cart.frontmatter.featured === true);
 const displayedCarts = limit ? featuredCarts.slice(0, 3) : sortedCarts;
-
 ---
 
 <ul class="inventory-card-wrap">
@@ -47,39 +45,40 @@ const displayedCarts = limit ? featuredCarts.slice(0, 3) : sortedCarts;
             year={cart.frontmatter.year}
             make={cart.frontmatter.make}
             model={cart.frontmatter.model}
-         />
-      ))}
+        />
+    ))}
 </ul>
 
 <style>
-.inventory-card-wrap {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  gap: 3rem 2rem;
-  max-width: 100rem;
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box;
-  padding: 0;
-  justify-content: space-between;
-}
+    /* Inventory Grid Styles */
+    .inventory-card-wrap {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        gap: 3rem 2rem;
+        max-width: 100rem;
+        margin: 3rem auto 2rem;
+        box-sizing: border-box;
+        padding: 0;
+        justify-content: space-between;
+    }
 
-.inventory-card-wrap ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+    /* Remove list styling */
+    .inventory-card-wrap ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
 
-.inventory-card-wrap .card {
-  width: 100%; 
-  min-width: 18rem;
-}
+    /* Card Styling */
+    .inventory-card-wrap .card {
+        width: 100%; 
+        min-width: 18rem;
+    }
 
-@media (min-width: 1024px) {
-  .inventory-card-wrap {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+    /* Responsive Styles */
+    @media (min-width: 1024px) {
+        .inventory-card-wrap {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
 </style>

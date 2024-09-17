@@ -11,13 +11,13 @@ export interface InventoryCardProps {
     model: string;
 }
 const { name, price, image, slug, sold, featured, year, make, model } = Astro.props as InventoryCardProps;
-console.log('Sold status:', true);
 
 // Format Numbers with Commas
 const formatPrice = (price) => {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 ---
+
 <li class="card">
     <div class="inventory-img-wrap">
         <img src={image} alt={name} class={`inventory-img ${sold ? 'sold-img' : ''}`} loading="lazy"/>
@@ -26,11 +26,17 @@ const formatPrice = (price) => {
     <div class="inventory-content">
         <h3 class="sub-title">{year} {make} {model}</h3>
         <p class="price"><strong>${formatPrice(price)}</strong></p>
-        <a href={`/carts/${slug}`} aria-label={`Specs and info for ${name}`} class="btn-text">Shop Cart<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentcolor" class="btn-icon"><path d="M422.6 278.6L445.3 256l-22.6-22.6-144-144L256 66.7 210.8 112l22.6 22.6L322.8 224 32 224 0 224l0 64 32 0 290.7 0-89.4 89.4L210.8 400 256 445.3l22.6-22.6 144-144z"/></svg></a>
+        <a href={`/carts/${slug}`} aria-label={`Specs and info for ${name}`} class="btn-text">
+            Shop Cart
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentcolor" class="btn-icon">
+                <path d="M422.6 278.6L445.3 256l-22.6-22.6-144-144L256 66.7 210.8 112l22.6 22.6L322.8 224 32 224 0 224l0 64 32 0 290.7 0-89.4 89.4L210.8 400 256 445.3l22.6-22.6 144-144z"/>
+            </svg>
+        </a>
     </div>
 </li>
 
 <style>
+    /* Image Styles */
     .inventory-img {
         width: 100%;
         aspect-ratio: 4/3;
@@ -38,14 +44,18 @@ const formatPrice = (price) => {
         z-index: 0;
     }
     .sold-img {
-        filter: grayscale(100%); /* Make image black and white when sold */
+        filter: grayscale(100%);
     }
+
+    /* Wrapper Styles */
     .inventory-img-wrap {
         position: relative;
     }
     .inventory-content {
         margin-top: 1.5rem;
     }
+
+    /* Price Styles */
     .price {
         font-family: var(--body);
         color: var(--green-500);
@@ -53,6 +63,8 @@ const formatPrice = (price) => {
         font-weight: 800;
         margin: 0.5rem 0;
     }
+
+    /* Sold Badge Styles */
     .sold-badge {
         display: flex;
         align-items: center;

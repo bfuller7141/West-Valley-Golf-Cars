@@ -1,8 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 
-const cart = await getCollection('carts', (cart) => cart.slug === '2020-ezgo-express'); 
-const { data: frontmatter } = cart[0]; 
+const cart = await getCollection('carts', (cart) => cart.slug === '2020-ezgo-express');
+const { data: frontmatter } = cart[0];
 ---
 
 <div class="grid-gallery">
@@ -14,149 +14,33 @@ const { data: frontmatter } = cart[0];
                     alt={image.alt || `Image ${index + 1}`}
                     class="img-main-lb"
                     loading="lazy"
-                    data-index={index}
                 />
             </div>
         ))
     ) : (
-        <p>No images available</p> 
+        <p>No images available</p>
     )}
 </div>
-
-<div id="lightbox-backdrop" class="lightbox-backdrop"></div> 
-<button id="close-lightbox" class="close-lightbox">✕</button> 
 
 <style>
     .grid-gallery {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
         margin-top: 2rem;
     }
 
     @media (max-width: 768px) {
         .grid-gallery {
-            grid-template-columns: repeat(2, 1fr); 
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
     .img-main-lb {
         width: 100%;
         height: auto;
-        max-width: 100%;
-        height: 100%;
         object-fit: cover;
         box-shadow: var(--shadow);
-        border-radius: 0.125rem; 
-    }
-
-    /* Expanded image style for lightbox */
-    .full-size {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1100;  
-        max-width: 100vw;
-        max-height: 100vh;
-        cursor: zoom-out;
-        object-fit: contain; 
-    }
-
-    /* Lightbox backdrop */
-    .lightbox-backdrop {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--green-90);
-        z-index: 1000;  
-        display: none; 
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .lightbox-backdrop.active {
-        display: block;
-        opacity: 1;
-    }
-
-    /* Close button for the lightbox */
-    .close-lightbox {
-        position: fixed;
-        top: 1rem;
-        right: 1rem;
-        background: none;
-        border: none;
-        font-size: 2rem;
-        color: white;
-        z-index: 1101; 
-        display: none;
-    }
-
-    .close-lightbox.active {
-        display: block;
-    }
-
-    /* Responsive lightbox adjustments */
-    @media (max-width: 768px) {
-        .full-size {
-            max-width: 90vw;
-            max-height: 80vh; 
-        }
-    }
-
-    @media (max-width: 480px) {
-        .full-size {
-            max-width: 100vw;
-            max-height: 70vh; 
-        }
+        border-radius: 0.125rem;
     }
 </style>
-
-<!--
-<script use:client>
-    document.addEventListener('DOMContentLoaded', function () {
-        const galleryItems = document.querySelectorAll('.img-main-lb');
-        const backdrop = document.getElementById('lightbox-backdrop');
-        const closeButton = document.getElementById('close-lightbox');
-        const body = document.body;
-        const nav = document.querySelector('.nav-main'); // Select the nav
-
-        // Handle the click on the image to open the lightbox
-        galleryItems.forEach(img => {
-            img.addEventListener('click', function () {
-                // Toggle full-size class and backdrop visibility
-                img.classList.toggle('full-size');
-                backdrop.classList.toggle('active');
-                closeButton.classList.toggle('active'); 
-
-                // Disable scrolling and hide the navbar when lightbox is active
-                if (backdrop.classList.contains('active')) {
-                    body.style.overflow = 'hidden';
-                    nav.style.visibility = 'hidden'; 
-                } else {
-                    body.style.overflow = 'auto';
-                    nav.style.visibility = 'visible'; 
-                }
-            });
-        });
-
-        // Close lightbox when the backdrop or close button is clicked
-        const closeLightbox = () => {
-            const expandedImage = document.querySelector('.full-size');
-            if (expandedImage) {
-                expandedImage.classList.remove('full-size');
-                backdrop.classList.remove('active');
-                closeButton.classList.remove('active');
-                body.style.overflow = 'auto'; 
-                nav.style.visibility = 'visible'; 
-            }
-        };
-
-        backdrop.addEventListener('click', closeLightbox);
-        closeButton.addEventListener('click', closeLightbox);
-    });
-</script>
--->

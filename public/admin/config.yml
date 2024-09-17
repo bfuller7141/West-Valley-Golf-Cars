@@ -23,39 +23,127 @@ collections:
     label: "Carts"
     folder: "src/content/carts"
     create: true
-    slug: "{{title}}"
+    slug: "{{slug}}"
     fields:
-      - {label: "Name", name: "name", widget: "string", required: true}
-      - {label: "Featured", name: "featured", widget: "boolean", hint: "Check to add to homepage", required: false}
-      - {label: "Features", name: "body", widget: "markdown", required: true}
-      - {label: "Serial Number", name: "serial", widget: "string", required: false}
-      - {label: "Make", name: "make", widget: "string", required: true}
-      - {label: "Model", name: "model", widget: "string", required: false}
-      - {label: "Trim", name: "trim", widget: "string", required: false}
-      - {label: "Year", name: "year", widget: "number", required: true, pattern: ["^[0-9]{4}$", "Year must be a 4 digit year."]}
-      - {label: "Color", name: "color", widget: "string", required: true}
-      - {label: "Price", name: "price", widget: "number", hint:"Don't include '$' symbol", required: true}
-      - {label: "Passenger Capacity", name: "passenger", widget: "number", required: true, pattern: ["^[0-9]{1}$", "Passenger capacity must be a number between 1 and 9."]}
-      - {label: "Condition", name: "condition", widget: "select", options: ["New", "Used"], required: true}
-      - {label: "Fuel Type", name: "fuel", widget: "select", options: ["Gas", "Electric", "Lead Acid"], required: true}
-      - {label: "Sold", name: "sold", widget: "boolean", hint: "Check to add sold badge to listing", required: false}
-      - {label: "Thumbnail", name: "thumbnail", widget: "image", hint: "This image will be displayed as the main image for the cart.", allow_multiple: false, required: true}
-      - {label: "Images", name: "images", widget: "list", hint: "These images will be displayed in the gallery for the cart.", fields: [{label: "Image", name: "image", widget: "image"}], required: false}
-      - {label: "Slug", name: "slug", widget: "string", required: true}
+      - label: "Name"
+        name: "name"
+        widget: "string"
+        required: true
+      - label: "Featured"
+        name: "featured"
+        widget: "boolean"
+        hint: "Check to add to homepage"
+        required: false
+      - label: "Features"
+        name: "body"
+        widget: "markdown"
+        required: true
+      - label: "Serial Number"
+        name: "serial"
+        widget: "string"
+        required: false
+      - label: "Make"
+        name: "make"
+        widget: "string"
+        required: true
+      - label: "Model"
+        name: "model"
+        widget: "string"
+        required: false
+      - label: "Trim"
+        name: "trim"
+        widget: "string"
+        required: false
+      - label: "Year"
+        name: "year"
+        widget: "number"
+        required: true
+        pattern: ["^[0-9]{4}$", "Year must be a 4-digit year."]
+      - label: "Color"
+        name: "color"
+        widget: "string"
+        required: true
+      - label: "Price"
+        name: "price"
+        widget: "number"
+        hint: "Don't include '$' symbol"
+        required: true
+      - label: "Passenger Capacity"
+        name: "passenger"
+        widget: "number"
+        required: true
+        pattern: ["^[0-9]{1}$", "Passenger capacity must be a number between 1 and 9."]
+      - label: "Condition"
+        name: "condition"
+        widget: "select"
+        options: ["New", "Used"]
+        required: true
+      - label: "Fuel Type"
+        name: "fuel"
+        widget: "select"
+        options: ["Gas", "Electric", "Lead Acid"]
+        required: true
+      - label: "Sold"
+        name: "sold"
+        widget: "boolean"
+        hint: "Check to add sold badge to listing"
+        required: false
+      - label: "Thumbnail"
+        name: "thumbnail"
+        widget: "image"
+        hint: "This image will be displayed as the main image for the cart."
+        allow_multiple: false
+        required: true
+      - label: "Images"
+        name: "images"
+        widget: "list"
+        hint: "These images will be displayed in the gallery for the cart."
+        fields:
+          - label: "Image"
+            name: "image"
+            widget: "image"
+        required: false
+      - label: "Slug"
+        name: "slug"
+        widget: "string"
+        required: true
 
   - name: "legal"
     label: "Legal Links"
     folder: "src/content/legal"
     create: true
-    extension: "md"
     slug: "{{slug}}"
     fields:
       - label: "Title"
         name: "title"
         widget: "string"
+        required: true
       - label: "Content"
         name: "content"
         widget: "markdown"
+        required: true
       - label: "Slug"
         name: "slug"
         widget: "string"
+        required: true
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "src/content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Name"
+        name: "name"
+        widget: "string"
+        required: true
+      - label: "Testimonial"
+        name: "testimonial"
+        widget: "text"
+        required: true
+      - label: "Rating"
+        name: "rating"
+        widget: "number"
+        required: true
+        min: 1
+        max: 5
