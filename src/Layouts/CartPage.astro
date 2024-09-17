@@ -42,8 +42,17 @@ const formatPrice = (price) => {
           <div class="wrapper column-r">
             <div class="thumbnail-wrapper">
               {sold && <div class="sold-badge" aria-label="Sold status">Sold</div>}
-              <img src={thumbnail} alt={`Thumbnail of ${name}`} class={`img-main ${sold ? 'sold-img' : ''}`} loading="eager" data-aos="fade-left" />
-              <ImageGallery images={images} />
+              <img 
+              src={`https://res.cloudinary.com/dxfuckig6/image/upload/f_auto,q_auto/${thumbnail}`} 
+              alt={`Thumbnail of ${name}`} 
+              class={`img-main ${sold ? 'sold-img' : ''}`} 
+              loading="eager" 
+              data-aos="fade-left" 
+            />
+            <ImageGallery images={images.map(image => ({
+              ...image, 
+              url: `https://res.cloudinary.com/dxfuckig6/image/upload/f_auto,q_auto/${image.url}`
+            }))} />
             </div>
             <div class="wrapper-feature">
               <h1 class="page-title" data-aos="fade-up">{year} <span class="underline">{make}</span> {model}</h1>
