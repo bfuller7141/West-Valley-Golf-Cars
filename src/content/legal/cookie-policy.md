@@ -1,6 +1,9 @@
 ---
-title: Cookie Policy
-content: >-
+title: "Cookie Policy"
+date: "2024-09-17"
+slug: "cookies"
+---
+
 # Cookie Policy for West Valley Golf Cars
 
 At West Valley Golf Cars, we use cookies to enhance your experience and improve the performance of our website. This Cookie Policy explains what cookies are, the types of cookies we use, how we use them, and how you can control your cookie preferences. We aim to be transparent about our use of cookies and ensure you have all the information you need to make informed decisions.
@@ -73,6 +76,3 @@ If you have any questions or concerns about our use of cookies or how we handle 
 - **Email**: [info@westvalleygolfcars.com](mailto:info@westvalleygolfcars.com)
 - **Phone**: (623) 882-0222
 - **Mailing Address**: West Valley Golf Cars, Litchfield Park, AZ 85340
-
-slug: cookies
----
