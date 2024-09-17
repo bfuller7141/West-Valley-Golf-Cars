@@ -6,7 +6,8 @@ backend:
     - admin
     - editor
   api_root: https://gitlab.com/api/v4
-  logo_url: "https://wvgc-build.netlify.app/logo-main_color.svg"
+  # Updated config to force refresh
+logo_url: "https://wvgc-build.netlify.app/logo-main_color.svg"
 
 media_folder: "public/carts"
 public_folder: "/carts"
