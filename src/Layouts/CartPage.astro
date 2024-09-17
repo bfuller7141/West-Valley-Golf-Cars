@@ -10,6 +10,7 @@ import InventoryCardWrap from "../components/InventoryCardWrap.astro";
 import ArrowButton from "../components/buttons/ArrowButton.astro";
 import GeneralForm from "../components/forms/GeneralForm.astro";
 import FooterMain from "../components/FooterMain.astro";
+import CookiePopup from "../components/CookiePopup.astro";
 
 const { name, body, make, model, trim, year, color, price, passenger, condition, fuel, sold, thumbnail, images } = Astro.props;
 
@@ -216,6 +217,7 @@ const formatPrice = (price) => {
 <footer>
 	<FooterMain />
 </footer>
+<CookiePopup />
 </body>
 <script>
 	import * as AOS from 'aos';

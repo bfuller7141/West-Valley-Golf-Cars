@@ -1,0 +1,73 @@
+<div id="cookie-popup" class="cookie-popup">
+    <p class="cookie-text">
+      We use cookies to improve your experience. By using our site, you agree to our use of cookies. <a href="/privacy-policy" class="cookie-link">Learn more</a>
+    </p>
+    <div class="cookie-buttons">
+      <button id="accept-cookies" class="btn">Accept</button>
+      <button id="disable-cookies" class="btn secondary">Disable Unnecessary Cookies</button>
+    </div>
+</div>
+
+<style>
+    /* Cookie Pop-up Styles */
+.cookie-popup {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 40rem;
+    padding: 1.25rem;
+    background-color: var(--wheat-500);
+    color: var(--green-700);
+    box-shadow: var(--shadow);
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1000;
+}
+
+.cookie-text {
+    font-family: var(--body);
+    font-size: var(--small-text);
+    color: var(--green-700);
+    text-align: center;
+    margin: 0;
+}
+
+.cookie-link {
+    color: var(--green-500);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.cookie-popup .btn {
+    padding: 0.5rem 1.25rem;
+    font-size: var(--text);
+    text-transform: uppercase;
+    transition: var(--hover);
+}
+</style>
+
+<script>
+    // Function to hide the cookie popup and set cookies accordingly
+    document.getElementById('accept-cookies').addEventListener('click', function() {
+        document.getElementById('cookie-popup').style.display = 'none';
+        document.cookie = "tracking=enabled; max-age=31536000; path=/";
+    });
+
+    document.getElementById('disable-cookies').addEventListener('click', function() {
+        document.getElementById('cookie-popup').style.display = 'none';
+        document.cookie = "tracking=disabled; max-age=31536000; path=/";
+        // Disable tracking cookies here if any
+    });
+</script>

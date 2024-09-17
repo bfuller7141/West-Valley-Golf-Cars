@@ -5,6 +5,7 @@ import BaseHead from "../components/BaseHead.astro";
 import SkipMain from "../components/buttons/SkipMain.astro";
 import NavMain from "../components/NavMain.astro";
 import FooterMain from "../components/FooterMain.astro";
+import CookiePopup from "../components/CookiePopup.astro";
 
 type PropsLegal = CollectionEntry<'legal'>['data'];
 
@@ -40,6 +41,7 @@ const contentHTML = marked(content);
 		<footer>
 			<FooterMain />
 		</footer>
+        <CookiePopup />
 	</body>
     <script>
         import * as AOS from 'aos';
