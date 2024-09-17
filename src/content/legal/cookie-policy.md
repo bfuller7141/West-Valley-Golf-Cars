@@ -1,23 +1,19 @@
 ---
 title: Cookie Policy
 content: >-
-  # Cookie Policy
+  ## Cookie Policy
 
 
   At West Valley Golf Cars, we use cookies to enhance your experience and improve the performance of our website. This Cookie Policy explains what cookies are, the types we use, how we use them, and how you can control your cookie preferences.
 
 
-
-
-  ## What Are Cookies?
+  ### What Are Cookies?
 
 
   Cookies are small text files placed on your device (computer, smartphone, or tablet) when you visit a website. They allow websites to remember your actions and preferences, such as login information, language settings, and other display preferences, for a certain period of time. They can also track your behavior on the website, enabling us to provide tailored content and analyze usage patterns.
 
 
-
-
-  ## Why Do We Use Cookies?
+  ### Why Do We Use Cookies?
 
 
   We use cookies for a variety of reasons, primarily to ensure that our website functions effectively. Specifically, cookies help us:
@@ -35,9 +31,7 @@ content: >-
   Support Marketing Activities: Cookies help us deliver relevant ads and measure the effectiveness of our marketing campaigns.
 
 
-
-
-  ## Types of Cookies We Use
+  ### Types of Cookies We Use
 
 
   Essential Cookies: Necessary for basic operation, such as security and accessibility.
@@ -58,14 +52,10 @@ content: >-
   We use third-party cookies from services like Google Analytics and Facebook to understand user interactions and track marketing campaigns. These cookies are governed by the privacy policies of the third-party providers.
 
 
-
-
-  ## How to Manage Cookies
+  ### How to Manage Cookies
 
 
   You can manage or disable cookies through your web browser settings. However, disabling cookies may impact the functionality of our website. Popular browser instructions for managing cookies:
-
-
 
 
   Google Chrome: Clear, enable, and manage cookies
@@ -80,7 +70,7 @@ content: >-
   Microsoft Edge: Delete and manage cookies
 
 
-  ## Consent to Use Cookies
+  ### Consent to Use Cookies
 
 
   By continuing to use our website, you consent to the placement of cookies as described in this policy.
