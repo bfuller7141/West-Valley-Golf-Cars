@@ -82,4 +82,24 @@ const {title, description, keywords, image, url} = Astro.props as BaseHeadProps;
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <link rel="stylesheet" href="/styles/flatpickr.css">
+
+    <!-- Page Transition -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const body = document.body;
+        body.classList.add('page-transition-enter-active');
+
+        window.addEventListener('beforeunload', () => {
+          body.classList.add('page-transition-exit-active');
+          setTimeout(() => {
+            body.classList.add('hidden');  // Hide content after transition ends
+          }, 500);  // Duration of transition
+        });
+
+        window.addEventListener('popstate', () => {
+          // Reset transition states when navigating back
+          body.classList.remove('page-transition-enter-active', 'page-transition-exit-active', 'hidden');
+        });
+      });
+    </script>
 </head>
