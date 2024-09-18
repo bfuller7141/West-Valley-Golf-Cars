@@ -25,7 +25,8 @@ collections:
     label: "Carts"
     folder: "src/content/carts"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{make}}-{{model}}-{{serial}}"
+    identifier_field: "slug" # identifier used to create slug
     fields:
       - label: "Name"
         name: "name"
@@ -44,6 +45,7 @@ collections:
         name: "serial"
         widget: "string"
         required: false
+        hint: "Unique string of numbers for slug"
       - label: "Make"
         name: "make"
         widget: "string"
@@ -109,7 +111,9 @@ collections:
       - label: "Slug"
         name: "slug"
         widget: "string"
+        pattern: ["{{year}}-{{make}}-{{model}}-{{serial}}", "Slug must follow year-make-model-serial format."]
         required: true
+        hint: "Auto-generated slug based on Year, Make, Model, and Serial Number."
 
   - name: "legal"
     label: "Legal Links"
