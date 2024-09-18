@@ -143,6 +143,7 @@ import CookiePopup from "../components/CookiePopup.astro";
 		import * as AOS from 'aos';
 		import 'aos/dist/aos.css';
 	
+		// Initialize AOS for desktop viewports
 		const initializeAOS = () => {
 			if (window.innerWidth > 980) {
 				AOS.init({
@@ -162,18 +163,28 @@ import CookiePopup from "../components/CookiePopup.astro";
 			}
 		};
 	
-		// Initialize AOS on initial page load
+		// Force repaint on back/forward navigation to avoid blank page
+		const forceRepaint = () => {
+			document.body.style.display = 'none';
+			document.body.offsetHeight;  // Trigger reflow
+			document.body.style.display = 'block';
+		};
+	
+		// Initialize AOS and force repaint on page load
 		document.addEventListener('DOMContentLoaded', () => {
 			initializeAOS();
 		});
 	
-		// Reinitialize AOS on back/forward navigation
+		// Handle back/forward navigation to fix blank page issue
 		window.addEventListener('popstate', () => {
-			// Ensure scroll restoration is handled
+			// Scroll to top to ensure content is visible
 			window.scrollTo(0, 0);
+	
+			// Force a repaint to avoid blank page
+			forceRepaint();
 	
 			// Reinitialize AOS animations
 			initializeAOS();
 		});
-	</script>	 
+	</script>	
 </html>
