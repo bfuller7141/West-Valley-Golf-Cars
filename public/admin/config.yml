@@ -25,7 +25,8 @@ collections:
     label: "Carts"
     folder: "src/content/carts"
     create: true
-    slug: "{{year}}-{{make}}-{{model}}-{{serial}}"
+    slug: "{{year}}-{{make}}-{{model}}-{{serial}}" # Slug format
+    path: "{{slug}}" # Set file name to be the same as the slug
     identifier_field: "slug" # identifier used to create slug
     fields:
       - label: "Name"
