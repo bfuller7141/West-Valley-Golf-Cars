@@ -10,7 +10,16 @@ export interface InventoryCardProps {
     make: string;
     model: string;
 }
-const { name, price, image, slug, sold, featured, year, make, model } = Astro.props as InventoryCardProps;
+const { name, price, image, sold, featured, year, make, model } = Astro.props as InventoryCardProps;
+
+const generateSlug = (year: number, make: string, model: string) => {
+  return `${year}-${make}-${model}`
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')  // Replace non-alphanumeric characters with dashes
+    .replace(/(^-|-$)/g, '');      // Remove leading/trailing dashes
+};
+
+const slug = generateSlug(year, make, model);
 
 // Format Numbers with Commas
 const formatPrice = (price) => {

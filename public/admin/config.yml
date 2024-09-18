@@ -16,8 +16,9 @@ collections:
     label: "Carts"
     folder: "src/content/carts"
     create: true
-    slug: "{{slug}}"
-    identifier_field: "name"
+    slug: '{{year}}-{{make}}-{{model}}'
+    identifier_field: name
+    extension: md
     fields:
       - label: "Name"
         name: "name"
@@ -98,11 +99,6 @@ collections:
             name: "image"
             widget: "image"
             required: true
-      - label: "Slug"
-        name: "slug"
-        widget: "string"
-        required: true
-        pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Slug must only contain lowercase letters, numbers, and dashes"]
 
   - name: "legal"
     label: "Legal Links"

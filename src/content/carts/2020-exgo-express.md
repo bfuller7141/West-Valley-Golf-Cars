@@ -1,6 +1,6 @@
 ---
 name: 2020 EZGO Express
-slug: 2020-ezgo-express
+slug: 2020-ezgo-express-s4
 featured: true
 serial: ""
 make: EZGO
