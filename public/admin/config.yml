@@ -6,28 +6,18 @@ backend:
     - admin
     - editor
   api_root: https://gitlab.com/api/v4
-  # Updated config to force refresh
 logo_url: "https://wvgc-build.netlify.app/logo-main_color.svg"
 
 media_folder: "public/carts"
 public_folder: "/carts"
-
-media_library:
-  name: cloudinary
-  output_filename_only: false
-  config:
-    cloud_name: dxfuckig6
-    api_key: 231154145636466
-    multiple: false
 
 collections:
   - name: "sales"
     label: "Carts"
     folder: "src/content/carts"
     create: true
-    slug: "{{year}}-{{make}}-{{model}}-{{serial}}" # Slug format
-    path: "{{slug}}" # Set file name to be the same as the slug
-    identifier_field: "slug" # identifier used to create slug
+    slug: "{{slug}}"
+    identifier_field: "name"
     fields:
       - label: "Name"
         name: "name"
@@ -46,7 +36,6 @@ collections:
         name: "serial"
         widget: "string"
         required: false
-        hint: "Unique string of numbers for slug"
       - label: "Make"
         name: "make"
         widget: "string"
@@ -112,15 +101,15 @@ collections:
       - label: "Slug"
         name: "slug"
         widget: "string"
-        pattern: ["{{year}}-{{make}}-{{model}}-{{serial}}", "Slug must follow year-make-model-serial format."]
         required: true
-        hint: "Auto-generated slug based on Year, Make, Model, and Serial Number."
+        pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Slug must only contain lowercase letters, numbers, and dashes"]
 
   - name: "legal"
     label: "Legal Links"
     folder: "src/content/legal"
     create: true
     slug: "{{slug}}"
+    identifier_field: "title"
     fields:
       - label: "Title"
         name: "title"
@@ -140,6 +129,7 @@ collections:
     folder: "src/content/testimonials"
     create: true
     slug: "{{slug}}"
+    identifier_field: "name"
     fields:
       - label: "Name"
         name: "name"
