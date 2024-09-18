@@ -24,6 +24,7 @@ import CookiePopup from "../components/CookiePopup.astro";
 	<body class="page-transition-enter">
 		<SkipMain />
 		<CookiePopup />
+
 		<header>
 			<NavMain data-aos="fade-down" />
 		</header>
@@ -138,29 +139,41 @@ import CookiePopup from "../components/CookiePopup.astro";
 			<FooterMain />
 		</footer>
 	</body>
-    <script>
-        import * as AOS from 'aos';
-        import 'aos/dist/aos.css';
-    
-        document.addEventListener('DOMContentLoaded', function () {
-            if (window.innerWidth > 980) {
-                AOS.init({
-                    duration: 800,
-                    once: true,
-                    easing: 'ease-in-out',
-                    offset: 0,
-                    delay: 0,
-                });
-            } else {
-                const aosElements = document.querySelectorAll('[data-aos]');
-    
-                aosElements.forEach(element => {
-                    const el = element as HTMLElement;
-                    el.removeAttribute('data-aos');
-                    el.style.opacity = '1';
-                    el.style.transform = 'none';
-                });
-            }
-        });
-    </script>  
+	<script type="module">
+		import * as AOS from 'aos';
+		import 'aos/dist/aos.css';
+	
+		const initializeAOS = () => {
+			if (window.innerWidth > 980) {
+				AOS.init({
+					duration: 800,
+					once: true,
+					easing: 'ease-in-out',
+					offset: 0,
+					delay: 0,
+				});
+			} else {
+				const aosElements = document.querySelectorAll('[data-aos]');
+				aosElements.forEach((element) => {
+					element.removeAttribute('data-aos');
+					element.style.opacity = '1';
+					element.style.transform = 'none';
+				});
+			}
+		};
+	
+		// Initialize AOS on initial page load
+		document.addEventListener('DOMContentLoaded', () => {
+			initializeAOS();
+		});
+	
+		// Reinitialize AOS on back/forward navigation
+		window.addEventListener('popstate', () => {
+			// Ensure scroll restoration is handled
+			window.scrollTo(0, 0);
+	
+			// Reinitialize AOS animations
+			initializeAOS();
+		});
+	</script>	 
 </html>

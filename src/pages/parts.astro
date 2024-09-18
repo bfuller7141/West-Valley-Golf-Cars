@@ -92,11 +92,11 @@ import TestimonialCardWrap from "../components/TestimonialCardWrap.astro";
         <CookiePopup />
     </body>
 
-    <script>
+    <script type="module">
         import * as AOS from 'aos';
         import 'aos/dist/aos.css';
-
-        document.addEventListener('DOMContentLoaded', function () {
+    
+        const initializeAOS = () => {
             if (window.innerWidth > 980) {
                 AOS.init({
                     duration: 800,
@@ -107,14 +107,26 @@ import TestimonialCardWrap from "../components/TestimonialCardWrap.astro";
                 });
             } else {
                 const aosElements = document.querySelectorAll('[data-aos]');
-    
-                aosElements.forEach(element => {
-                    const el = element as HTMLElement;
-                    el.removeAttribute('data-aos');
-                    el.style.opacity = '1';
-                    el.style.transform = 'none';
+                aosElements.forEach((element) => {
+                    element.removeAttribute('data-aos');
+                    element.style.opacity = '1';
+                    element.style.transform = 'none';
                 });
             }
+        };
+    
+        // Initialize AOS on initial page load
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeAOS();
         });
-    </script>
+    
+        // Reinitialize AOS on back/forward navigation
+        window.addEventListener('popstate', () => {
+            // Ensure scroll restoration is handled
+            window.scrollTo(0, 0);
+    
+            // Reinitialize AOS animations
+            initializeAOS();
+        });
+    </script>    
 </html>

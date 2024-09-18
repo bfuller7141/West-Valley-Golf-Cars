@@ -43,28 +43,41 @@ const contentHTML = marked(content);
     <CookiePopup />
   </body>
 
-  <script>
+  <script type="module">
     import * as AOS from 'aos';
     import 'aos/dist/aos.css';
 
-    document.addEventListener('DOMContentLoaded', function () {
-      if (window.innerWidth > 980) {
-        AOS.init({
-          duration: 800,
-          once: true,
-          easing: 'ease-in-out',
-          offset: 0,
-          delay: 0,
-        });
-      } else {
-        const aosElements = document.querySelectorAll('[data-aos]');
+    const initializeAOS = () => {
+        if (window.innerWidth > 980) {
+            AOS.init({
+                duration: 800,
+                once: true,
+                easing: 'ease-in-out',
+                offset: 0,
+                delay: 0,
+            });
+        } else {
+            const aosElements = document.querySelectorAll('[data-aos]');
+            aosElements.forEach((element) => {
+                element.removeAttribute('data-aos');
+                element.style.opacity = '1';
+                element.style.transform = 'none';
+            });
+        }
+    };
 
-        aosElements.forEach((element) => {
-          element.removeAttribute('data-aos');
-          (element as HTMLElement).style.opacity = '1';
-          (element as HTMLElement).style.transform = 'none';
-        });
-      }
+    // Initialize AOS on initial page load
+    document.addEventListener('DOMContentLoaded', () => {
+        initializeAOS();
     });
-  </script>
+
+    // Reinitialize AOS on back/forward navigation
+    window.addEventListener('popstate', () => {
+        // Ensure scroll restoration is handled
+        window.scrollTo(0, 0);
+
+        // Reinitialize AOS animations
+        initializeAOS();
+    });
+</script>
 </html>
