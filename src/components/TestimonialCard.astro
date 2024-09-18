@@ -7,11 +7,18 @@ export interface TestimonialCardProps {
 
 const { name, rating, quote } = Astro.props as TestimonialCardProps;
 const fullStars = Math.floor(rating);
-const emptyStars = 5 - fullStars; 
+const emptyStars = 5 - fullStars;
+
+function sanitizeId(name: string) {
+    return name.toLowerCase().replace(/[^a-z0-9]/g, '-');
+}
+
+const sanitizedId = sanitizeId(name);
 ---
-<div class="testimonial-card" aria-labelledby="testimonial-title">
+
+<div class="testimonial-card" aria-labelledby={`testimonial-title-${sanitizedId}`}>
     <div class="testimonial-content">
-        <div class="rating" aria-label={`Rating: ${rating} out of 5 stars`}>
+        <div class="rating" role="img" aria-label={`Rating: ${rating} out of 5 stars`}>
             {Array(fullStars).fill('★').map((_, index) => (
                 <span class="rating-star full" aria-hidden="true">★</span>
             ))}
@@ -19,7 +26,7 @@ const emptyStars = 5 - fullStars;
                 <span class="rating-star empty" aria-hidden="true">★</span>
             ))}
         </div>
-        <p class="text" id="testimonial-title">{quote}</p>
+        <p class="text" id={`testimonial-title-${sanitizedId}`}>{quote}</p>
     </div>
     <div class="sub-title">{name}</div>
 </div>

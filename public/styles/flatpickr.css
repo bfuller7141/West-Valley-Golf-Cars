@@ -15,7 +15,7 @@
 }
 
 .flatpickr-day:hover, .flatpickr-day:focus {
-    background-color: var(--green-300) !important; 
+    background-color: var(--wheat-500) !important; 
     color: white !important;
 }
 

@@ -9,21 +9,21 @@
     <div class="horizontal-group">
         <div class="input-wrap">
             <label for="first-name">First Name</label>
-            <input class="input" type="text" id="first-name" name="first-name" placeholder="First Name" required/>
+            <input class="input" type="text" id="first-name" name="first-name" placeholder="First Name" required autocomplete="given-name"/>
         </div>
         <div class="input-wrap">
             <label for="last-name">Last Name</label>
-            <input class="input" type="text" id="last-name" name="last-name" placeholder="Last Name" required/>
+            <input class="input" type="text" id="last-name" name="last-name" placeholder="Last Name" required autocomplete="family-name"/>
         </div>
     </div>
     <div class="horizontal-group">
         <div class="input-wrap">
             <label for="email">Email</label>
-            <input class="input" type="email" id="email" name="email" placeholder="email@domain.com" required/>
+            <input class="input" type="email" id="email" name="email" placeholder="email@domain.com" required autocomplete="email"/>
         </div>
         <div class="input-wrap">
             <label for="phone">Phone</label>
-            <input class="input" type="tel" id="phone" name="phone" placeholder="(480) 123-4567"/>
+            <input class="input" type="tel" id="phone" name="phone" placeholder="(480) 123-4567" autocomplete="tel"/>
         </div>
     </div>
     <div class="input-wrap">
@@ -61,8 +61,8 @@
         width: 100%;
     }
     .input {
-        padding: 0.75rem 0.5rem 0.5rem 0.5rem;
-        border: solid 2px var(--wheat-600);
+        padding: 1rem 0.5rem 0.75rem 0.5rem;
+        border: solid 2px var(--green-500);
         border-radius: 0.125rem;
         font-family: var(--body);
         font-size: var(--text);
@@ -76,7 +76,7 @@
         overflow-y: scroll;
     }
     .input:hover, .input:focus, .input:active {
-        border-color: var(--green-500);
+        border-color: var(--wheat-500);
         transition: border-color 0.25s ease-in-out;
     }
     label {

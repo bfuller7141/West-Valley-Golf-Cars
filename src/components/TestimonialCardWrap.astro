@@ -14,6 +14,9 @@ function shuffleArray(array: any[]) {
 const randomTestimonials = shuffleArray(testimonials).slice(0, 3);
 ---
 <div class="testimonial-slider-wrapper">
+    <!-- Add a heading element with the ID testimonials-heading -->
+    <h2 id="testimonials-heading" class="sr-only">Customer Testimonials</h2>
+    
     <div class="testimonial-slider" role="region" aria-labelledby="testimonials-heading">
         {randomTestimonials.map((testimonial, index: number) => (
             <div class="testimonial-slide" id={`slide-${index}`} role="group" aria-roledescription="slide">
@@ -25,9 +28,16 @@ const randomTestimonials = shuffleArray(testimonials).slice(0, 3);
             </div>
         ))}
     </div>
+    
     <div class="indicators" role="tablist" aria-label="Testimonials Navigation">
         {randomTestimonials.map((_, index: number) => (
-            <span class="indicator" role="tab" aria-controls={`slide-${index}`} data-slide={index}></span>
+            <span
+                class="indicator"
+                role="tab"
+                aria-controls={`slide-${index}`}
+                aria-label={`Go to testimonial from ${randomTestimonials[index].frontmatter.name}`}
+                data-slide={index}
+            ></span>        
         ))}
     </div>
 </div>
@@ -37,6 +47,18 @@ const randomTestimonials = shuffleArray(testimonials).slice(0, 3);
 </div>
 
 <style>
+/* Style adjustments */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
 .testimonial-slider-wrapper {
     overflow-x: hidden;
     overflow-y: visible;

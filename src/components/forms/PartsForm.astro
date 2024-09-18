@@ -9,42 +9,42 @@
     <div class="horizontal-group">
         <div class="input-wrap">
             <label for="first-name">First Name</label>
-            <input class="input" type="text" id="first-name" name="first-name" placeholder="First Name" required/>
+            <input class="input" type="text" id="first-name" name="first-name" placeholder="First Name" required autocomplete="given-name"/>
         </div>
         <div class="input-wrap">
             <label for="last-name">Last Name</label>
-            <input class="input" type="text" id="last-name" name="last-name" placeholder="Last Name" required/>
+            <input class="input" type="text" id="last-name" name="last-name" placeholder="Last Name" required autocomplete="family-name"/>
         </div>
     </div>
     <div class="horizontal-group">
         <div class="input-wrap">
             <label for="email">Email</label>
-            <input class="input" type="email" id="email" name="email" placeholder="email@domain.com" required/>
+            <input class="input" type="email" id="email" name="email" placeholder="email@domain.com" required autocomplete="email"/>
         </div>
         <div class="input-wrap">
             <label for="phone">Phone</label>
-            <input class="input" type="tel" id="phone" name="phone" placeholder="(480) 123-4567"/>
+            <input class="input" type="tel" id="phone" name="phone" placeholder="(480) 123-4567" autocomplete="tel"/>
         </div>
     </div>
     <h3>Vehicle Information</h3>
-        <hr />
-        <div class="input-wrap">
-            <label for="make">Make</label>
-            <input type="text" id="make" name="make" placeholder="Vehicle Make" class="input" required />
-        </div>
-        <div class="input-wrap">
-            <label for="model">Model</label>
-            <input type="text" id="model" name="model" placeholder="Vehicle Model" class="input" required />
-        </div>
-        <div class="input-wrap">
-            <label for="year">Year</label>
-            <input type="text" id="year" name="year" placeholder="Vehicle Year" class="input" required />
-        </div>
-        <div class="input-wrap">
-            <label for="message">Additional Information</label>
-            <textarea class="input textarea" id="message" name="message" placeholder="Tell us more about the parts you're looking for."></textarea>
-        </div>
-        <button type="submit" class="btn" aria-label="Submit form">Submit Form</button>
+    <hr />
+    <div class="input-wrap">
+        <label for="make">Make</label>
+        <input type="text" id="make" name="make" placeholder="Vehicle Make" class="input" required autocomplete="organization"/>
+    </div>
+    <div class="input-wrap">
+        <label for="model">Model</label>
+        <input type="text" id="model" name="model" placeholder="Vehicle Model" class="input" required autocomplete="model"/>
+    </div>
+    <div class="input-wrap">
+        <label for="year">Year</label>
+        <input type="text" id="year" name="year" placeholder="Vehicle Year" class="input" required autocomplete="year"/>
+    </div>
+    <div class="input-wrap">
+        <label for="message">Additional Information</label>
+        <textarea class="input textarea" id="message" name="message" placeholder="Tell us more about the parts you're looking for."></textarea>
+    </div>
+    <button type="submit" class="btn" aria-label="Submit form">Submit Form</button>
 </form>
 
 <style>
@@ -64,8 +64,8 @@
         width: 100%;
     }
     .input {
-        padding: 0.75rem 0.5rem 0.5rem 0.5rem;
-        border: solid 2px var(--wheat-600);
+        padding: 1rem 0.5rem 0.75rem 0.5rem;
+        border: solid 2px var(--green-500);
         border-radius: 0.125rem;
         font-family: var(--body);
         font-size: var(--text);
@@ -79,7 +79,7 @@
         overflow-y: scroll;
     }
     .input:hover, .input:focus, .input:active {
-        border-color: var(--green-500);
+        border-color: var(--wheat-500);
         transition: border-color 0.25s ease-in-out;
     }
     label {
