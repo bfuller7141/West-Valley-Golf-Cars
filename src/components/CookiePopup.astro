@@ -1,4 +1,4 @@
-<div id="cookie-popup" class="cookie-popup">
+<div id="cookie-popup" class="cookie-popup" style="display: none;">
     <p class="cookie-text">
         We use cookies to improve your experience. By using our site, you agree to our use of cookies. <a href="/privacy-policy" class="cookie-link">Learn more</a>
     </p>
@@ -13,6 +13,14 @@
         const value = `; ${document.cookie}`;
         const parts = value.split(`; ${name}=`);
         if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
+    }
+
+    function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + "; " + expires + "; path=/";
     }
 
     function setupCookiePopup() {
@@ -20,21 +28,27 @@
         const acceptButton = document.getElementById('accept-cookies');
         const disableButton = document.getElementById('disable-cookies');
 
+        // Check if the user has already made a cookie selection
         const cookieConsent = getCookie('tracking');
+
         if (!cookieConsent) {
+            // Show the cookie popup if no cookie has been set
             cookiePopup.style.display = 'flex';
         }
 
+        // Handle "Accept" button click
         acceptButton.addEventListener('click', function () {
             cookiePopup.style.display = 'none';
-            document.cookie = "tracking=enabled; max-age=31536000; path=/"; 
+            setCookie('tracking', 'enabled', 365);  // Set cookie for 1 year
         });
 
+        // Handle "Disable Unnecessary Cookies" button click
         disableButton.addEventListener('click', function () {
             cookiePopup.style.display = 'none';
-            document.cookie = "tracking=disabled; max-age=31536000; path=/"; 
+            setCookie('tracking', 'disabled', 365);  // Set cookie for 1 year
         });
     }
 
+    // Initialize the cookie popup setup after DOM is loaded
     window.addEventListener('DOMContentLoaded', setupCookiePopup);
 </script>

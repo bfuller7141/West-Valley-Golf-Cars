@@ -1,14 +1,15 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-    const currentLocation = window.location.pathname;
-    const menuItems = document.querySelectorAll('.menu a');
+        const currentLocation = window.location.pathname.replace(/\/$/, "");  // Remove trailing slash, if any
+        const menuItems = document.querySelectorAll('.menu a');
 
-    menuItems.forEach(item => {
-        if (item.getAttribute('href') === currentLocation) {
-            item.classList.add('active');
-        }
+        menuItems.forEach(item => {
+            const menuItemPath = item.getAttribute('href').replace(/\/$/, "");  // Remove trailing slash, if any
+            if (menuItemPath === currentLocation) {
+                item.classList.add('active');
+            }
+        });
     });
-});
 </script>
 
 <nav class="nav-main">
