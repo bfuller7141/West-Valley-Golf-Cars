@@ -152,6 +152,7 @@ li {
 .img-main {
     max-width: 100%;
     height: 100%;
+    aspect-ratio: 4/3;
     object-fit: cover;
     box-shadow: var(--shadow);
     border-radius: 0.125rem;
@@ -281,7 +282,7 @@ li {
 .column-r {
     position: relative;
     display: grid;
-    align-items: center;
+    align-items: flex-start;
     grid-template-columns: 1fr 1.25fr;
     gap: 3rem;
     z-index: 100;

@@ -16,20 +16,26 @@ collections:
     label: "Carts"
     folder: "src/content/carts"
     create: true
-    slug: '{{year}}-{{make}}-{{model}}'
-    identifier_field: name
+    slug: '{{slug}}'
+    identifier_field: "Name"
     extension: md
     fields:
       - label: "Name"
         name: "name"
         widget: "string"
         required: true
+      - label: "Slug"
+        name: "slug"
+        widget: "string"
+        required: true
+        hint: "This will be used to generate the URL for this cart. It should be unique and contain only lowercase letters, numbers, and hyphens. You can use the Google Sheets to generate a slug."
       - label: "Featured"
         name: "featured"
         widget: "boolean"
         hint: "Check to add to homepage"
         required: false
-      - label: "Features"
+        default: false
+      - label: "Body"
         name: "body"
         widget: "markdown"
         required: true
@@ -83,6 +89,7 @@ collections:
         widget: "boolean"
         hint: "Check to add sold badge to listing"
         required: false
+        default: false
       - label: "Thumbnail"
         name: "thumbnail"
         widget: "image"
@@ -99,6 +106,11 @@ collections:
             name: "image"
             widget: "image"
             required: true
+          - label: "Alt Text"
+            name: "alt"
+            widget: "string"
+            required: true
+            hint: "Breif description of the image for screen readers."
 
   - name: "legal"
     label: "Legal Links"
