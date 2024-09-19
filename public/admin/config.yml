@@ -17,7 +17,7 @@ collections:
     folder: "src/content/carts"
     create: true
     slug: '{{slug}}'
-    identifier_field: "Name"
+    identifier_field: "name"
     extension: md
     fields:
       - label: "Name"
