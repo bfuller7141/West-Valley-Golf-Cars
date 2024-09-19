@@ -8,18 +8,18 @@
 
     <div class="horizontal-group">
         <div class="input-wrap">
-            <label for="first-name">First Name</label>
-            <input class="input" type="text" id="first-name" name="first-name" placeholder="First Name" required autocomplete="given-name"/>
+            <label for="first-name">First Name <span class="required">*</span></label>
+            <input class="input" type="text" id="first-name" name="first-name" placeholder="First Name" required aria-required="true" autocomplete="given-name"/>
         </div>
         <div class="input-wrap">
-            <label for="last-name">Last Name</label>
-            <input class="input" type="text" id="last-name" name="last-name" placeholder="Last Name" required autocomplete="family-name"/>
+            <label for="last-name">Last Name <span class="required">*</span></label>
+            <input class="input" type="text" id="last-name" name="last-name" placeholder="Last Name" required aria-required="true" autocomplete="family-name"/>
         </div>
     </div>
     <div class="horizontal-group">
         <div class="input-wrap">
-            <label for="email">Email</label>
-            <input class="input" type="email" id="email" name="email" placeholder="email@domain.com" required autocomplete="email"/>
+            <label for="email">Email <span class="required">*</span></label>
+            <input class="input" type="email" id="email" name="email" placeholder="email@domain.com" required aria-required="true" autocomplete="email"/>
         </div>
         <div class="input-wrap">
             <label for="phone">Phone</label>
@@ -27,8 +27,8 @@
         </div>
     </div>
     <div class="input-wrap">
-        <label for="service">What can we help you with?</label>
-        <select class="input" id="service" name="service" required>
+        <label for="service">What can we help you with? <span class="required">*</span></label>
+        <select class="input" id="service" name="service" required aria-required="true">
             <option value="Sales">Sales</option>
             <option value="Service">Service</option>
             <option value="Rentals">Rentals</option>
@@ -45,6 +45,12 @@
 </form>
 
 <style>
+    .required {
+    color: var(--red-500);
+    font-size: 1rem;
+    margin-left: 0.25rem;
+    }
+
     .form-wrap {
         padding-top: 2rem;
         max-width: 80rem;
@@ -79,6 +85,12 @@
         border-color: var(--wheat-500);
         transition: border-color 0.25s ease-in-out;
     }
+
+    :focus-visible {
+        outline: 0px solid var(--wheat-500);
+        outline-offset: 0px;
+    }
+
     label {
         font-family: var(--body);
         font-size: var(--text);

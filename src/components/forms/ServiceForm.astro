@@ -19,12 +19,12 @@ declare var flatpickr: any; // Declare flatpickr as a global variable
         <!-- Name, Email, Phone -->
         <div class="horizontal-group">
             <div class="input-wrap">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Full Name" class="input" required autocomplete="name"/>
+                <label for="name">Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Full Name" class="input" required aria-required="true" autocomplete="name"/>
             </div>
             <div class="input-wrap">
-                <label for="worked-before">Have we worked with you before?</label>
-                <select id="worked-before" name="worked-before" class="input" required>
+                <label for="worked-before">Have we worked with you before? <span class="required">*</span></label>
+                <select id="worked-before" name="worked-before" class="input" required aria-required="true">
                     <option value="" disabled selected>Select an option</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
@@ -48,29 +48,29 @@ declare var flatpickr: any; // Declare flatpickr as a global variable
 
         <div class="horizontal-group">
             <div class="input-wrap">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" placeholder="(480) 123-4567" class="input" required autocomplete="tel"/>
+                <label for="phone">Phone <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="(480) 123-4567" class="input" required aria-required="true" autocomplete="tel"/>
             </div>
             <div class="input-wrap">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="email@domain.com" class="input" required autocomplete="email"/>
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="email@domain.com" class="input" required aria-required="true" autocomplete="email"/>
             </div>
         </div>
 
         <!-- Address -->
         <div class="input-wrap">
-            <label for="address">Address</label>
-            <input type="text" id="address" name="address" placeholder="Street Address" class="input" required autocomplete="street-address"/>
+            <label for="address">Address <span class="required">*</span></label>
+            <input type="text" id="address" name="address" placeholder="Street Address" class="input" required aria-required="true" autocomplete="street-address"/>
         </div>
 
         <div class="horizontal-group">
             <div class="input-wrap">
-                <label for="city">City</label>
-                <input type="text" id="city" name="city" placeholder="City" class="input" required autocomplete="address-level2"/>
+                <label for="city">City <span class="required">*</span></label>
+                <input type="text" id="city" name="city" placeholder="City" class="input" required aria-required="true" autocomplete="address-level2"/>
             </div>
             <div class="input-wrap">
-                <label for="state">State</label>
-                <input type="text" id="state" name="state" placeholder="State" class="input" required autocomplete="address-level1"/>
+                <label for="state">State <span class="required">*</span></label>
+                <input type="text" id="state" name="state" placeholder="State" class="input" required aria-required="true" autocomplete="address-level1"/>
             </div>
         </div>
 
@@ -78,18 +78,18 @@ declare var flatpickr: any; // Declare flatpickr as a global variable
         <h3>Vehicle Information</h3>
         <hr />
         <div class="input-wrap">
-            <label for="make">Make</label>
-            <input type="text" id="make" name="make" placeholder="Vehicle Make" class="input" required/>
+            <label for="make">Make <span class="required">*</span></label>
+            <input type="text" id="make" name="make" placeholder="Vehicle Make" class="input" required aria-required="true"/>
         </div>
 
         <div class="input-wrap">
-            <label for="model">Model</label>
-            <input type="text" id="model" name="model" placeholder="Vehicle Model" class="input" required/>
+            <label for="model">Model <span class="required">*</span></label>
+            <input type="text" id="model" name="model" placeholder="Vehicle Model" class="input" required aria-required="true"/>
         </div>
 
         <div class="input-wrap">
-            <label for="year">Year</label>
-            <input type="text" id="year" name="year" placeholder="Vehicle Year" class="input" required/>
+            <label for="year">Year <span class="required">*</span></label>
+            <input type="text" id="year" name="year" placeholder="Vehicle Year" class="input" required aria-required="true"/>
         </div>
 
         <div class="input-wrap">
@@ -100,8 +100,8 @@ declare var flatpickr: any; // Declare flatpickr as a global variable
         <!-- Timeframe and Willingness to Wait -->
         <div class="horizontal-group">
             <div class="input-wrap">
-                <label for="timeframe">Timeframe for completion (Date Range)</label>
-                <input type="text" id="timeframe" name="timeframe" class="flatpickr-input" placeholder="mm/dd/yyyy" required/>
+                <label for="timeframe">Timeframe for completion (Date Range) <span class="required">*</span></label>
+                <input type="text" id="timeframe" name="timeframe" class="flatpickr-input" placeholder="mm/dd/yyyy" required aria-required="true"/>
             </div>
             <div class="input-wrap">
                 <label for="willing-wait">Are you willing to wait past this date?</label>
@@ -130,6 +130,12 @@ declare var flatpickr: any; // Declare flatpickr as a global variable
 </script>
 
 <style>
+        .required {
+    color: var(--red-500);
+    font-size: 1rem;
+    margin-left: 0.25rem;
+    }
+    
     .btn {
         margin-top: 2rem;
     }
@@ -160,7 +166,7 @@ declare var flatpickr: any; // Declare flatpickr as a global variable
         margin-bottom: 0.25rem;
     }
 
-    .input, .flatpickr-input {
+    .input, .flatpickr-input, .textarea {
         padding: 1rem 0.5rem;
         border: solid 2px var(--green-500);
         border-radius: 0.125rem;
@@ -171,9 +177,14 @@ declare var flatpickr: any; // Declare flatpickr as a global variable
     }
 
     .input:hover, .input:focus, .input:active, 
-    .flatpickr-input:hover, .flatpickr-input:focus, .flatpickr-input:active {
+    .flatpickr-input:hover, .flatpickr-input:focus, .flatpickr-input:active, .textarea:hover, .textarea:focus, .textarea:active {
         border-color: var(--wheat-500);
         transition: border-color 0.25s ease-in-out;
+    }
+
+    :focus-visible {
+        outline: 0px solid var(--wheat-500);
+        outline-offset: 0px;
     }
 
     .textarea {
@@ -206,57 +217,4 @@ declare var flatpickr: any; // Declare flatpickr as a global variable
         border-top: 2px solid var(--wheat-500);
         margin-bottom: 2rem;
     }
-
-/* Override Flatpickr font and colors */
-.flatpickr-calendar {
-    font-family: sans-serif !important; /* Force sans-serif font */
-    background-color: #f5f5f5 !important; /* Background color of the date picker */
-    border: 1px solid #334843 !important; /* Border color around the calendar */
-}
-
-.flatpickr-months {
-    background-color: #334843 !important; /* Header background */
-    color: white !important; /* Text color for the month and year */
-}
-
-.flatpickr-current-month {
-    font-family: sans-serif !important; /* Ensure the month/year font is sans-serif */
-}
-
-.flatpickr-weekdays {
-    background-color: #334843 !important; /* Weekday header background */
-    color: white !important; /* Text color for weekdays */
-}
-
-.flatpickr-day {
-    font-family: sans-serif !important; /* Ensure day numbers are sans-serif */
-    color: #334843 !important; /* Default day color */
-}
-
-.flatpickr-day:hover,
-.flatpickr-day:focus {
-    background-color: #597d87 !important; /* Hover color for days */
-    color: white !important; /* Text color on hover */
-    border-radius: 0.25rem !important; /* Optional: Rounded corners */
-}
-
-.flatpickr-day.selected {
-    background-color: #334843 !important; /* Selected day background color */
-    color: white !important; /* Selected day text color */
-    border-radius: 0.25rem !important; /* Optional: Rounded corners */
-}
-
-.flatpickr-next-month, .flatpickr-prev-month {
-    color: white !important; /* Arrows for next/previous months */
-}
-
-.flatpickr-weekday {
-    font-family: sans-serif !important; /* Weekday font */
-}
-
-.flatpickr-day.today {
-    border-color: #334843 !important; /* Today's date border color */
-    color: #334843 !important; /* Today's date text color */
-}
-
 </style>

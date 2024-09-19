@@ -8,7 +8,7 @@ export interface ImageButtonProps {
 const { image, title, link } = Astro.props as ImageButtonProps;
 ---
 <div class="image-btn-wrap">
-    <img class="image-btn" src={image} alt="" loading="lazy"/>
+    <img class="image-btn" src={image} alt= {`link to ${title}`} loading="lazy"/>
     <a href={link} class="img-link"><span>{title}</span></a>
     <div class="btn-underline"></div>
 </div>

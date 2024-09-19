@@ -30,8 +30,12 @@
     --gray-700: #2B2A2C;
     --gray-800: #201F20;
 
+    --red-500: #D9534F;
+    --red-100: #F5C6CB;
+
     --white: #FFFFFF;
     --black: #050505;
+
 
     /* Transparencies */
     --green-90: rgba(51, 72, 67, 0.9);
@@ -160,7 +164,7 @@ li {
 }
 
 :focus-visible {
-    outline: 3px solid var(--wheat-500);
+    outline: 3px solid var(--red-500);
     outline-offset: 3px;
 }
 
