@@ -10,10 +10,13 @@ import ArrowButton from "../components/buttons/ArrowButton.astro";
 import GeneralForm from "../components/forms/GeneralForm.astro";
 import FooterMain from "../components/FooterMain.astro";
 import CookiePopup from "../components/CookiePopup.astro";
+import { CollectionEntry } from "astro:content";
+import { Props } from "astro/components/ViewTransitions.astro";
 
-const { name, body, make, model, trim, year, color, price, passenger, condition, fuel, sold, thumbnail, images } = Astro.props;
+const { name, content, make, model, trim, year, color, price, passenger, condition, fuel, sold, thumbnail, images } = Astro.props as PropsCarts;
 
-const bodyHTML = marked(body);
+type PropsCarts = CollectionEntry<'carts'>['data'];
+const contentHTML = marked(content);
 
 // Format Numbers with Commas
 const formatPrice = (price) => {
@@ -101,7 +104,7 @@ const formatPrice = (price) => {
                 <h1 class="page-title" data-aos="fade-up">{year} <span class="underline">{make}</span> {model}</h1>
                 <div class="md-title wheat" data-aos="fade-up" role="heading">${formatPrice(price)}</div>
                 <div class="text" data-aos="fade-up">
-					<div set:html={bodyHTML}></div>
+					<div set:html={contentHTML}></div>
                 </div>
 				<div class="feature-grid" data-aos="fade-up">
 					<div class="feature-card">

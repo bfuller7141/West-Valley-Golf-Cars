@@ -3,7 +3,7 @@ import { defineCollection, z } from "astro:content";
 const carts = defineCollection({
   schema: z.object({
     name: z.string(),
-    serial: z.string().optional(),
+    featured: z.boolean(),
     make: z.string(),
     model: z.string(),
     trim: z.string().optional(),
@@ -19,7 +19,7 @@ const carts = defineCollection({
       image: z.string(),
       alt: z.string(),
     })),
-    body: z.string(),
+    content: z.string(), // Matches the markdown content
   }),
 });
 

@@ -35,8 +35,8 @@ collections:
         hint: "Check to add to homepage"
         required: false
         default: false
-      - label: "Body"
-        name: "body"
+      - label: "Features"
+        name: "content"
         widget: "markdown"
         required: true
       - label: "Serial Number"
