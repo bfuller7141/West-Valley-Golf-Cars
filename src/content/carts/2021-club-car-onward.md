@@ -30,4 +30,10 @@ body: >-
   ### Features:
 
   * 48v ECO Lithium Battery: 1 year old.
+  * 25+ MPH: High-speed capability for a fast and efficient ride.
+  * Street Legal with LED Lights.
+  * Upgraded Upholstery: Enhanced comfort and unique style.
+  * Custom Winter Cover and Summer Shade.
+  * Custom Dash: Stylish and functional for added convenience.
+  * Beverage Tray: Convenient for holding drinks during your ride.
 ---
