@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   branch: main
-  repo: bfuller7141/wvgolf-cars
+  repo: bfuller7141/West-Valley-Golf-Cars
   accept_roles: 
     - admin
     - editor
