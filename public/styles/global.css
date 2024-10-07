@@ -499,6 +499,7 @@ a {
     fill: var(--green-500);
     max-height: 1.5rem;
     max-width: auto;
+    display: inline-block;
     transition: all 0.2s ease-in-out;
 }
 
