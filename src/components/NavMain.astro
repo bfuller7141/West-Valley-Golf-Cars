@@ -79,6 +79,7 @@
     .logo-img {
         display: inline-flex;
         width: 12rem;
+        max-width: 12rem;
         transition: width 0.3s;
     }
 
@@ -257,6 +258,7 @@
 
         .logo-img {
             width: 10rem;
+            max-width: 10rem;
         }
 
         .padding-nav {
@@ -306,6 +308,20 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: -1;
+    }
+
+    @supports (-webkit-touch-callout: none) {
+        .logo-img {
+            width: 10rem;
+            max-width: 10rem;
+        }
+    }
+
+    @supports (-webkit-touch-callout: none) and (max-width: 980px) {
+        .logo-img {
+            width: 10rem;
+            max-width: 10rem;
+        }
     }
 </style>
 
