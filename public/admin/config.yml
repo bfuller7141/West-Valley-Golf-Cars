@@ -6,7 +6,7 @@ backend:
     - admin
     - editor
   api_root: https://gitlab.com/api/v4
-logo_url: "https://wvgc-build.netlify.app/logo-main_color.svg"
+logo_url: "https://westvalleygolfcars.com/logo-main_color.svg"
 
 media_folder: "public/carts"
 public_folder: "/carts"
