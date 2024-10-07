@@ -498,6 +498,7 @@ a {
 .btn-icon {
     fill: var(--green-500);
     max-height: 1.5rem;
+    max-width: auto;
     transition: all 0.2s ease-in-out;
 }
 
