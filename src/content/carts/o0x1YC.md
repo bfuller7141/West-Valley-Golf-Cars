@@ -3,7 +3,10 @@ name: Club Car DS o0x1YC
 slug: o0x1YC
 featured: false
 content: >-
-  Introducing the 2002 Maroon Club Car DS "West Valley Edition," a stylish and powerful golf cart designed for both golf courses and street use. With custom upholstery and a robust 48-volt system, this cart reaches speeds over 20 mph, providing a smooth and efficient ride.
+  Introducing the 2002 Maroon Club Car DS "West Valley Edition," a stylish and
+  powerful golf cart designed for both golf courses and street use. With custom
+  upholstery and a robust 48-volt system, this cart reaches speeds over 20 mph,
+  providing a smooth and efficient ride.
 
 
   **Features:**
@@ -13,7 +16,7 @@ content: >-
   *   **20+ MPH:** High-speed capability for quick and enjoyable rides.
 
   *   **New 8v Trojan Lead Acid Batteries:** Reliable and durable for long-lasting use.
-  
+
   *   **Street Legal:** Perfect for both golf courses and neighborhood streets.
 
   *   **Custom Upholstery:** Enhanced comfort and unique style.
@@ -27,7 +30,7 @@ price: 4000
 passenger: 2
 condition: Used
 fuel: Lead Acid
-sold: false
+sold: true
 thumbnail: /carts/2002-clubcar-1.webp
 images:
   - image: /carts/2002-clubcar-2.webp
