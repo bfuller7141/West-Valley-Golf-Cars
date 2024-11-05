@@ -3,7 +3,10 @@ name: Club Car Precident JU4xNY
 slug: JU4xNY
 featured: true
 content: >-
-  Meet the 2014 Orange "Woody" Club Car Precedent, a unique and stylish golf cart perfect for both the golf course and neighborhood streets. With custom upholstery and a versatile flip seat with a golf holder, this cart combines functionality and performance, reaching speeds over 20 mph.
+  Meet the 2014 Orange "Woody" Club Car Precedent, a unique and stylish golf
+  cart perfect for both the golf course and neighborhood streets. With custom
+  upholstery and a versatile flip seat with a golf holder, this cart combines
+  functionality and performance, reaching speeds over 20 mph.
 
 
   **Features:**
@@ -13,7 +16,7 @@ content: >-
   *   **20+ MPH:** High-speed capability for quick and enjoyable rides.
 
   *   **New Batteries:** Batteries from November 2023
-  
+
   *   **Street Legal:** Perfect for both golf courses and neighborhood streets.
 
   *   **Custom Upholstery:** Enhanced comfort and unique style.
@@ -27,7 +30,7 @@ price: 5750
 passenger: 4
 condition: Used
 fuel: Electric
-sold: false
+sold: true
 thumbnail: /carts/2014-clubcar-1.webp
 images:
   - image: /carts/2014-clubcar-2.webp
