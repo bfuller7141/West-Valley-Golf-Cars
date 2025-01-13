@@ -48,7 +48,7 @@ make: MadJax
 model: "X Series "
 year: 2024
 color: "Bolt Blue "
-price: 15100
+price: 14000
 passenger: 4
 condition: New
 fuel: Electric
