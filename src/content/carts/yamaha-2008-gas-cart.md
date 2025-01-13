@@ -27,7 +27,7 @@ make: "Yamaha "
 model: "Drive "
 year: 2008
 color: Red
-price: 4500
+price: 3749
 passenger: 0
 condition: Used
 fuel: Gas
