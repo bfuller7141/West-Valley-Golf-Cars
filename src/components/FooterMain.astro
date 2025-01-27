@@ -44,13 +44,20 @@
                 </nav>
             </div>
             <div class="footer-bottom">
-                <p class="text white">© 2024 West Valley Golf Cars. All Rights Reserved.</p>
+                <p class="footer-copyright">
+                    © <span id="currentYear"></span> West Valley Golf Cars. All Rights Reserved.
+                </p>
             </div>
         </div>
     </div>
+    <p class="hide-always">Designed by <a href="www.tripassdesign.com">Tripass Design</a></p>
 </footer>
 
 <style>
+    .hide-always {
+        display: none;
+    }
+    
     .footer {
         background-color: var(--green-500);
         border-top: 6px solid var(--wheat-500);
@@ -158,3 +165,10 @@
         }
     }
 </style>
+
+<script>
+    const currentYearElement = document.getElementById('currentYear');
+    if (currentYearElement) {
+      currentYearElement.textContent = new Date().getFullYear().toString();
+    }
+  </script>
