@@ -41,8 +41,23 @@ const testimonials = defineCollection({
   }),
 });
 
+const blogCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    titlePage: z.string(),
+    date: z.date(), 
+    thumbnail: z.string(),
+    coverImage: z.string(),
+    featured: z.boolean().default(false),
+    slug: z.string().optional(),
+    article: z.string(),
+    excerpt: z.string(),
+  }),
+});
+
 export const collections = {
   carts,
   legal,
   testimonials,
+  blogCollection,
 };

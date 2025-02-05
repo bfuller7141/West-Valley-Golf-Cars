@@ -2,7 +2,8 @@
 import InventoryCard from './InventoryCard.astro'
 
 const { limit } = Astro.props;
-const carts = await Astro.glob('../content/carts/*.md');
+const cartEntries = import.meta.glob('../content/carts/*.md', { eager: true });
+const carts = Object.values(cartEntries);
 
 // Shuffle array elements
 function shuffleArray(array: any[]) {

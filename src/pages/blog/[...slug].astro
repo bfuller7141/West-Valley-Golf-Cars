@@ -1,0 +1,120 @@
+---
+import { getCollection } from "astro:content";
+import BaseHead from "../../components/BaseHead.astro";
+import NavMain from "../../components/NavMain.astro";
+import { marked } from 'marked';
+import FooterMain from "../../components/FooterMain.astro";
+import SkipMain from "../../components/buttons/SkipMain.astro";
+import GeneralForm from "../../components/forms/GeneralForm.astro";
+
+export const getStaticPaths = async () => {
+    const blogEntries = await getCollection('blog');
+
+    return blogEntries.map((blog) => ({
+        params: { 
+            slug: blog.data.slug ?? blog.id // Use frontmatter slug if available, otherwise use id
+        },
+        props: { ...blog.data, slug: blog.data.slug ?? blog.id }, // Ensure slug exists in props
+    }));
+};
+
+interface BlogProps {
+    titlePage: string;
+    date: string;
+    category: string;
+    coverImage: string;
+    featured: boolean;
+    slug: string;
+    article: string;
+    excerpt: string;
+    author: string;
+    readTime: number;
+}
+
+const { titlePage, excerpt, date, article, slug, coverImage } = Astro.props as unknown as BlogProps;
+
+const formattedDate = new Intl.DateTimeFormat('en-US', {
+    month: 'short',
+    day: '2-digit',
+    year: 'numeric',
+}).format(new Date(date));
+
+let bodyContent: string = '';
+if (article) {
+    bodyContent = await marked(article);
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <BaseHead
+            title={`West Valley Golf Cars | ${titlePage}`}
+            description={excerpt}
+            keywords="golf carts, golf car blog, golf cart maintenance, golf cart accessories, golf cart tips"
+            url={`https://westvalleygolfcars.com/blog/${slug}`}
+        />
+    </head>
+    <body>
+        <SkipMain />
+        <header>
+            <NavMain data-aos="fade-down"/>
+        </header>
+        <main id="main-content">
+            <section class="hero-home" data-aos="fade-up">
+                <div class="top-banner"></div>
+                <div class="background-image" aria-hidden="true"></div>
+                <div class="padding-hero">
+                    <div class="container">
+                        <img src={coverImage} alt={titlePage} class="img-blog"/>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="padding-global">
+                    <div class="container">
+                        <h1 class="blog-title">{titlePage}</h1>
+                        <p class="blog-date">{formattedDate}</p>
+                        <article>
+                            <div class="body" set:html={await marked(article)}></div>
+                        </article> 
+                    </div>
+            </section>
+            <section id="contact">
+				<div class="padding-global" data-aos="fade-up">
+					<div class="container">
+						<h2 class="section-title center">Let's Get you into your <span class="underline">Dream</span> Cart today</h2>
+						<GeneralForm data-aos="fade-up" />
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<FooterMain />
+		</footer>
+	</body>
+</html>
+
+<style>
+    .img-blog {
+        min-width: 100%;
+        max-width: 100%;
+        aspect-ratio: 8/3;
+        object-fit: cover;
+        box-shadow: var(--shadow);
+        border-radius: 0.125rem;
+    }
+
+    .blog-title {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll(".body img").forEach(img => {
+            img.classList.add("img-blog");
+        });
+    });
+</script>

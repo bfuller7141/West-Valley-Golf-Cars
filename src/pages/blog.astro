@@ -1,0 +1,107 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import NavMain from '../components/NavMain.astro';
+import SkipMain from "../components/buttons/SkipMain.astro";
+import FooterMain from '../components/FooterMain.astro';
+import BlogCollection from '../components/BlogCollection.astro';
+import CookiePopup from '../components/CookiePopup.astro';
+import ServiceBanner from '../components/ServiceBanner.astro';
+import GeneralForm from '../components/forms/GeneralForm.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <BaseHead 
+        title="Blog | West Valley Golf Cars"
+        description="Read the latest insights, tips, and updates on golf carts from West Valley Golf Cars. Learn about maintenance, customization, and industry trends."
+        keywords="golf cart blog, golf cart maintenance, custom golf carts, West Valley Golf Cars"
+        image="/images/opengraph/blog-page.webp"
+        url="https://www.westvalleygolfcars.com/blog"
+    />
+    <body class="page-transition-enter">
+        <SkipMain />
+        <header>
+            <NavMain data-aos="fade-down" />
+        </header>
+        <main id="main-content">
+            <section class="hero-home" data-aos="fade-up">
+                <div class="top-banner"></div>
+                <div class="background-image" aria-hidden="true"></div>
+                <div class="padding-hero">
+                    <div class="container">
+                        <div class="wrapper column-hero">
+                            <div class="wrapper">
+                                <h1 class="page-title" data-aos="fade-up">The Latest <span class="underline">News</span> From West Valley Golf Cars</h1>
+                                <p class="text" data-aos="fade-up">Explore expert insights, practical tips, and the latest industry updates on all things golf carts. Whether you're looking for maintenance guides, troubleshooting advice, or inspiration for custom upgrades, our blog has you covered. Stay informed on emerging trends, best practices, and must-know tips to keep your golf cart running smoothly and looking its best.</p>
+                                <div class="btn-wrapper" data-aos="fade-up">
+                                    <a href="#articles" class="btn">Latest Articles</a>
+                                </div>
+                            </div>
+                            <img src="/images/static/sales-home.webp" alt="Man with a brand new club car from WVGC" class="img-main hero" loading="eager" data-aos="fade-left" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <ServiceBanner data-aos="fade-up" />
+            
+            <section id="articles" class="blog-listing" data-aos="fade-up">
+                <div class="padding-global">
+                    <div class="container">
+                        <h2 class="section-title center">Our <span class="underline">Latest</span> Articles</h2>
+                        <BlogCollection data-aos="fade-up" />
+                    </div>
+                </div>
+            </section>
+
+            <section data-aos="fade-up">
+                <div class="padding-global">
+                    <div class="container">
+                        <h2 class="section-title center">Let's Get you into your <span class="underline">Dream</span> Cart today</h2>
+                        <GeneralForm data-aos="fade-up" />
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        
+        <footer>
+            <FooterMain />
+        </footer>
+        
+        <CookiePopup />
+    </body>
+    
+    <script type="module">
+        import * as AOS from 'aos';
+        import 'aos/dist/aos.css';
+    
+        const initializeAOS = () => {
+            if (window.innerWidth > 980) {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    easing: 'ease-in-out',
+                    offset: 0,
+                    delay: 0,
+                });
+            } else {
+                const aosElements = document.querySelectorAll('[data-aos]');
+                aosElements.forEach((element) => {
+                    element.removeAttribute('data-aos');
+                    element.style.opacity = '1';
+                    element.style.transform = 'none';
+                });
+            }
+        };
+    
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeAOS();
+        });
+    
+        window.addEventListener('popstate', () => {
+            window.scrollTo(0, 0);
+            initializeAOS();
+        });
+    </script>    
+</html>

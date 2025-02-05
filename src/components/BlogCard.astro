@@ -1,0 +1,90 @@
+---
+export interface BlogItem {
+    title: string;
+    thumbnail: string;
+    date: string;
+    excerpt: string;
+    slug: string;
+}
+
+const { title, thumbnail, date, excerpt, slug } = Astro.props;
+
+const formattedDate = new Intl.DateTimeFormat('en-US', {
+    month: 'short',
+    day: '2-digit',
+    year: 'numeric',
+}).format(new Date(date));
+---
+
+<li class="blog-item">
+    <a href={`/blog/${slug}`} class="blog-link">
+        <img src={thumbnail} alt={title} class="blog-thumbnail"/>
+        <div class="blog-content">
+            <p class="blog-date">{formattedDate}</p>
+            <h3 class="blog-title">{title}</h3>
+            <p class="blog-excerpt">{excerpt}</p>
+        </div>
+    </a>
+</li>
+
+<style>
+    .blog-item {
+        list-style: none;
+        max-width: 100%;
+        overflow: hidden;
+        transition: var(--hover);
+    }
+
+    .blog-link {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        transition: var(--hover);
+    }
+
+    .blog-link:hover .blog-title {
+        color: var(--wheat-500);
+    }
+
+    .blog-link:hover .blog-thumbnail {
+        filter: grayscale(1);
+        transition: var(--hover);
+    }
+
+    .blog-thumbnail {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        transition: var(--hover);
+        border-radius: 0.125rem;
+    }
+
+    .blog-content {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .blog-date {
+        font-size: var(--small-text);
+        font-weight: 600;
+        color: var(--gray-500);
+    }
+
+    .blog-title {
+        font-family: var(--title-font);
+        font-size: var(--md-title);
+        color: var(--green-500);
+        margin: 0;
+        transition: var(--hover);
+    }
+
+    .blog-excerpt {
+        font-family: var(--body);
+        font-size: var(--text);
+        color: var(--gray-700);
+        line-height: 1.3;
+    }
+</style>
