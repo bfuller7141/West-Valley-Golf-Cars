@@ -1,5 +1,5 @@
 ---
-title: Choosing a Golf Cart That’s Built to Last
+title: Choosing a Golf Cart
 titlePage: Choosing a Golf Cart That’s Built to Last
 date: 2025-03-20T10:33:00.000Z
 thumbnail: /carts/pickup-delivery.webp
