@@ -31,7 +31,7 @@ price: 3749
 passenger: 0
 condition: Used
 fuel: Gas
-sold: false
+sold: true
 thumbnail: /carts/img_3326.jpg
 images:
   - image: /carts/img_3325.jpg
