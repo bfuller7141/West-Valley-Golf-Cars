@@ -19,7 +19,7 @@ make: "Columbia "
 model: "Par Car "
 year: 2014
 color: "Blue "
-price: 4248
+price: 4250
 passenger: 4
 condition: Used
 fuel: Electric
