@@ -1,6 +1,6 @@
 ---
 name: "West Valley Edition Club Car "
-slug: "club car, west valley golf carts, new cart, used cart, high speed golf cart "
+slug: "46361"
 featured: true
 content: >-
   

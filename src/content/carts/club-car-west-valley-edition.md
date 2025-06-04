@@ -1,7 +1,7 @@
 ---
 name: "Club Car West Valley Edition "
-slug: "Club Car New Cart Golf Cart "
-featured: false
+slug: "46357"
+featured: true
 content: >-
   
 

@@ -1,23 +1,16 @@
 ---
 export interface InventoryCardProps {
-    name: string;
-    price: string;
-    image: string;
-    slug: string;
-    sold: boolean;
-    featured: boolean;
-    year: number;
-    make: string;
-    model: string;
+  name: string;
+  price: string;
+  image: string;
+  slug: string;
+  sold: boolean;
+  featured: boolean;
+  year: number;
+  make: string;
+  model: string;
 }
 const { name, price, image, sold, featured, year, make, model, slug } = Astro.props as InventoryCardProps;
-
-const generateSlug = (year: number, make: string, model: string) => {
-  return `${year}-${make}-${model}`
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')  // Replace non-alphanumeric characters with dashes
-    .replace(/(^-|-$)/g, '');      // Remove leading/trailing dashes
-};
 
 // Format Numbers with Commas
 const formatPrice = (price) => {
@@ -26,71 +19,85 @@ const formatPrice = (price) => {
 ---
 
 <li class="card">
-    <div class="inventory-img-wrap">
-        <img src={image} alt={name} class={`inventory-img ${sold ? 'sold-img' : ''}`} loading="lazy"/>
-        {sold && <div class="sold-badge">Sold</div>}
-    </div>
-    <div class="inventory-content">
-        <h3 class="sub-title">{year} {make} {model}</h3>
-        <p class="price"><strong>${formatPrice(price)}</strong></p>
-        <a href={`/carts/${slug}`} aria-label={`Specs and info for ${name}`} class="btn-text">
-            Shop Cart
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentcolor" class="btn-icon">
-                <path d="M422.6 278.6L445.3 256l-22.6-22.6-144-144L256 66.7 210.8 112l22.6 22.6L322.8 224 32 224 0 224l0 64 32 0 290.7 0-89.4 89.4L210.8 400 256 445.3l22.6-22.6 144-144z"/>
-            </svg>
-        </a>
-    </div>
+  <div class="inventory-img-wrap">
+    <img
+      src={image}
+      alt={name}
+      class={`inventory-img ${sold ? "sold-img" : ""}`}
+      loading="lazy"
+    />
+    {sold && <div class="sold-badge">Sold</div>}
+  </div>
+  <div class="inventory-content">
+    <h3 class="sub-title">{year} {make} {model}</h3>
+    <p class="price"><strong>${formatPrice(price)}</strong></p>
+    <a
+      href={`/carts/${slug}`}
+      aria-label={`Specs and info for ${name}`}
+      class="btn-text"
+    >
+      Shop Cart
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 448 512"
+        fill="currentcolor"
+        class="btn-icon"
+      >
+        <path d="M422.6 278.6L445.3 256l-22.6-22.6-144-144L256 66.7 210.8 112l22.6 22.6L322.8 224 32 224 0 224l0 64 32 0 290.7 0-89.4 89.4L210.8 400 256 445.3l22.6-22.6 144-144z" />
+      </svg>
+    </a>
+  </div>
 </li>
 
 <style>
-    /* Image Styles */
-    .inventory-img {
-        min-width: 100%;
-        max-width: 100%;
-        aspect-ratio: 4/3;
-        object-fit: cover;
-        z-index: 0;
-    }
-    .sold-img {
-        filter: grayscale(100%);
-    }
+  /* Image Styles */
+  .inventory-img {
+    min-width: 100%;
+    max-width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .sold-img {
+    filter: grayscale(100%);
+  }
 
-    /* Wrapper Styles */
-    .inventory-img-wrap {
-        position: relative;
-        min-width: 100%;
-        max-width: 100%;
-    }
-    .inventory-content {
-        margin-top: 1.5rem;
-    }
+  /* Wrapper Styles */
+  .inventory-img-wrap {
+    position: relative;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .inventory-content {
+    margin-top: 1.5rem;
+  }
 
-    /* Price Styles */
-    .price {
-        font-family: var(--body);
-        color: var(--green-500);
-        font-size: var(--text);
-        font-weight: 800;
-        margin: 0.5rem 0;
-    }
+  /* Price Styles */
+  .price {
+    font-family: var(--body);
+    color: var(--green-500);
+    font-size: var(--text);
+    font-weight: 800;
+    margin: 0.5rem 0;
+  }
 
-    /* Sold Badge Styles */
-    .sold-badge {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        z-index: 1000;
-        position: absolute;
-        top: -2rem;
-        left: -0.5rem;
-        background-color: var(--green-500);
-        color: var(--wheat-300);
-        font-family: var(--title-font);
-        font-size: 2rem;
-        padding: 0.35rem 1.25rem;
-        font-weight: 500;
-        text-transform: uppercase;
-        border-radius: 0.125rem;
-    }
+  /* Sold Badge Styles */
+  .sold-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    z-index: 1000;
+    position: absolute;
+    top: -2rem;
+    left: -0.5rem;
+    background-color: var(--green-500);
+    color: var(--wheat-300);
+    font-family: var(--title-font);
+    font-size: 2rem;
+    padding: 0.35rem 1.25rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 0.125rem;
+  }
 </style>

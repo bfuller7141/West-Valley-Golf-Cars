@@ -1,6 +1,6 @@
 ---
 name: "2024 MadJax X-Series "
-slug: "Golf cart X series MadJax New Cart "
+slug: "46353"
 featured: false
 content: >-
   

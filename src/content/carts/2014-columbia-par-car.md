@@ -1,6 +1,6 @@
 ---
 name: "2014 Columbia Par Car "
-slug: "Par Car Golf Cart Used "
+slug: "43652"
 featured: false
 content: |-
   

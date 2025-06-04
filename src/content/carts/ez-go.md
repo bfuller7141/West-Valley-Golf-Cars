@@ -1,6 +1,6 @@
 ---
 name: "EZ Go "
-slug: "EZ Go used cart golf cart new cart "
+slug: "46359"
 featured: false
 content: |-
   EZ Go 2009 Clean Cart 

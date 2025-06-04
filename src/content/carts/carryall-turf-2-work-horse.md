@@ -1,6 +1,6 @@
 ---
 name: "Carryall Turf 2 Work Horse "
-slug: "Carryall, club car, utility cart, gas, dump bed, work horse "
+slug: "46355"
 featured: false
 content: |-
   Upgrade your utility cart game with a nice 2008 Carryall Gas Turf 2 cart 

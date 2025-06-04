@@ -1,6 +1,6 @@
 ---
 name: "Club Car DS Tan "
-slug: "club car used cart golf cart "
+slug: "46356"
 featured: false
 content: |-
   Club Car DS Tan with winter cover 

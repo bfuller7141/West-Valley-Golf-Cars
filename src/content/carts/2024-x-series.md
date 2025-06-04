@@ -1,7 +1,7 @@
 ---
 name: "2024 X Series "
-slug: madjax xseries 2024 gen 2
-featured: false
+slug: "46354"
+featured: true
 content: >-
   Experience the 2024 Bolt Blue MadJax X-Series GEN 2, a top-of-the-line golf
   cart designed for both performance and luxury. With a powerful ECO lithium

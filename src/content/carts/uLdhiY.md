@@ -1,6 +1,6 @@
 ---
-name: EZGo 36V uLdhiY
-slug: uLdhiY
+name: EZGo 36V 
+slug: "46360"
 featured: false
 content: >-
   The EZ Go TXT has been an outstanding cart and you still see many of them on the road today. With proper maintenance and upkeep they just keep running!! We have several just like the one in the picture available for you to choose from. They are great for work or the neighborhood! We can build to add seats or utility beds to fit your needs.

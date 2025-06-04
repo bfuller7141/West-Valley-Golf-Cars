@@ -1,6 +1,6 @@
 ---
 name: "2006 Columbia Par Car "
-slug: golf cart par car Columbia used car
+slug: "43651"
 featured: false
 content: |-
   2006 Columbia Par Car 

@@ -2,10 +2,11 @@ backend:
   name: git-gateway
   branch: main
   repo: bfuller7141/West-Valley-Golf-Cars
-  accept_roles: 
+  accept_roles:
     - admin
     - editor
   api_root: https://gitlab.com/api/v4
+
 logo_url: "https://westvalleygolfcars.com/logo-main_color.svg"
 
 media_folder: "public/carts"
@@ -16,86 +17,115 @@ collections:
     label: "Carts"
     folder: "src/content/carts"
     create: true
-    slug: '{{slug}}'
+    # change this to use the frontmatter slug field rather than year/make/model
+    slug: "{{slug}}"
     identifier_field: "name"
-    extension: md
+    extension: "md"
     fields:
       - label: "Name"
         name: "name"
         widget: "string"
         required: true
+
       - label: "Slug"
         name: "slug"
-        widget: "string"
+        widget: "randomSlug"
         required: true
-        hint: "This will be used to generate the URL for this cart. It should be unique and contain only lowercase letters, numbers, and hyphens. You can use the Google Sheets to generate a slug."
+        pattern:
+          - "^[0-9]{8}$"
+          - "Slug must be exactly 8 digits."
+        hint: "An 8-digit random ID is generated automatically on entry."
+
       - label: "Featured"
         name: "featured"
         widget: "boolean"
         hint: "Check to add to homepage"
         required: false
         default: false
+
       - label: "Features"
         name: "content"
         widget: "markdown"
         required: true
+
       - label: "Serial Number"
         name: "serial"
         widget: "string"
         required: false
+
       - label: "Make"
         name: "make"
         widget: "string"
         required: true
+
       - label: "Model"
         name: "model"
         widget: "string"
         required: false
+
       - label: "Trim"
         name: "trim"
         widget: "string"
         required: false
+
       - label: "Year"
         name: "year"
         widget: "number"
         required: true
-        pattern: ["^[0-9]{4}$", "Year must be a 4-digit year."]
+        pattern:
+          - "^[0-9]{4}$"
+          - "Year must be a 4-digit year."
+
       - label: "Color"
         name: "color"
         widget: "string"
         required: true
+
       - label: "Price"
         name: "price"
         widget: "number"
         hint: "Don't include '$' symbol"
         required: true
+
       - label: "Passenger Capacity"
         name: "passenger"
         widget: "number"
         required: true
-        pattern: ["^[0-9]{1}$", "Passenger capacity must be a number between 1 and 9."]
+        pattern:
+          - "^[0-9]{1}$"
+          - "Passenger capacity must be a number between 1 and 9."
+
       - label: "Condition"
         name: "condition"
         widget: "select"
-        options: ["New", "Used"]
+        options:
+          - "New"
+          - "Used"
         required: true
+
       - label: "Fuel Type"
         name: "fuel"
         widget: "select"
-        options: ["Gas", "Electric", "Lead Acid"]
+        options:
+          - "Gas"
+          - "Electric"
+          - "Lead Acid"
         required: true
+
       - label: "Sold"
         name: "sold"
         widget: "boolean"
         hint: "Check to add sold badge to listing"
         required: false
         default: false
+
       - label: "Thumbnail"
         name: "thumbnail"
         widget: "image"
         hint: "This image will be displayed as the main image for the cart."
         allow_multiple: false
         required: true
+
       - label: "Images"
         name: "images"
         widget: "list"
@@ -110,7 +140,7 @@ collections:
             name: "alt"
             widget: "string"
             required: true
-            hint: "Breif description of the image for screen readers."
+            hint: "Brief description of the image for screen readers."
 
   - name: "legal"
     label: "Legal Links"
@@ -161,12 +191,39 @@ collections:
     extension: "md"
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string", required: true}
-      - {label: "TitlePage", name: "titlePage", widget: "string", required: true}
-      - {label: "Date", name: "date", widget: "datetime", required: true}
-      - {label: "Thumbnail", name: "thumbnail", widget: "image", required: true}
-      - {label: "Cover Image", name: "coverImage", widget: "image", required: true}
-      - {label: "Featured", name: "featured", widget: "boolean", default: false}
-      - {label: "Slug", name: "slug", widget: "string", required: true}
-      - {label: "Article", name: "article", widget: "markdown", required: true}
-      - {label: "Excerpt", name: "excerpt", widget: "string", required: true}
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        required: true
+      - label: "TitlePage"
+        name: "titlePage"
+        widget: "string"
+        required: true
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        required: true
+      - label: "Thumbnail"
+        name: "thumbnail"
+        widget: "image"
+        required: true
+      - label: "Cover Image"
+        name: "coverImage"
+        widget: "image"
+        required: true
+      - label: "Featured"
+        name: "featured"
+        widget: "boolean"
+        default: false
+      - label: "Slug"
+        name: "slug"
+        widget: "string"
+        required: true
+      - label: "Article"
+        name: "article"
+        widget: "markdown"
+        required: true
+      - label: "Excerpt"
+        name: "excerpt"
+        widget: "string"
+        required: true

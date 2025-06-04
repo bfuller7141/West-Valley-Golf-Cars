@@ -1,6 +1,6 @@
 ---
-name: Yamaha 36V dHNIVe
-slug: dHNIVe
+name: Yamaha 36V
+slug: "46358"
 featured: false
 content: >-
   Here is a great opportunity to get into a nice electric cart at an affordable price. With proper maintenance and upkeep they just keep running!! We have several just like the one in the picture available for you to choose from. They are great for work or the neighborhood! We can build to add seats or utility beds to fit your needs.
