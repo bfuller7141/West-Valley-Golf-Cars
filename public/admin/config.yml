@@ -17,7 +17,6 @@ collections:
     label: "Carts"
     folder: "src/content/carts"
     create: true
-    # change this to use the frontmatter slug field rather than year/make/model
     slug: "{{slug}}"
     identifier_field: "name"
     extension: "md"
