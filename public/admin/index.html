@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex" />
     <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
     <title>Content Manager | West Valley Golf Cars</title>
-    
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -15,12 +15,16 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#334843">
     <meta name="msapplication-TileColor" content="#334843">    
   </head>
-  
+
   <body>
+    
+    <div id="nc-root"></div>
+
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
 
     <script>
+
       function genNonRepeatingNumericString(length = 8) {
         const digits = "0123456789".split("");
         let result = "";
@@ -33,9 +37,7 @@
 
       const RandomSlugControl = createClass({
         componentDidMount: function () {
-          if (this.props.value) {
-            return;
-          }
+          if (this.props.value) return;
           const randomId = genNonRepeatingNumericString(8);
           this.props.onChange(randomId);
         },
@@ -46,20 +48,18 @@
             className: this.props.classNameWrapper,
             type: "text",
             value: value,
-            disabled: true
+            disabled: true, // lock so user cannot edit
           });
         },
       });
 
       CMS.registerWidget("randomSlug", RandomSlugControl);
-    </script>
 
-    <script>
       CMS.init({
         config: {
           backend: {
             name: "git-gateway",
-            branch: "main"
+            branch: "main",
           },
           media_folder: "assets",
           public_folder: "/assets",
@@ -73,22 +73,14 @@
               identifier_field: "name",
               extension: "md",
               fields: [
-                {
-                  label: "Name",
-                  name: "name",
-                  widget: "string",
-                  required: true
-                },
+                { label: "Name", name: "name", widget: "string", required: true },
                 {
                   label: "Slug",
                   name: "slug",
                   widget: "randomSlug",
                   required: true,
-                  pattern: [
-                    "^[0-9]{8}$",
-                    "Slug must be exactly 8 digits."
-                  ],
-                  hint: "An 8-digit random ID is generated automatically on entry."
+                  pattern: ["^[0-9]{8}$", "Slug must be exactly 8 digits."],
+                  hint: "An 8-digit random ID is generated automatically on entry.",
                 },
                 {
                   label: "Featured",
@@ -96,84 +88,48 @@
                   widget: "boolean",
                   hint: "Check to add to homepage",
                   required: false,
-                  default: false
+                  default: false,
                 },
-                {
-                  label: "Features",
-                  name: "content",
-                  widget: "markdown",
-                  required: true
-                },
-                {
-                  label: "Serial Number",
-                  name: "serial",
-                  widget: "string",
-                  required: false
-                },
-                {
-                  label: "Make",
-                  name: "make",
-                  widget: "string",
-                  required: true
-                },
-                {
-                  label: "Model",
-                  name: "model",
-                  widget: "string",
-                  required: false
-                },
-                {
-                  label: "Trim",
-                  name: "trim",
-                  widget: "string",
-                  required: false
-                },
+                { label: "Features", name: "content", widget: "markdown", required: true },
+                { label: "Serial Number", name: "serial", widget: "string", required: false },
+                { label: "Make", name: "make", widget: "string", required: true },
+                { label: "Model", name: "model", widget: "string", required: false },
+                { label: "Trim", name: "trim", widget: "string", required: false },
                 {
                   label: "Year",
                   name: "year",
                   widget: "number",
                   required: true,
-                  pattern: [
-                    "^[0-9]{4}$",
-                    "Year must be a 4-digit year."
-                  ]
+                  pattern: ["^[0-9]{4}$", "Year must be a 4-digit year."],
                 },
-                {
-                  label: "Color",
-                  name: "color",
-                  widget: "string",
-                  required: true
-                },
+                { label: "Color", name: "color", widget: "string", required: true },
                 {
                   label: "Price",
                   name: "price",
                   widget: "number",
                   hint: "Don't include '$' symbol",
-                  required: true
+                  required: true,
                 },
                 {
                   label: "Passenger Capacity",
                   name: "passenger",
                   widget: "number",
                   required: true,
-                  pattern: [
-                    "^[0-9]{1}$",
-                    "Passenger capacity must be a number between 1 and 9."
-                  ]
+                  pattern: ["^[0-9]{1}$", "Passenger capacity must be between 1 and 9."],
                 },
                 {
                   label: "Condition",
                   name: "condition",
                   widget: "select",
                   options: ["New", "Used"],
-                  required: true
+                  required: true,
                 },
                 {
                   label: "Fuel Type",
                   name: "fuel",
                   widget: "select",
                   options: ["Gas", "Electric", "Lead Acid"],
-                  required: true
+                  required: true,
                 },
                 {
                   label: "Sold",
@@ -181,7 +137,7 @@
                   widget: "boolean",
                   hint: "Check to add sold badge to listing",
                   required: false,
-                  default: false
+                  default: false,
                 },
                 {
                   label: "Thumbnail",
@@ -189,7 +145,7 @@
                   widget: "image",
                   hint: "This image will be displayed as the main image for the cart.",
                   allow_multiple: false,
-                  required: true
+                  required: true,
                 },
                 {
                   label: "Images",
@@ -198,25 +154,21 @@
                   hint: "These images will be displayed in the gallery for the cart.",
                   required: false,
                   fields: [
-                    {
-                      label: "Image",
-                      name: "image",
-                      widget: "image",
-                      required: true
-                    },
+                    { label: "Image", name: "image", widget: "image", required: true },
                     {
                       label: "Alt Text",
                       name: "alt",
                       widget: "string",
                       required: true,
-                      hint: "Brief description of the image for screen readers."
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
+                      hint: "Brief description of the image for screen readers.",
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        root: "#nc-root",
       });
     </script>
   </body>
