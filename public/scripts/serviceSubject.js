@@ -12,8 +12,8 @@ function updateSubject(event) {
 
       // 3) Build the subject line
       const subjectText = lastName
-        ? `New Estimate Request from ${firstName} ${lastName}`
-        : `New Estimate Request from ${firstName}`;
+        ? `New Service Request from ${firstName} ${lastName}`
+        : `New Service Request from ${firstName}`;
 
       subjectField.value = subjectText;
     }
