@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
 
+    <!-- 1) Tell Decap CMS where to find your config -->
     <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
 
     <title>Content Manager | West Valley Golf Cars</title>
@@ -22,6 +23,8 @@
 
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
+    <script>window.CMS_MANUAL_INIT = true;</script>
+
     <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
 
     <script>
@@ -37,6 +40,7 @@
 
       const RandomSlugControl = createClass({
         componentDidMount: function () {
+          // Only generate a slug if the field is currently empty
           if (this.props.value) return;
           const randomId = genNonRepeatingNumericString(8);
           this.props.onChange(randomId);
@@ -48,21 +52,13 @@
             className: this.props.classNameWrapper,
             type: "text",
             value: value,
-            disabled: true,
+            disabled: true, // lock it so user can’t overwrite
           });
         },
       });
 
       CMS.registerWidget("randomSlug", RandomSlugControl);
-
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
-          CMS.init({ root: "#nc-root" });
-        });
-        window.netlifyIdentity.init();
-      } else {
-        CMS.init({ root: "#nc-root" });
-      }
+      
     </script>
   </body>
 </html>
