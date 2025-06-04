@@ -13,7 +13,7 @@ media_folder: "public/carts"
 public_folder: "/carts"
 
 collections:
-  - name: "sales"
+  - name: "carts"
     label: "Carts"
     folder: "src/content/carts"
     create: true

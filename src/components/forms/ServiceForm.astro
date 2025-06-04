@@ -8,13 +8,23 @@ declare var flatpickr: any; // Declare flatpickr as a global variable
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 <div class="form-wrap">
-    <form name="service-scheduling" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
+    <form     
+    id="estimate-form"
+    name="service-scheduling"
+    method="POST"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    action="/success"
+    >
         <input type="hidden" name="form-name" value="service-scheduling" />
 
         <!-- Honey Pot Field -->
         <div class="hidden" style="display: none;">
             <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
         </div>
+
+        <!-- HIDDEN: Dynamic subject line for Netlify email -->
+        <input type="hidden" name="subject" id="subject" />
 
         <!-- Name, Email, Phone -->
         <div class="horizontal-group">
