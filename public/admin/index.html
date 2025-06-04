@@ -4,27 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
-
-    <!-- 1) Tell Decap CMS where to find your config -->
     <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
-
     <title>Content Manager | West Valley Golf Cars</title>
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#334843" />
-    <meta name="msapplication-TileColor" content="#334843" />
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#334843">
+    <meta name="msapplication-TileColor" content="#334843">    
   </head>
-
+  
   <body>
-    <div id="nc-root"></div>
-
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-    <script>window.CMS_MANUAL_INIT = true;</script>
-
     <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
 
     <script>
@@ -40,8 +33,9 @@
 
       const RandomSlugControl = createClass({
         componentDidMount: function () {
-          // Only generate a slug if the field is currently empty
-          if (this.props.value) return;
+          if (this.props.value) {
+            return;
+          }
           const randomId = genNonRepeatingNumericString(8);
           this.props.onChange(randomId);
         },
@@ -52,23 +46,13 @@
             className: this.props.classNameWrapper,
             type: "text",
             value: value,
-            disabled: true, // lock it so user can’t overwrite
+            disabled: true
           });
         },
       });
 
       CMS.registerWidget("randomSlug", RandomSlugControl);
-
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.init();
-        window.netlifyIdentity.on("login", () => {
-
-          CMS.init({ root: "#nc-root" });
-        });
-      } else {
-
-        CMS.init({ root: "#nc-root" });
-      }
     </script>
+
   </body>
 </html>
