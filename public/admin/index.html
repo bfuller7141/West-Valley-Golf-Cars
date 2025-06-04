@@ -58,7 +58,17 @@
       });
 
       CMS.registerWidget("randomSlug", RandomSlugControl);
-      
+
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.init();
+        window.netlifyIdentity.on("login", () => {
+
+          CMS.init({ root: "#nc-root" });
+        });
+      } else {
+
+        CMS.init({ root: "#nc-root" });
+      }
     </script>
   </body>
 </html>
