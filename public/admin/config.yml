@@ -32,8 +32,6 @@ collections:
         required: false
         pattern:
           - "^[0-9]{8}$"
-          - "Slug must be exactly 8 digits."
-        hint: "An 8-digit random ID is generated automatically on entry."
 
       - label: "Featured"
         name: "featured"
