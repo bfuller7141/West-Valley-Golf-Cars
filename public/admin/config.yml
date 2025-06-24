@@ -30,8 +30,6 @@ collections:
         name: "slug"
         widget: "randomSlug"
         required: false
-        pattern:
-          - "^[0-9]{8}$"
 
       - label: "Featured"
         name: "featured"
