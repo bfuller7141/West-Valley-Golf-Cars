@@ -42,7 +42,7 @@ content: >-
   Golf Package Included: Equipped with features tailored for golfing needs.
 make: MadJax
 model: "X-Series 4 Seater "
-year: 2021
+year: 2024
 color: "Lime Green "
 price: 13495
 passenger: 4
