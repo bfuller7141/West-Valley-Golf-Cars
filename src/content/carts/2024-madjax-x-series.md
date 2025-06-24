@@ -1,7 +1,7 @@
 ---
 name: "2024 MadJax X-Series "
 slug: "46353"
-featured: false
+featured: true
 content: >-
   
 
