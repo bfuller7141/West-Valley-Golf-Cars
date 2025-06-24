@@ -29,7 +29,7 @@ collections:
       - label: "Slug"
         name: "slug"
         widget: "randomSlug"
-        required: true
+        required: false
         pattern:
           - "^[0-9]{8}$"
           - "Slug must be exactly 8 digits."
