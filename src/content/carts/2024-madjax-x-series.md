@@ -48,7 +48,7 @@ price: 13495
 passenger: 4
 condition: New
 fuel: Electric
-sold: false
+sold: true
 thumbnail: /carts/img_1543.jpg
 images:
   - image: /carts/img_1540.jpg
