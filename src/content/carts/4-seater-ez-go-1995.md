@@ -24,7 +24,7 @@ model: "EZ Go "
 trim: TXT
 year: 1995
 color: "White "
-price: 3948
+price: 3950
 passenger: 4
 condition: Used
 fuel: Electric
