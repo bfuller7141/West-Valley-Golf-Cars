@@ -21,7 +21,7 @@ price: 4500
 passenger: 2
 condition: Used
 fuel: Gas
-sold: false
+sold: true
 thumbnail: /carts/img_1223.heic
 images:
   - image: /carts/img_1225.heic
