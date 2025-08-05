@@ -24,7 +24,7 @@ content: >-
   Street Legal
 make: Club Car
 model: "ONWARD "
-year: 2019
+year: 2021
 color: "Red "
 price: 9995
 passenger: 2
