@@ -22,7 +22,7 @@ price: 12499
 passenger: 2
 condition: Used
 fuel: Electric
-sold: false
+sold: true
 thumbnail: /carts/img_3535.jpg
 images:
   - image: /carts/img_3537.jpg
