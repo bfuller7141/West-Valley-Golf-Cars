@@ -15,6 +15,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.3",
     "@astrojs/react": "^3.6.2",
+    "@astrojs/sitemap": "^3.7.0",
     "aos": "^2.3.4",
     "astro": "^5.1.1",
     "flatpickr": "^4.6.13",
