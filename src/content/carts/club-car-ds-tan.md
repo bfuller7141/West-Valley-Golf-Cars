@@ -20,7 +20,7 @@ price: 4000
 passenger: 2
 condition: Used
 fuel: Electric
-sold: false
+sold: true
 thumbnail: /carts/img_1281.jpg
 images:
   - image: /carts/img_1283.jpg
