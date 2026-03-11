@@ -1,6 +1,7 @@
 import { defineCollection, z } from "astro:content";
 
 const carts = defineCollection({
+  type: "content",
   schema: z.object({
     name: z.string(),
     featured: z.boolean(),
@@ -22,11 +23,12 @@ const carts = defineCollection({
       })
     ),
     content: z.string(),
-    serial: z.string().optional(), // Optional field added to match YAML
+    serial: z.string().optional(),
   }),
 });
 
 const legal = defineCollection({
+  type: "content",
   schema: z.object({
     title: z.string(),
     content: z.string(),
@@ -34,6 +36,7 @@ const legal = defineCollection({
 });
 
 const testimonials = defineCollection({
+  type: "content",
   schema: z.object({
     name: z.string(),
     testimonial: z.string(),
@@ -41,11 +44,12 @@ const testimonials = defineCollection({
   }),
 });
 
-const blogCollection = defineCollection({
+const blog = defineCollection({
+  type: "content",
   schema: z.object({
     title: z.string(),
     titlePage: z.string(),
-    date: z.date(), 
+    date: z.date(),
     thumbnail: z.string(),
     coverImage: z.string(),
     featured: z.boolean().default(false),
@@ -59,5 +63,5 @@ export const collections = {
   carts,
   legal,
   testimonials,
-  blogCollection,
+  blog,
 };
