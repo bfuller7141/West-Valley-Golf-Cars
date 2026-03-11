@@ -44,7 +44,7 @@ make: MadJax
 model: "X-Series 4 Seater "
 year: 2024
 color: "Admiral Metallic Blue "
-price: 13750
+price: 10250
 passenger: 4
 condition: New
 fuel: Electric
