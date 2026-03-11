@@ -1,18 +1,18 @@
 ---
 import LegalPage from "../../Layouts/LegalPage.astro";
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection, render, type CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
   const legalEntries = await getCollection('legal');
   return legalEntries.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
+    params: { slug: entry.id },
+    props: { entry, slug: entry.id },
   }));
 }
 
-const { entry } = Astro.props as { entry: CollectionEntry<'legal'> };
-const { Content } = await entry.render();
+const { entry, slug } = Astro.props as { entry: CollectionEntry<'legal'>; slug: string };
+const { Content } = await render(entry);
 ---
-<LegalPage {...entry.data}>
+<LegalPage {...entry.data} slug={slug}>
     <Content />
 </LegalPage>

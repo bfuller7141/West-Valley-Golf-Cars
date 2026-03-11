@@ -1,18 +1,18 @@
 ---
 import CartPage from "../../Layouts/CartPage.astro";
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection, render, type CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
   const cartEntries = await getCollection('carts');
   return cartEntries.map((cart) => ({
-    params: { slug: cart.slug },
-    props: { cart },
+    params: { slug: cart.id },
+    props: { cart, slug: cart.id },
   }));
 }
 
-const { cart } = Astro.props as { cart: CollectionEntry<'carts'> };
-const { Content } = await cart.render();
+const { cart, slug } = Astro.props as { cart: CollectionEntry<'carts'>; slug: string };
+const { Content } = await render(cart);
 ---
-<CartPage {...cart.data}>
+<CartPage {...cart.data} slug={slug}>
   <Content />
 </CartPage>
