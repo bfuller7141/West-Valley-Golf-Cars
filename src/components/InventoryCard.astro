@@ -1,7 +1,7 @@
 ---
 export interface InventoryCardProps {
   name: string;
-  price: string;
+  price: number | string;
   image: string;
   slug: string;
   sold: boolean;
@@ -13,7 +13,7 @@ export interface InventoryCardProps {
 const { name, price, image, sold, featured, year, make, model, slug } = Astro.props as InventoryCardProps;
 
 // Format Numbers with Commas
-const formatPrice = (price) => {
+const formatPrice = (price: number | string) => {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 ---

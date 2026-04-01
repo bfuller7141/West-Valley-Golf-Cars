@@ -1,9 +1,4 @@
 ---
-import { getCollection } from 'astro:content';
-
-const cart = await getCollection('carts');
-const { data: frontmatter } = cart[0];
-
 const { images } = Astro.props; // Expecting images to be passed in from the parent component
 ---
 

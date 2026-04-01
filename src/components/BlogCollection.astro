@@ -1,7 +1,6 @@
 ---
 import BlogCard from "./BlogCard.astro";
 
-const blogEntries = import.meta.glob<BlogEntry>('../content/blog/*.md', { eager: true });
 type BlogEntry = {
     frontmatter: {
         title: string;
@@ -12,6 +11,7 @@ type BlogEntry = {
     };
 };
 
+const blogEntries = import.meta.glob<BlogEntry>('../content/blog/*.md', { eager: true });
 const blog: BlogEntry[] = Object.values(blogEntries);
 
 const allBlogItems = blog.map(item => ({

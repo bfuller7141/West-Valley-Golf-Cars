@@ -53,7 +53,6 @@ const blog = defineCollection({
     thumbnail: z.string(),
     coverImage: z.string(),
     featured: z.boolean().default(false),
-    slug: z.string().optional(),
     article: z.string(),
     excerpt: z.string(),
   }),

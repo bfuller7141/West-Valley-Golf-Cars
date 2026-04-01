@@ -10,11 +10,25 @@ import ArrowButton from "../components/buttons/ArrowButton.astro";
 import GeneralForm from "../components/forms/GeneralForm.astro";
 import FooterMain from "../components/FooterMain.astro";
 import CookiePopup from "../components/CookiePopup.astro";
-import { CollectionEntry } from "astro:content";
+
+type PropsCarts = {
+	name: string;
+	content: string;
+	make: string;
+	model: string;
+	trim?: string;
+	year: number;
+	color: string;
+	price: number;
+	passenger: number;
+	condition: "New" | "Used";
+	fuel: "Gas" | "Electric" | "Lead Acid";
+	sold: boolean;
+	thumbnail: string;
+	images: Array<{ image: string; alt: string }>;
+};
 
 const { name, content, make, model, trim, year, color, price, passenger, condition, fuel, sold, thumbnail, images } = Astro.props as PropsCarts;
-
-type PropsCarts = CollectionEntry<'carts'>['data'];
 const contentHTML = marked(content);
 
 // Format Numbers with Commas
@@ -187,7 +201,7 @@ const formatPrice = (price) => {
 			<InventoryCardWrap limit={true} data-aos="fade-up"/>
 			<div class="container">
 				<div class="btn-wrapper" data-aos="fade-up">
-					<a href="/golf-carts" class="btn secondary">View All Inventory</a>
+					<a href="/sales#inventory" class="btn secondary">View All Inventory</a>
 				</div>
 			</div>
 		</div>

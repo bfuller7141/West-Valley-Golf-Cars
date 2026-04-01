@@ -1,5 +1,4 @@
 ---
-import { getCollection } from "astro:content";
 import BaseHead from "../../components/BaseHead.astro";
 import NavMain from "../../components/NavMain.astro";
 import { marked } from 'marked';
@@ -8,13 +7,14 @@ import SkipMain from "../../components/buttons/SkipMain.astro";
 import GeneralForm from "../../components/forms/GeneralForm.astro";
 
 export const getStaticPaths = async () => {
-    const blogEntries = await getCollection('blog');
+    const blogEntries = import.meta.glob("../../content/blog/*.md", { eager: true });
+    const entries = Object.values(blogEntries) as Array<{ frontmatter: Record<string, unknown> }>;
 
-    return blogEntries.map((blog) => ({
+    return entries.map((blog) => ({
         params: { 
-            slug: blog.data.slug ?? blog.id // Use frontmatter slug if available, otherwise use id
+            slug: String(blog.frontmatter.slug)
         },
-        props: { ...blog.data, slug: blog.data.slug ?? blog.id }, // Ensure slug exists in props
+        props: { ...blog.frontmatter, slug: String(blog.frontmatter.slug) },
     }));
 };
 

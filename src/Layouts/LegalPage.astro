@@ -1,5 +1,4 @@
 ---
-import { CollectionEntry } from "astro:content";
 import { marked } from "marked";
 import BaseHead from "../components/BaseHead.astro";
 import SkipMain from "../components/buttons/SkipMain.astro";
@@ -7,7 +6,11 @@ import NavMain from "../components/NavMain.astro";
 import FooterMain from "../components/FooterMain.astro";
 import CookiePopup from "../components/CookiePopup.astro";
 
-type PropsLegal = CollectionEntry<'legal'>['data'];
+type PropsLegal = {
+  title: string;
+  content: string;
+  slug?: string;
+};
 
 const { title, content } = Astro.props as PropsLegal;
 const contentHTML = marked(content);
