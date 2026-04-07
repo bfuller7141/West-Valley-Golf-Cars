@@ -41,7 +41,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const modelSelect = document.getElementById('model');
+        const modelSelect = document.getElementById('model') as HTMLSelectElement | null;
         if (!modelSelect) return;
 
         const modelParam = new URLSearchParams(window.location.search).get('model');
@@ -56,7 +56,7 @@
         const selectedModel = allowed[normalized];
         if (!selectedModel) return;
 
-        const hasOption = Array.from(modelSelect.options).some((option) => option.value === selectedModel);
+        const hasOption = modelSelect.querySelector(`option[value="${selectedModel}"]`) !== null;
         if (hasOption) {
             modelSelect.value = selectedModel;
         }
