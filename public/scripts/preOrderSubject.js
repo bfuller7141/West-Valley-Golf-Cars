@@ -1,5 +1,5 @@
 (function () {
-  const form = document.getElementById("general-contact-form");
+  const form = document.getElementById("pre-order-form");
   const modelElement = document.getElementById("model");
   const firstNameElement = document.getElementById("first-name");
   const lastNameElement = document.getElementById("last-name");
