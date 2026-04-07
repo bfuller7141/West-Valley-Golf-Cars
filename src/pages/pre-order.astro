@@ -1,0 +1,94 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import SkipMain from "../components/buttons/SkipMain.astro";
+import CookiePopup from "../components/CookiePopup.astro";
+import FooterMain from "../components/FooterMain.astro";
+import PreOrderForm from "../components/forms/PreOrderForm.astro";
+import NavMain from "../components/NavMain.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <BaseHead
+        title="Pre-Order New MadJax Models | West Valley Golf Cars"
+        description="Pre-order the latest MadJax models at West Valley Golf Cars. Reserve your X4 or Ascent today and our team will contact you to confirm details."
+        keywords="MadJax pre-order, X4 pre-order, Ascent pre-order, golf cart pre-order, West Valley Golf Cars"
+        image="/images/opengraph/open-graph_main.webp"
+        url="https://www.westvalleygolfcars.com/pre-order/"
+    />
+    <body class="page-transition-enter">
+        <SkipMain />
+        <header>
+            <NavMain data-aos="fade-down" />
+        </header>
+
+        <main id="main-content">
+            <div class="top-banner"></div>
+            <section id="pre-order" class="pre-order-section" data-aos="fade-up">
+                <div class="large-top">
+                    <div class="container">
+                        <h1 class="section-title center">Pre-Order Your New <span class="underline">MadJax</span></h1>
+                        <p class="text center mt-2">Reserve your X4 or Ascent today and our team will contact you to confirm availability, options, and next steps.</p>
+                        <PreOrderForm data-aos="fade-up" />
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <FooterMain />
+        </footer>
+
+        <CookiePopup />
+    </body>
+
+    <style>
+        #main-content {
+            position: relative;
+        }
+
+        .pre-order-section .large-top {
+            padding-top: clamp(12rem, 18vw, 16rem);
+            padding-bottom: clamp(4rem, 7vw, 7rem);
+        }
+
+        @media (min-width: 971px) {
+            #main-content > .top-banner {
+                height: 9rem;
+            }
+        }
+    </style>
+
+    <script type="module">
+        import * as AOS from 'aos';
+        import 'aos/dist/aos.css';
+
+        const initializeAOS = () => {
+            if (window.innerWidth > 980) {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    easing: 'ease-in-out',
+                    offset: 0,
+                    delay: 0,
+                });
+            } else {
+                const aosElements = document.querySelectorAll('[data-aos]');
+                aosElements.forEach((element) => {
+                    element.removeAttribute('data-aos');
+                    element.style.opacity = '1';
+                    element.style.transform = 'none';
+                });
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeAOS();
+        });
+
+        window.addEventListener('popstate', () => {
+            window.scrollTo(0, 0);
+            initializeAOS();
+        });
+    </script>
+</html>

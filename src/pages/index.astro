@@ -42,10 +42,10 @@ import CookiePopup from "../components/CookiePopup.astro";
 									<a href="/sales#inventory" class="btn">View Our Inventory</a>
 									<a href="/service#schedule" class="btn secondary">Schedule A Service</a>
 								</div>
-								<LogoWrap logoSize="logo-small" text="small-text" data-aos="fade-up" />
 							</div>
-							<img src="/images/static/2024-madjax_blue.webp" alt="2024 Madjax Blue Golf Cart" class="hero-img" loading="eager" data-aos="fade-left" />
+							<img src="/images/static/wv-edition.webp" alt="Custom West Valley Edition golf cart from West Valley Golf Cars" class="hero-img" loading="eager" data-aos="fade-left" />
 						</div>
+						<LogoWrap logoSize="logo-small" text="small-text" data-aos="fade-up" />
 					</div>
 				</div>
 			</section>
@@ -54,14 +54,52 @@ import CookiePopup from "../components/CookiePopup.astro";
 				<div class="large-top" data-aos="fade-right">
 					<div class="container">
 						<div class="wrapper column-l">
-							<img src="/images/static/2023-madjax_navy.webp" alt="2023 Madjax Navy Golf Cart" class="img cart" loading="lazy" data-aos="zoom-in" />
+							<img src="/images/static/2026-madjax_sea.webp" alt="2023 Madjax Navy Golf Cart" class="img cart" loading="lazy" data-aos="zoom-in" />
 							<div class="wrapper" data-aos="fade-left">
 								<h2 class="section-title">Experience The <span class="underline">MadJax</span> X-Series</h2>
 								<p class="text">Experience the MadJax X-Series and take your golfing adventures to new heights. With its blend of sleek design and top-tier performance, this cart promises to enhance every moment on the course. Whether you're navigating fairways or cruising around town, the MadJax X-Series delivers both comfort and style, ensuring that every ride is enjoyable and effortless.</p>
 								<p class="text">Offering a 3-year warranty and easy access to replacement parts and accessories, the MadJax X-Series is designed for long-lasting enjoyment. Maintaining and upgrading your cart is simple, allowing you to focus on having fun without worrying about downtime. With the MadJax X-Series, the thrill of the ride is always within reach.</p>								
 								<div class="btn-wrapper" data-aos="fade-up">
-									<div class="sub-title" role="heading">Starting at $14,250</div>
-									<a href="#contact" class="btn">Check Availability</a>
+									<a href="/sales#inventory" class="btn">Current Inventory</a>
+									<a href="/pre-order/" class="btn secondary">Pre-Order New Models</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="padding-global" data-aos="fade-up">
+					<div class="container">
+						<h2 class="section-title">Preorder the New MadJax <span class="underline">X4 & Ascent</span></h2>
+						<div class="wrapper preorder-video-block" data-aos="fade-up">
+							<div class="video-embed">
+								<iframe
+									src="https://www.youtube-nocookie.com/embed/dsp5VC3PNTE"
+									title="MadJax X4 and Ascent Video"
+									loading="lazy"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									allowfullscreen
+								></iframe>
+							</div>
+						</div>
+						<div class="card-wrapper">
+							<div class="card preorder-card" data-aos="fade-up">
+								<h3 class="sub-title preorder-card-title">MadJax X4</h3>
+								<div class="price-tag" role="heading">Starting at $12,965</div>
+								<p class="text">The MadJax X4 is built for drivers who want modern style, practical comfort, and dependable day-to-day performance. Its clean body lines, premium fit and finish, and technology-forward interior give you a cart that feels just as good on neighborhood streets as it does at the club.</p>
+								<p class="text">From smooth lithium-powered efficiency to upgraded lighting and a connected driving experience, the X4 is designed to deliver value without sacrificing features. If you want a versatile cart that looks sharp and is ready for daily use, the X4 is a strong choice.</p>
+								<div class="btn-wrapper preorder-btn-wrap">
+									<a href="/pre-order/" class="btn secondary">Preorder X4</a>
+								</div>
+							</div>
+							<div class="card preorder-card" data-aos="fade-up">
+								<h3 class="sub-title preorder-card-title">MadJax Ascent</h3>
+								<div class="price-tag" role="heading">Starting at $14,495</div>
+								<p class="text">The MadJax Ascent is crafted for customers who want a premium ride with standout styling and elevated details throughout. This model brings together upscale finishes, advanced design elements, and a refined cabin feel that turns every trip into an experience.</p>
+								<p class="text">With high-end comfort and a fully-loaded feature set, the Ascent is ideal for buyers who want top-tier presence and performance in one package. Preorder now to reserve your place in line for one of the most anticipated MadJax releases.</p>
+								<div class="btn-wrapper preorder-btn-wrap">
+									<a href="/pre-order/?model=Ascent" class="btn secondary">Preorder Ascent</a>
 								</div>
 							</div>
 						</div>
@@ -189,6 +227,57 @@ import CookiePopup from "../components/CookiePopup.astro";
 		</footer>
 	</body>
 
+	<style>
+		.preorder-video-block {
+			margin-top: clamp(1rem, 2vw, 1.5rem);
+			margin-bottom: clamp(1rem, 2vw, 1.5rem);
+		}
+
+		.video-embed {
+			position: relative;
+			width: 100%;
+			height: clamp(13rem, 28vw, 20rem);
+			margin-top: clamp(0.75rem, 2vw, 1.25rem);
+			margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+			border-radius: 1rem;
+			overflow: hidden;
+			background: #000;
+		}
+
+		.video-embed iframe {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			border: 0;
+		}
+
+		@media (max-width: 757px) {
+			.video-embed {
+				height: clamp(16rem, 62vw, 24rem);
+			}
+		}
+
+		.price-tag {
+			font-family: var(--title-font);
+			font-style: var(--title-style);
+			font-weight: 500;
+			color: #d2b982;
+			font-size: clamp(1.25rem, 1vw + 0.75rem, 1.75rem);
+			line-height: 1.1;
+			margin-bottom: 0.65rem;
+		}
+
+		.preorder-card-title {
+			font-size: clamp(1.85rem, 1.5vw + 0.9rem, 2.45rem);
+			line-height: 1.05;
+		}
+
+		.preorder-btn-wrap {
+			justify-content: flex-start;
+		}
+	</style>
+
 	<script type="module">
         import * as AOS from 'aos';
         import 'aos/dist/aos.css';
@@ -227,3 +316,4 @@ import CookiePopup from "../components/CookiePopup.astro";
         });
     </script> 
 </html>
+
