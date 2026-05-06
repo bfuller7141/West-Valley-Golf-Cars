@@ -16,6 +16,7 @@ function updateSubject(event) {
   return true; // allow form to submit
 }
 
-document
-  .getElementById("parts-form")
-  .addEventListener("submit", updateSubject);
+const partsForm = document.getElementById("parts-form");
+if (partsForm) {
+  partsForm.addEventListener("submit", updateSubject);
+}

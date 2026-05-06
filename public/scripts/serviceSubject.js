@@ -22,6 +22,7 @@ function updateSubject(event) {
   return true;
 }
 
-document
-  .getElementById("estimate-form")
-  .addEventListener("submit", updateSubject);
+const estimateForm = document.getElementById("estimate-form");
+if (estimateForm) {
+  estimateForm.addEventListener("submit", updateSubject);
+}
