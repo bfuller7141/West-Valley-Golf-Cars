@@ -19,7 +19,7 @@ model: "Precedent "
 trim: "West Valley Edition "
 year: 2014
 color: Green
-price: 5800
+price: 6500
 passenger: 2
 condition: Used
 fuel: Electric
