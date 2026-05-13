@@ -20,7 +20,7 @@ price: 4250
 passenger: 2
 condition: Used
 fuel: Lead Acid
-sold: false
+sold: true
 thumbnail: /carts/img_5252.jpg
 images:
   - image: /carts/img_5253.jpg
