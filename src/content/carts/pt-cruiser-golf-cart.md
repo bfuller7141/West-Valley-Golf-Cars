@@ -18,7 +18,7 @@ price: 6498
 passenger: 3
 condition: Used
 fuel: Lead Acid
-sold: false
+sold: true
 thumbnail: /carts/img_6853.jpg
 images:
   - image: /carts/img_6852.jpg
