@@ -27,9 +27,9 @@ content: >-
 make: "X Series "
 model: "X6 - Limo "
 trim: ""
-year: 2024
+year: 2025
 color: "Gunmetal "
-price: 16249
+price: 16250
 passenger: 6
 condition: Used
 fuel: Electric
