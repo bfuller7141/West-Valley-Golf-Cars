@@ -16,7 +16,7 @@ content: |-
   \- Street Legal
 make: Club Car
 model: "Precedent "
-year: 2006
+year: 2008
 color: "Red "
 price: 5000
 passenger: 0
