@@ -1,4 +1,4 @@
-<form class="form-wrap" id="general-contact-form" name="general-contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
+<form class="form-wrap" id="general-contact-form" name="general-contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true" action="/success">
     <input type="hidden" name="form-name" value="general-contact-form" />
     
     <!-- Honey Pot Field -->
@@ -44,6 +44,7 @@
         <label for="message">Additional Information</label>
         <textarea class="input textarea" id="message" name="message" placeholder="Tell us more about how we can help you."></textarea>
     </div>
+    <div data-netlify-recaptcha="true"></div>
     <button type="submit" class="btn" aria-label="Submit form">Submit Form</button>
 </form>
 

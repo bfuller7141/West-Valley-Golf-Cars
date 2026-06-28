@@ -1,5 +1,5 @@
-<form class="form-wrap" id="parts-form" name="parts-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
-    <input type="hidden" name="form-name" value="general-contact-form" />
+<form class="form-wrap" id="parts-form" name="parts-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true" action="/success">
+    <input type="hidden" name="form-name" value="parts-form" />
     
     <!-- Honey Pot Field -->
     <div class="hidden" style="display: none;">
@@ -48,6 +48,7 @@
         <label for="message">Additional Information</label>
         <textarea class="input textarea" id="message" name="message" placeholder="Tell us more about the parts you're looking for."></textarea>
     </div>
+    <div data-netlify-recaptcha="true"></div>
     <button type="submit" class="btn" aria-label="Submit form">Submit Form</button>
 </form>
 

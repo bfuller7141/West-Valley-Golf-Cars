@@ -14,6 +14,7 @@ declare var flatpickr: any; // Declare flatpickr as a global variable
     method="POST"
     data-netlify="true"
     data-netlify-honeypot="bot-field"
+    data-netlify-recaptcha="true"
     action="/success"
     >
         <input type="hidden" name="form-name" value="service-scheduling" />
@@ -123,6 +124,7 @@ declare var flatpickr: any; // Declare flatpickr as a global variable
             </div>
         </div>
 
+        <div data-netlify-recaptcha="true"></div>
         <button type="submit" class="btn" aria-label="Submit form">Submit Form</button>
     </form>
 </div>
