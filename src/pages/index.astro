@@ -20,6 +20,7 @@ import CookiePopup from "../components/CookiePopup.astro";
     keywords="golf carts, used golf carts, new golf carts, golf cart service, golf cart rentals, West Valley, Arizona"
 	image="/images/opengraph/open-graph_main.webp"
     url="https://www.westvalleygolfcars.com/"
+	enableNetlifyIdentity={true}
 	/>
 	<body class="page-transition-enter">
 		<SkipMain />
@@ -225,6 +226,17 @@ import CookiePopup from "../components/CookiePopup.astro";
 		<footer>
 			<FooterMain />
 		</footer>
+		<script is:inline>
+			if (window.netlifyIdentity) {
+				window.netlifyIdentity.on("init", (user) => {
+					if (!user) {
+						window.netlifyIdentity.on("login", () => {
+							window.location.assign("/admin/");
+						});
+					}
+				});
+			}
+		</script>
 	</body>
 
 	<style>
